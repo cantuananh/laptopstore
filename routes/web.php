@@ -12,7 +12,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login:admin|employee|supplie
 
     Route::resource('products', 'ProductController');
 
-    Route::resource('users', 'UserController');
+    Route::resource('users', 'UserController')->middleware('login:admin');
 
     Route::resource('bills', 'BillController');
 

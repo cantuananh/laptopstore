@@ -67,7 +67,7 @@
                             {{$date}}
                         </td>
                         <td> @if($order->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
-                        <td> 1000000 <u>đ</u>  </td>
+                        <td> {{$order->total_price}} <u>đ</u>  </td>
                         <td>
                             <form action="{{route('orders.destroy',['order'=>$order->id])}}" method="POST">
                                 {!! csrf_field() !!}
@@ -86,6 +86,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{$orders->links()}}
         </div>
     </div>
 @endsection

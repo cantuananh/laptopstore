@@ -46,11 +46,11 @@
                     </div>
                     <div class="form-block">
                         <label>Ảnh đại diện: </label>
-                        <img src="/uploads/users/{{Auth::user()->image}}" height="100" width="100">
+                        <img src="uploads/users/{{Auth::user()->image}}" height="100" width="100">
                     </div>
                     <div class="form-block">
                         <label style="margin-right: 20px">Trạng thái: </label>@if(Auth::user()->status == 1)
-                           Dùng
+                           Đang dùng
                         @else
                             Không dùng
                          @endif

@@ -50,7 +50,7 @@
                     <tr class="odd gradeX">
                         <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
-                        <td><img src="../uploads/users/{{$user->image}}" height="100"
+                        <td><img src="uploads/users/{{$user->image}}" height="100"
                                  width="150">
                         </td>
                         <td>{{$user->email}}</td>
@@ -72,10 +72,11 @@
                             </form>
                         </td>
                     </tr>
+                    
                 @endforeach
                 </tbody>
             </table>
-{{--            {{$users->links()}}--}}
+            {{$users->links()}}
         </div>
     </div>
 @endsection

@@ -50,7 +50,7 @@
                         <td>{{$product->id}}</td>
                         <td>{{$product->name}}</td>
                         <td>{{$product->brand->name}}</td>
-                        <td><img src="../uploads/products/{{$product->image}}" height="100"
+                        <td><img src="uploads/products/{{$product->image}}" height="100"
                                  width="150">
                         </td>
                         <td>{{$product->microprocessors}}</td>
@@ -73,6 +73,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{$products->links()}}
         </div>
     </div>
 @endsection

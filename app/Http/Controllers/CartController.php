@@ -71,12 +71,11 @@ class CartController extends Controller
             return redirect('user/dat-hang')->with('loi', "Bạn vui lòng kiểm tra lại giỏ hàng: " . $list_soil_out);
         } else {
             $this->validate($request, [
-                "phone" => "required|numeric",
+                "phone" => "required",
                 "address" => "required",
                 "name" => "required",
             ], [
                 "phone.required" => "Bạn phải nhập số điện thoại",
-                "phone.numeric" => "Số điện thoại phải là số",
                 "address.required" => "Bạn phải nhập địa chỉ",
                 "name.required" => "Bạn phải nhập họ tên",
             ]);
@@ -85,6 +84,7 @@ class CartController extends Controller
             $customer = new Order();
             $customer->user_id = get_data_user('web');
             $customer->payment = $request->payment;
+            $customer->total_price = $total;
             $customer->save();
 
             $product_cart = \Cart::getContent();
@@ -95,8 +95,7 @@ class CartController extends Controller
                 $detail->quantity = $product->quantity;
                 $detail->save();
                 $detail_p = Product::where('id', $product->id)->first();
-                $quantity = $detail_p->quanlity;
-                $quantity_remain = $quantity - $product->quantity;
+                $quantity_remain = $detail_p->quantity - $product->quantity;
                 //cập nhật lại số lượng hàng trong kho
                DB::table('products')->where('id', $product->id)->update(['quantity' => $quantity_remain]);
             }

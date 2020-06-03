@@ -9,7 +9,6 @@
                     </h1>
                 </div>
                 <form action="{{route('bills.store')}}" method="POST" enctype="multipart/form-data">
-                    <div class="col-lg-7" style="padding-bottom:120px">
                         @if(count($errors)>0)
                             <div class="alert alert-warning" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
@@ -51,7 +50,6 @@
                         </div>
                         <button type="submit" class="btn btn-default">Thêm</button>
                         <a href="{{route('bills.index')}}" class="btn btn-default">Trở về</a>
-                    </div>
                     {{csrf_field()}}
                 </form>
             </div>

@@ -59,5 +59,6 @@
                 @endforeach
                 </tbody>
             </table>
+            {{$brands->links()}}
         </div>
 @endsection

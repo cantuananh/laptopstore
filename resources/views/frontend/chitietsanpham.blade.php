@@ -3,7 +3,7 @@
     <div class="inner-header">
         <div class="container">
             <div class="pull-left">
-                <h6 class="inner-title">Sản phẩm {{$detail_product->name}}</h6>
+                <h6 class="inner-title">{{$detail_product->name}}</h6>
             </div>
             <div class="pull-right">
                 <div class="beta-breadcrumb font-large">
@@ -47,13 +47,10 @@
                         </ul>
                         <div class="panel" id="tab-description">
                             <p>
-                                Laptop nhỏ gọn, cao cấp, sang trọng
-                                i5 đời 8, sẵn SSD NVMe dung lượng cao
-                                Bảo hành chính hãng Asus 24 tháng
-                                <br>{{$detail_product->description}}
-                                Bộ vi xử lý: {{$detail_product->microprocessors}}
-                                Màn hình: {{$detail_product->screen}}
-                                Bộ nhớ: {{$detail_product->ram}}
+                               {{$detail_product->description}}
+                                <br> Bộ vi xử lý: {{$detail_product->microprocessors}}
+                                <br> Màn hình: {{$detail_product->screen}} inch
+                                <br> Bộ nhớ: {{$detail_product->ram}} GB
                             </p>
                         </div>
                     </div>

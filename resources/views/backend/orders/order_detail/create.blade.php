@@ -1,4 +1,4 @@
-<div class="modal fade" id="newBillProductModal">
+<div class="modal fade" id="newOrderProductModal">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,7 +7,7 @@
             </div>
             <div id="error"></div>
             <div class="modal-body">
-                <form action="" data-url="" method="POST" id="newResourceFormBillProduct">
+                <form action="" data-url="" method="POST" id="newResourceFormOrderProduct">
                     @csrf
                     <div class="form-group">
                         <label for="name" class="col-xs-4 control-label">Tên sản phẩm</label>
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="footer">
-                        <button type="submit" class="btn btn-primary " id="handleAddBillProduct">Lưu</button>
+                        <button type="submit" class="btn btn-primary " id="handleAddOrderProduct">Lưu</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </form>

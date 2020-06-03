@@ -62,7 +62,7 @@
                         </td>
                         <td> {{$bill->supplier->name}}</td>
                         <td> @if($bill->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
-                        <td> 1000000 <u>đ</u></td>
+                        <td> {{$bill->total_price}} <u>đ</u></td>
                         <td>
                             <form action="{{route('bills.destroy',['bill'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}
@@ -81,6 +81,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{$bills->links()}}
         </div>
     </div>
 @endsection

@@ -10,7 +10,6 @@
                 </div>
                 <form action="{{route('orders.update',['order'=>$order->id])}}}" method="POST"
                       enctype="multipart/form-data">
-                    <div class="col-lg-7" style="padding-bottom:100px">
                         @if(!empty(session('message')))
                             <div class="alert alert-success" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
@@ -40,7 +39,6 @@
                         </div>
                         <button type="submit" class="btn btn-default" name='ok'>Lưu lại</button>
                         <a href="{{route('orders.index')}}" class="btn btn-default">Trở về</a>
-                    </div>
                     {{csrf_field()}}
                     @method('PATCH')
                 </form>

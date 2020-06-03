@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Thống kê
+                    <h1 class="page-header">Thống kê chung
                     </h1>
                 </div>
                 <div class="row placeholders">
                     <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        <img src="{{asset('\uploads\charts\circle.png')}}"
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
                             <div class="counter" data-count="{{$user}}">0</div>
@@ -17,7 +17,7 @@
                         </h4>
                     </div>
                     <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        <img src="{{asset('\uploads\charts\circle.png')}}"
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
                             <div class="counter" data-count="{{$product}}">0</div>
@@ -25,7 +25,7 @@
                         </h4>
                     </div>
                     <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        <img src="{{asset('\uploads\charts\circle.png')}}"
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
                             <div class="counter" data-count="{{$category}}">0</div>
@@ -33,7 +33,7 @@
                         </h4>
                     </div>
                     <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        <img src="{{asset('\uploads\charts\circle.png')}}"
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
                             <div class="counter" data-count="{{$bill}}">0</div>

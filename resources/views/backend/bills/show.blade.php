@@ -32,7 +32,7 @@
                         <tr class="odd gradeX">
                             <td>{{$item->detail_product->product->id}}</td>
                             <td>{{$item->detail_product->product->name}}</td>
-                            <td><img src="../uploads/products/{{$item->detail_product->product->image}}" height="100"
+                            <td><img src="uploads/products/{{$item->detail_product->product->image}}" height="100"
                                      width="100">
                             <td>
                                 {{$item->quantity}}

@@ -9,7 +9,7 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">Hóa Đơn Bán
                         <small>Chi tiết</small>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#newBillProductModal"
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#newOrderProductModal"
                                 value="{{$order->id}}">Thêm
                         </button>
                         <a href="{{route('orders.index')}}" class="btn btn-primary"
@@ -33,7 +33,7 @@
                         <tr class="odd gradeX">
                             <td>{{$item->id}}</td>
                             <td>{{$item->detail_product->product->name}}</td>
-                            <td><img src="../uploads/products/{{$item->detail_product->product->image}}" height="100"
+                            <td><img src="uploads/products/{{$item->detail_product->product->image}}" height="100"
                                      width="100">
                             <td>
                                 {{$item->detail_product->product->price}} <u>đ</u>
@@ -42,22 +42,22 @@
                                 {{$item->quantity}}
                             </td>
                             <td>
-                                1000000 <u>đ</u>
+                                {{$item->quantity*$item->detail_product->product->price}} <u>đ</u>
                             </td>
                             <td class="center">
-                                <button class="btn btn-danger btnDeleteBillProductModal btn-del" data-toggle="modal"
+                                <button class="btn btn-danger btnDeleteOrderProductModal btn-del" data-toggle="modal"
                                         style="border-radius: 50%"
-                                        data-target="#btnDeleteBillDetailModal" data-id="{{$item->id}}"
+                                        data-target="#btnDeleteOrderDetailModal" data-id="{{$item->id}}"
                                         title="xoa">
                                     <i class="far fa-trash-alt"></i></button>
-                                <button class="btn btn-primary btnEditBillProductModal" data-toggle="modal"
+                                <button class="btn btn-primary btnEditOrderProductModal" data-toggle="modal"
                                         style="border-radius: 50%"
-                                        data-target="#editBillProductModal" data-id="{{$item->id}}"
+                                        data-target="#editOrderProductModal" data-id="{{$item->id}}"
                                         title="sua">
                                     <i class="fas fa-pencil-alt"></i></button>
-                                <button class="btn btn-success btnEditBillProductModal" data-toggle="modal"
+                                <button class="btn btn-success btnEditOrderProductModal" data-toggle="modal"
                                         style="border-radius: 50%"
-                                        data-target="#indexBillProductModal" data-id="{{$item->id}}"
+                                        data-target="#indexOrderProductModal" data-id="{{$item->id}}"
                                         title="sua">
                                     <i class="fas fa-plus-circle"></i></button>
                             </td>
