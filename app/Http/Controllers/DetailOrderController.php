@@ -2,23 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Bill;
-use App\BillDetail;
+use App\DetailOrder;
+use App\DetailProduct;
 use App\Http\Requests\StoreBillProductRequest;
 use App\Http\Requests\UpdateBillProductRequest;
+use App\Order;
 use App\Product;
+use Barryvdh\DomPDF\Facade as PDF;
 
-class DetalBillController extends Controller
+class DetailOrderController extends Controller
 {
-    protected $bill;
+    protected $order;
     protected $product;
-    protected $billProduct;
+    protected $detailOrder;
+    protected $detailProduct;
 
     public function __construct()
     {
-        $this->bill = new Bill();
+        $this->order = new Order();
         $this->product = new Product();
-        $this->billProduct = new BillDetail();
+        $this->detailOrder = new DetailOrder();
+        $this->detailProduct = new DetailProduct();
     }
 
     /**
@@ -38,27 +42,35 @@ class DetalBillController extends Controller
      */
     public function create()
     {
-        $products = $this->product->all();
-
-        return view('bills.show', compact('products'));
+        //
     }
 
 
     public function store(StoreBillProductRequest $request)
     {
-        $this->billProduct->create($request->all());
-        $this->product->addQuantity($request->product_id, $request);
-        $this->bill->addTotalPrice($request->product_id, $request->bill_id, $request);
-
+        // update quantity product
+        $product = $this->product->getProductBy($request->product_id);
+        $quantity = $product->quantity - $request->quantity;
+        $product->update(['quantity' => $quantity]);
+        // create bill detail
+        $detail_product = DetailProduct::orderBy('updated_at', 'DESC')->first();
+        $dataDetailProuduct = [
+            'detail_product_id' => $detail_product->id,
+            'order_id' => $request->order_id,
+            'quantity' => $request->quantity
+        ];
+        $this->detailOrder->create($dataDetailProuduct);
+        //update total price
+        $this->order->addTotalPrice($request->product_id, $request->order_id, $request);
         return response()->json([
             'status' => 200,
-            'data' => $this->product->getBillProductById($request->product_id, $request->bill_id),
+            'data' => $dataDetailProuduct,
         ]);
     }
 
     public function show($id)
     {
-        $billProduct = $this->billProduct->getBillProductBy($id);
+        $billProduct = $this->billDetail->getBillProductBy($id);
 
         return response()->json([
             'status' => 200,
@@ -79,8 +91,7 @@ class DetalBillController extends Controller
 
     public function update(UpdateBillProductRequest $request, $id)
     {
-        $billProduct = $this->billProduct->getBillProductBy($id);
-        $this->product->editQuantity($billProduct->product_id, $id, $request);
+        $billProduct = $this->billDetail->getBillProductBy($id);
         $this->bill->editTotalPrice($billProduct->product_id, $billProduct->bill_id, $id, $request);
         $billProduct->update($request->all());
 
@@ -92,8 +103,7 @@ class DetalBillController extends Controller
 
     public function destroy($id)
     {
-        $billProduct = $this->billProduct->getBillProductBy($id);
-        $this->product->deleteQuantity($billProduct->product_id, $id);
+        $billProduct = $this->billDetail->getBillProductBy($id);
         $this->bill->deleteTotalPrice($billProduct->product_id, $billProduct->bill_id, $billProduct);
         $billProduct->delete();
 
@@ -101,5 +111,13 @@ class DetalBillController extends Controller
             'status' => 200,
             'data' => $billProduct
         ]);
+    }
+
+    public function exportOrder($id)
+    {
+        $order = $this->order->getOrderBy($id);
+        $product_items = $this->detailOrder->where('order_id', $id)->get();
+        $pdf = PDF::loadView('backend.orders.pdf', compact('order', 'product_items'));
+        return $pdf->download('invoice.pdf');
     }
 }

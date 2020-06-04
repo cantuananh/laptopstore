@@ -2,7 +2,6 @@
 @section('content')
     @include('backend.orders.order_detail.create')
     @include('backend.orders.order_detail.edit')
-    @include('backend.orders.order_detail.index')
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -10,7 +9,8 @@
                     <h1 class="page-header">Hóa Đơn Bán
                         <small>Chi tiết</small>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#newOrderProductModal"
-                                value="{{$order->id}}">Thêm
+                                value="{{$order->id}}" style="color: white;border-radius: 50%"><i
+                                class="fas fa-plus-circle"></i>
                         </button>
                         <a href="{{route('orders.index')}}" class="btn btn-primary"
                            style="color: white;border-radius: 50%"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
@@ -55,11 +55,6 @@
                                         data-target="#editOrderProductModal" data-id="{{$item->id}}"
                                         title="sua">
                                     <i class="fas fa-pencil-alt"></i></button>
-                                <button class="btn btn-success btnEditOrderProductModal" data-toggle="modal"
-                                        style="border-radius: 50%"
-                                        data-target="#indexOrderProductModal" data-id="{{$item->id}}"
-                                        title="sua">
-                                    <i class="fas fa-plus-circle"></i></button>
                             </td>
                         </tr>
                     @endforeach

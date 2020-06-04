@@ -79,7 +79,10 @@
                                 <a href="{{route('orders.edit',['order'=>$order->id])}}" class="btn btn-primary"
                                    style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
                                 <a href="{{route('orders.show',['order'=>$order->id])}}" class="btn btn-success"
-                                   style="color: white;border-radius: 50%"><i class="fas fa-plus-circle"></i></a>
+                                   style="color: white;border-radius: 50%"><i class="fas fa-arrow-alt-circle-right"></i></a>
+                                <a href="{{route('exportOrder',['id'=>$order->id])}}" class="btn btn-success"
+                                   style="color: #d40e0e;border-radius: 50%;background: yellow"><i
+                                        class="fas fa-file-pdf"></i></a>
                             </form>
                         </td>
                     </tr>

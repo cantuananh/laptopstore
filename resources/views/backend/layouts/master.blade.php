@@ -7,16 +7,16 @@
     <base href="{{asset('')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../backend/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="backend/dist/css/adminlte.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <link href="../backend/dist/css/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="backend/dist/css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -50,7 +50,7 @@
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="../uploads/users/{{Auth::guard()->user()->image}}" class="img-circle elevation-2"
+                    <img src="uploads/users/{{Auth::guard()->user()->image}}" class="img-circle elevation-2"
                          alt="User Image">
                 </div>
                 <div class="info">
@@ -101,26 +101,10 @@
                         </a>
                     </li>
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p>
-                                Bảo hành
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item has-treeview">
                         <a href="{{route('users.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>
                                 Tài khoản
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item has-treeview">
-                        <a href="{{route('statistical')}}" class="nav-link">
-                            <i class="nav-icon fas fa-chart-pie"></i>
-                            <p>
-                                Thống kê
                             </p>
                         </a>
                     </li>
@@ -135,7 +119,7 @@
     </div>
     <footer class="main-footer">
         <div class="float-right d-none d-sm-block">
-            <b>Version</b> 3.0
+            <b>Version</b>
         </div>
         <strong>Copyright &copy; 2018-2020 <a href="https://www.facebook.com/daotrongquang">laptopstore</a>.</strong>
         All rights
@@ -144,16 +128,18 @@
     <aside class="control-sidebar control-sidebar-dark">
     </aside>
 </div>
-<script src="../plugins/jquery/jquery.min.js"></script>
-<script src="../backend/dist/js/adminlte.min.js"></script>
-<script src="../backend/dist/js/demo.js"></script>
-<script src="../backend/js/warning-delete.js"></script>
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../backend/js/count-up.js"></script>
-<script src="../backend/js/bill-product.js"></script>
-<script src="../backend/js/flot-data.js"></script>
-<script src="../backend/js/morris-data.js"></script>
-<script src="../backend/js/sb-admin-2.js"></script>
-<script src="../backend/js/sweetalert.min.js"></script>
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="backend/dist/js/adminlte.min.js"></script>
+<script src="backend/dist/js/demo.js"></script>
+<script src="backend/js/warning-delete.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="backend/js/count-up.js"></script>
+<script src="backend/js/bill-product.js"></script>
+<script src="backend/js/order-product.js"></script>
+<script src="backend/js/flot-data.js"></script>
+<script src="backend/js/morris-data.js"></script>
+<script src="backend/js/sb-admin-2.js"></script>
+<script src="backend/js/sweetalert.min.js"></script>
+@yield('js')
 </body>
 </html>

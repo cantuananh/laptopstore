@@ -9,10 +9,12 @@
                     <h1 class="page-header">Phiếu nhập kho
                         <small>Chi tiết</small>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#newBillProductModal"
-                                value="{{$bill->id}}">Thêm
+                                value="{{$bill->id}}" style="color: white;border-radius: 50%"><i
+                                class="fas fa-plus-circle"></i>
                         </button>
                         <a href="{{route('bills.index')}}" class="btn btn-primary"
-                           style="color: white;border-radius: 50%"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                           style="color: white;border-radius: 50%"><i class="fa fa-arrow-left"
+                                                                      aria-hidden="true"></i></a>
                     </h1>
                 </div>
                 <table class="table table-striped table-bordered table-hover">
@@ -62,4 +64,17 @@
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script>
+        function loadInputSeri(obj) {
+            var qty = obj.value;
+            var listInputSeri = '';
+            for (let i = 0; i < qty; i++) {
+                listInputSeri += `<input type='text' class='form-control' name='seri${i}'>`;
+            }
+            console.log(listInputSeri);
+            document.getElementById('listSeris').innerHTML = listInputSeri;
+        }
+    </script>
 @endsection

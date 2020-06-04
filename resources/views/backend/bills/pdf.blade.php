@@ -40,23 +40,23 @@
     </style>
 </head>
 <body>
-<h1 style="color: red; text-align: center">{{trans('message.hoadonnhap')}}</h1>
+<h1 style="color: red; text-align: center">Hoa don nhap</h1>
 <div class="col-lg-12">
     <table class="table__info-customer">
         <tr>
-            <td>{{trans('message.nguoinhap')}}</td>
+            <td>nguoi nhap</td>
             <td>{{$bill->user->name}}</td>
         </tr>
         <tr>
-            <td>{{trans('message.dienthoai')}}</td>
+            <td>dien thoai</td>
             <td>{{$bill->user->phone}}</td>
         </tr>
         <tr>
-            <td>{{trans('message.email')}}</td>
+            <td>email</td>
             <td>{{$bill->user->email}}</td>
         </tr>
         <tr>
-            <td>{{trans('message.tongtien')}}</td>
+            <td>tong tien</td>
             <td>{{number_format($bill->total_price)}} dong</td>
         </tr>
     </table>
@@ -66,10 +66,10 @@
     <table>
         <thead>
         <tr>
-            <th>{{trans('message.stt')}}</th>
-            <th>{{trans('message.tensanpham')}}</th>
-            <th>{{trans('message.dongia')}}</th>
-            <th>{{trans('message.soluong')}}</th>
+            <th>STT</th>
+            <th>ten san pham</th>
+            <th>don gia</th>
+            <th>so luong</th>
         </tr>
         </thead>
         <tbody>
@@ -77,9 +77,9 @@
         @foreach($product_items as $item)
             <tr>
                 <td>{{$stt}}</td>
-                <td>{{$item->product->name}}</td>
-                <td>{{number_format($item->product->promotion_price)}} dong</td>
-                <td>{{$item->q}}</td>
+                <td>{{$item->detail_product->product->name}}</td>
+                <td>{{number_format($item->detail_product->product->price)}} dong</td>
+                <td>{{$item->quantity}}</td>
             {{$stt++}}
         @endforeach
         </tbody>

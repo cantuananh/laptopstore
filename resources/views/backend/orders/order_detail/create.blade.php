@@ -5,14 +5,14 @@
                 <h4 class="modal-title">Thêm chi tiết</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div id="error"></div>
+            <div id="errorOrder"></div>
             <div class="modal-body">
                 <form action="" data-url="" method="POST" id="newResourceFormOrderProduct">
                     @csrf
                     <div class="form-group">
                         <label for="name" class="col-xs-4 control-label">Tên sản phẩm</label>
                         <div class="col-xs-8">
-                            <select class="form-control" name="product_id" style="margin-bottom: 10px" id="createProductId">
+                            <select class="form-control" name="product_id" style="margin-bottom: 10px" id="createOrderProductId">
                                 @foreach($products as $product)
                                     <option value='{{$product->id}}'>{{$product->name}}</option>
                                 @endforeach
@@ -25,7 +25,7 @@
                     <div class="form-group">
                         <label for="name" class="col-xs-4 control-label">Số lượng</label>
                         <div class="col-xs-8">
-                            <input type="text" class="form-control" name="quantity" id="createQuantity"
+                            <input type="text" class="form-control" name="quantity" id="createOrderQuantity"
                                    placeholder="Nhập số lượng">
                             <div class="qtyError" style="color: red">
                             </div>

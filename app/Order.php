@@ -36,4 +36,27 @@ class Order extends Model
     {
         return Order::findOrFail($id);
     }
+    public static function addTotalPrice($product_id, $order_id, $request)
+    {
+        $order = Order::findOrFail($order_id);
+        $product = Product::findOrFail($product_id);
+        return $order->update(['total_price' => $order->total_price + $request->quantity * $product->price]);
+    }
+
+    public static function deleteTotalPrice($product_id, $bill_id, $request)
+    {
+        $bill = Bill::findOrFail($bill_id);
+        $product = Product::findOrFail($product_id);
+
+        return $bill->update(['total_price' => $bill->total_price - $request->quantity * $product->price]);
+    }
+
+    public static function editTotalPrice($product_id, $bill_id, $billproduct_id, $request)
+    {
+        $bill = Bill::findOrFail($bill_id);
+        $product = Product::findOrFail($product_id);
+        $billProduct = BillDetail::findOrFail($billproduct_id);
+
+        return $bill->update(['total_price' => $bill->total_price - $billProduct->quantity * $product->price + $request->quantity * $product->price]);
+    }
 }

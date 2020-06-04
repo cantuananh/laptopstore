@@ -14,8 +14,8 @@ function showErrorOrderProduct(error) {
 $(function () {
     $('#handleAddOrderProduct').click(function (event) {
         event.preventDefault();
-        billProductData = $('#newResourceFormBillProduct').serialize();
-        billProductUrl = '/admin/billProduct';
+        billProductData = $('#newResourceFormOrderProduct').serialize();
+        billProductUrl = '/laptopstore/public/admin/orderDetail';
         callApi(billProductData, billProductUrl, 'post')
             .done(response => {
                 $('#newBillProductModal').modal('hide');
@@ -25,7 +25,7 @@ $(function () {
               location.reload();
             })
             .fail(error => {
-                showErrorBillProduct(error.responseJSON.errors);
+
             });
     });
 

@@ -16,9 +16,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login:admin|employee|supplie
 
     Route::resource('bills', 'BillController');
 
+    Route::resource('billDetail', 'DetailBillController');
+
+    Route::resource('orderDetail', 'DetailOrderController');
+
     Route::resource('orders', 'OrderController');
 
     Route::get('/statistical', 'StatisticalController@index')->name('statistical');
+
+    Route::get('bill/{id}/export','DetailBillController@exportBill')->name('exportBill');
+
+    Route::get('order/{id}/export','DetailOrderController@exportOrder')->name('exportOrder');
 
 });
 Route::get('dang-nhap',['as'=>'dangnhap', 'uses'=>'PageController@getLogin']);

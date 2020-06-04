@@ -26,22 +26,15 @@
                         <label for="name" class="col-xs-4 control-label">Số lượng</label> &emsp;
                         <div class="col-xs-8">
                             <input type="text" class="form-control" name="quantity" id="createQuantity"
-                                   placeholder="Nhập số lượng">
+                                   placeholder="Nhập số lượng" onchange="loadInputSeri(this)">
                             <div class="qtyError" style="color: red">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="name" class="col-xs-4 control-label">Nhập các số seri</label> &emsp;
-                        <div class="col-xs-8">
-                            <input type="text" class="form-control" name="quantity" id="createQuantity"
-                                   placeholder="Nhập số seri">
-                            <input type="text" class="form-control" name="quantity" id="createQuantity"
-                                   placeholder="Nhập số seri">
-                            <input type="text" class="form-control" name="quantity" id="createQuantity"
-                                   placeholder="Nhập số seri">
-                            <div class="qtyError" style="color: red">
-                            </div>
+                        <div class="col-xs-8" id="listSeris">
+                            <div class="qtyError" style="color: red"></div>
                         </div>
                     </div>
                     <div class="footer">
