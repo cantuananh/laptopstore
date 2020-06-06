@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $table = 'orders';
-    protected $fillable = ['user_id', 'payment'];
+    protected $fillable = ['user_id', 'payment','total_price'];
 
 
     public function products()
@@ -43,12 +43,12 @@ class Order extends Model
         return $order->update(['total_price' => $order->total_price + $request->quantity * $product->price]);
     }
 
-    public static function deleteTotalPrice($product_id, $bill_id, $request)
+    public static function deleteTotalPrice($product_id, $order_id, $request)
     {
-        $bill = Bill::findOrFail($bill_id);
+        $order = Order::findOrFail($order_id);
         $product = Product::findOrFail($product_id);
 
-        return $bill->update(['total_price' => $bill->total_price - $request->quantity * $product->price]);
+        return $order->update(['total_price' => $order->total_price - $request->quantity * $product->price]);
     }
 
     public static function editTotalPrice($product_id, $bill_id, $billproduct_id, $request)

@@ -48,6 +48,8 @@ Route::group(['prefix'=>'profile'],function (){
     Route::post('sua','PageController@postEditUser');
 });
 
+Route::get('/comment','PageController@comment')->name('comment');
+
 Route::get('loai-san-pham/{type}',['as'=>'loaisanpham','uses'=>'PageController@getLoaisanpham']);
 
 Route::get('chi-tiet-san-pham/{id}',['as'=>'chitietsanpham', 'uses'=>'PageController@getChitietsanpham']);
@@ -88,7 +90,6 @@ Route::group(['prefix'=>'user','middleware'=>'userLogin'], function (){
 
     Route::get('danh-sach-hoa-don',['as'=>'list.bill', 'uses'=>'PageController@getListBill']);
 
-    Route::post('danh-sach-hoa-don','AjaxController@postAjaxShowBills');
 });
 
 Route::get('/', 'PageController@index')->name('index');

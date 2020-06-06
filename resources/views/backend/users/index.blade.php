@@ -64,7 +64,7 @@
                                 {!! csrf_field() !!}
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-del"
-                                        style="border-radius: 50%" title="xoa">
+                                        style="border-radius: 50%" title="Xóa">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
                                 <a href="{{route('users.edit',['user'=>$user->id])}}" class="btn btn-primary"
@@ -72,7 +72,7 @@
                             </form>
                         </td>
                     </tr>
-                    
+
                 @endforeach
                 </tbody>
             </table>

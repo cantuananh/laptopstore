@@ -196,4 +196,10 @@ class PageController extends Controller
         $user->save();
         return redirect('profile/sua')->with('message', 'Sửa thông tin thành công');
     }
+
+    public function comment()
+    {
+
+        return back();
+    }
 }

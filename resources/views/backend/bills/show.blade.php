@@ -49,12 +49,12 @@
                                 <button class="btn btn-danger btnDeleteBillProductModal btn-del" data-toggle="modal"
                                         style="border-radius: 50%"
                                         data-target="#btnDeleteBillDetailModal" data-id="{{$item->id}}"
-                                        title="xoa">
+                                        title="Xóa">
                                     <i class="far fa-trash-alt"></i></button>
                                 <button class="btn btn-primary btnEditBillProductModal" data-toggle="modal"
                                         style="border-radius: 50%"
                                         data-target="#editBillProductModal" data-id="{{$item->id}}"
-                                        title="sua">
+                                        title="Sửa">
                                     <i class="fas fa-pencil-alt"></i></button>
                             </td>
                         </tr>
@@ -71,7 +71,7 @@
             var qty = obj.value;
             var listInputSeri = '';
             for (let i = 0; i < qty; i++) {
-                listInputSeri += `<input type='text' class='form-control' name='seri${i}'>`;
+                listInputSeri += `<input type='text' placeholder="Nhập số seri thứ ${i + 1}" class='form-control' name='seri${i}'> <br>`;
             }
             console.log(listInputSeri);
             document.getElementById('listSeris').innerHTML = listInputSeri;

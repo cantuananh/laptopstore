@@ -114,7 +114,7 @@ class DetailBillController extends Controller
     public function destroy($id)
     {
         $billProduct = $this->billDetail->getBillProductBy($id);
-        $this->bill->deleteTotalPrice($billProduct->product_id, $billProduct->bill_id, $billProduct);
+        $this->bill->deleteTotalPrice($billProduct->detail_product_id->product_id, $billProduct->bill_id, $billProduct);
         $billProduct->delete();
 
         return response()->json([

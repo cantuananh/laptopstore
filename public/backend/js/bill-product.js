@@ -30,10 +30,10 @@ $(function () {
             });
     });
 
-    $(document).on("click", '.btnDeleteBillProductModal', function () {
+    $(document).on("click", ".btnDeleteBillProductModal", function () {
         billproduct_id = $(this).attr('data-id');
-        billProductUrl = '/admin/billProduct/' + billproduct_id;
-        callApi(billproduct_id, billProductUrl, 'delete')
+        billProductUrl1 = '/laptopstore/public/admin/billDetail/' + billproduct_id;
+        callApi(billproduct_id, billProductUrl1, 'delete')
             .done(response => {
                 swal("Thành công!", "Hãy bấm vào nút này!", "success");
                 $('.swal-button--confirm').click(function () {

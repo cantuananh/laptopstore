@@ -70,12 +70,7 @@ class DetailOrderController extends Controller
 
     public function show($id)
     {
-        $billProduct = $this->billDetail->getBillProductBy($id);
-
-        return response()->json([
-            'status' => 200,
-            'data' => $billProduct
-        ]);
+       //
     }
 
     /**
@@ -91,8 +86,8 @@ class DetailOrderController extends Controller
 
     public function update(UpdateBillProductRequest $request, $id)
     {
-        $billProduct = $this->billDetail->getBillProductBy($id);
-        $this->bill->editTotalPrice($billProduct->product_id, $billProduct->bill_id, $id, $request);
+        $billProduct = $this->detailOrder->getOrderProductBy($id);
+        $this->order->editTotalPrice($billProduct->product_id, $billProduct->bill_id, $id, $request);
         $billProduct->update($request->all());
 
         return response()->json([
@@ -103,8 +98,8 @@ class DetailOrderController extends Controller
 
     public function destroy($id)
     {
-        $billProduct = $this->billDetail->getBillProductBy($id);
-        $this->bill->deleteTotalPrice($billProduct->product_id, $billProduct->bill_id, $billProduct);
+        $billProduct = $this->detailOrder->getOrderProductBy($id);
+        $this->order->deleteTotalPrice($billProduct->product_id, $billProduct->bill_id, $billProduct);
         $billProduct->delete();
 
         return response()->json([

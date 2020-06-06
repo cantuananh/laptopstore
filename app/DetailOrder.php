@@ -22,4 +22,8 @@ class DetailOrder extends Model
     {
         return DetailOrder::where('order_id',$id)->latest('id')->get();
     }
+    public function getOrderProductBy($id)
+    {
+        return DetailOrder::findOrFail($id);
+    }
 }

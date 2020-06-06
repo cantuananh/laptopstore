@@ -15,7 +15,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>Admin </b>LaptopStore</a>
+        <a href="{{route('login')}}"><b>Admin </b>LaptopStore</a>
     </div>
     <div class="card">
         <div class="card-body login-card-body">
@@ -39,23 +39,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-7">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">
-                                Nhớ mật khẩu
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-5">
+                    <div class="col-6">
                         <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
                     </div>
                 </div>
                 {{csrf_field()}}
             </form>
-
+            <br>
             <p class="mb-1">
-                <a href="forgot-password.html">Tôi quên mật khẩu của tôi</a>
+                <a href="{{route('register')}}">Bạn chưa có tài khoản?</a>
+            </p>
+            <p class="mb-1">
+                <a href="{{route('password.request')}}">Bạn quên mật khẩu của bạn?</a>
             </p>
         </div>
     </div>

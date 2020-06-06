@@ -31,8 +31,8 @@ $(function () {
 
     $(document).on("click", '.btnDeleteOrderProductModal', function () {
         billproduct_id = $(this).attr('data-id');
-        billProductUrl = '/admin/billProduct/' + billproduct_id;
-        callApi(billproduct_id, billProductUrl, 'delete')
+        billProductUrl1 = '/laptopstore/public/admin/orderDetail/' + billproduct_id;
+        callApi(billproduct_id, billProductUrl1, 'delete')
             .done(response => {
                 swal("Thành công!", "Hãy bấm vào nút này!", "success");
                 $('.swal-button--confirm').click(function () {

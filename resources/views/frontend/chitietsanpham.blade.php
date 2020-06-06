@@ -52,6 +52,11 @@
                                 <br> Màn hình: {{$detail_product->screen}} inch
                                 <br> Bộ nhớ: {{$detail_product->ram}} GB
                             </p>
+                             <br>
+                            <p>
+                                <label>Bình luận của bạn</label>
+                                <input type="text" name="comment" placeholder="Nhập bình luận của bạn về sản phẩm này!">
+                            </p>
                         </div>
                     </div>
                     <div class="space40">&nbsp;</div>
