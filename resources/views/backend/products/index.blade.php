@@ -55,7 +55,7 @@
                         </td>
                         <td>{{$product->microprocessors}}</td>
                         <td>{{$product->screen}}</td>
-                        <td>{{$product->price}}</td>
+                        <td>{{number_format($product->price)}} <u>đ</u></td>
                         <td>{{$product->quantity}}</td>
                         <td>
                             <form action="{{route('products.destroy',['product'=>$product->id])}}" method="POST">
@@ -67,6 +67,8 @@
                                 </button>
                                 <a href="{{route('products.edit',['product'=>$product->id])}}" class="btn btn-primary"
                                    style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="{{route('products.show',['product'=>$product->id])}}" class="btn btn-success"
+                                   style="color: white;border-radius: 50%"><i class="fas fa-arrow-alt-circle-right"></i></a>
                             </form>
                         </td>
                     </tr>

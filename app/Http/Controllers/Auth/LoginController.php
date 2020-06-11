@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\RoleUser;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,7 +51,13 @@ class LoginController extends Controller
         $email = $request->email;
         $password = $request->password;
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect()->route('home');
+            $role_ids = RoleUser::where('user_id', Auth::user()->id)->get();
+            foreach ($role_ids as $role_id) {
+                if ($role_id->role_id != 2) {
+                    return redirect()->route('home');
+                }
+            }
+            return redirect()->route('index');
         } else {
             return redirect()->route('login')->with('error', 'Sai email hoặc mật khẩu!');
         }

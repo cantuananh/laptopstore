@@ -14,7 +14,6 @@
                     @endif
                 </div>
                 <div class="col-lg-7" style="padding-bottom:120px">
-                    <div class="col-lg-7" style="padding-bottom:120px">
                         <form action="{{route('brands.update',['brand'=>$brand->id])}}" method="POST">
                             <div class="form-group">
                                 <label>Tên thương hiệu</label>
@@ -37,7 +36,6 @@
                             {{csrf_field()}}
                             @method('PATCH')
                         </form>
-                    </div>
                 </div>
             </div>
         </div>

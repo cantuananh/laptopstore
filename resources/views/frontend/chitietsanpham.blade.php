@@ -47,16 +47,40 @@
                         </ul>
                         <div class="panel" id="tab-description">
                             <p>
-                               {{$detail_product->description}}
+                                {{$detail_product->description}}
                                 <br> Bộ vi xử lý: {{$detail_product->microprocessors}}
                                 <br> Màn hình: {{$detail_product->screen}} inch
                                 <br> Bộ nhớ: {{$detail_product->ram}} GB
                             </p>
-                             <br>
-                            <p>
+                            <br>
+
+                            <form action="{{route('feedback',['id' => $id])}}" method="POST">
+                                {!! csrf_field() !!}
                                 <label>Bình luận của bạn</label>
-                                <input type="text" name="comment" placeholder="Nhập bình luận của bạn về sản phẩm này!">
-                            </p>
+                                <br>
+                                <input type="text" name="comment" maxlength="80" placeholder="Nhập bình luận của bạn về sản phẩm!">
+                                <br>
+                                @if($check)
+                                <button type="submit" class="btn btn-primary ">Đánh giá sản
+                                    phẩm</button>
+                                @else
+                                    <a href="{{route('dangnhap')}}" class="btn btn-primary">Đánh giá sản
+                                        phẩm</a>
+                                @endif
+                            </form>
+
+                            <hr>
+                            <p>
+                            @foreach($feed_backs as $fb)
+                                <div>
+                                    <img src="uploads/users/{{$fb->user->image}}" alt="" height="42px"
+                                         width="34px"> &nbsp; {{$fb->user->name}}
+                                    <br>
+                                    {{$fb->content}}
+                                    <br>
+                                </div>
+                                @endforeach
+                                </p>
                         </div>
                     </div>
                     <div class="space40">&nbsp;</div>

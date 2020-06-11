@@ -11,7 +11,7 @@ class FeedBack extends Model
 
     public function user()
     {
-        return $this->hasMany('App\User', 'user_id');
+        return $this->belongsTo('App\User', 'user_id');
     }
     public function product()
     {

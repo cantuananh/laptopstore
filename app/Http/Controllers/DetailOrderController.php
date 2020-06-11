@@ -115,4 +115,13 @@ class DetailOrderController extends Controller
         $pdf = PDF::loadView('backend.orders.pdf', compact('order', 'product_items'));
         return $pdf->download('invoice.pdf');
     }
+
+    public function exportGuarantee($id)
+    {
+        $detail_order = $this->detailOrder->getOrderProductBy($id);
+        $order = $this->order->getOrderBy($detail_order->order_id);
+        $pdf = PDF::loadView('backend.orders.order_detail.guarantee', compact('detail_order', 'order'));
+        return $pdf->download('invoice.pdf');
+      //  return view('backend.orders.order_detail.guarantee', compact('detail_order', 'order'));
+    }
 }

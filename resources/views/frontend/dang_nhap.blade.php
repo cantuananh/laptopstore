@@ -52,6 +52,9 @@
                     <div class="form-block">
                         <button type="submit" class="btn btn-primary">Đăng nhập</button>
                     </div>
+                    <p class="mb-1">
+                        <a href="{{route('password.request')}}">Bạn quên mật khẩu của bạn?</a>
+                    </p>
                 </div>
                 <div class="col-sm-6"></div>
             </div>

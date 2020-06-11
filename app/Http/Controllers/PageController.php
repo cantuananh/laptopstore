@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\FeedBack;
 use App\Product;
 use App\Slide;
 use App\User;
@@ -41,10 +42,13 @@ class PageController extends Controller
 
     public function getChitietsanpham(Request $request)
     {
+        $check = Auth::check();
+        $id = $request->id;
+        $feed_backs = FeedBack::where('product_id', $request->id)->paginate(3);
         $detail_product = Product::where('id', $request->id)->first();
-        $sanpham_tuongtu = Product::paginate(6);;
+        $sanpham_tuongtu = Product::paginate(6);
         $sanpham_noibat = Product::where('price', '<>', 0)->paginate(8);
-        return view('frontend.chitietsanpham', compact('detail_product', 'sanpham_tuongtu', 'sanpham_noibat'));
+        return view('frontend.chitietsanpham', compact('detail_product', 'sanpham_tuongtu', 'sanpham_noibat', 'feed_backs', 'id', 'check'));
     }
 
     public function getLienhe()
@@ -197,9 +201,18 @@ class PageController extends Controller
         return redirect('profile/sua')->with('message', 'Sửa thông tin thành công');
     }
 
-    public function comment()
+    public function comment($id, Request $request)
     {
+        try {
+            $data = [
+                'user_id' => Auth::user()->id,
+                'product_id' => $id,
+                'content' => $request->comment
+            ];
+            FeedBack::create($data);
+        } catch (\Exception $e) {
 
+        }
         return back();
     }
 }

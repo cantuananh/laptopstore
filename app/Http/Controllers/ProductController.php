@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\DetailProduct;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Product;
@@ -12,14 +13,17 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     use StoreImageTrait;
+
     protected $imagePath = "uploads/products/";
     protected $product;
     protected $brand;
+    protected $detailProduct;
 
     public function __construct()
     {
         $this->product = new Product();
         $this->brand = new Brand();
+        $this->detailProduct = new DetailProduct();
     }
 
     /**
@@ -70,9 +74,11 @@ class ProductController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        $seri = $request->input('seri');
+        $product_items = $this->detailProduct->search($seri, $id);
+        return view('backend.products.show', compact('product_items', 'id'));
     }
 
     /**
@@ -83,7 +89,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $brands =  $this->brand->all();
+        $brands = $this->brand->all();
         $product = $this->product->getProductBy($id);
 
         return view('backend.products.edit', compact('product', 'brands'));
@@ -122,4 +128,16 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('message', 'xóa thành công');
     }
 
+    public function updateDetailProduct($id)
+    {
+        $detailProduct = $this->detailProduct->findOrFail($id);
+
+        if ($detailProduct->status == 1) {
+            $detailProduct->update(['status' => 2]);
+        } else {
+            $detailProduct->update(['status' => 1]);
+        }
+
+        return redirect()->back();
+    }
 }

@@ -14,7 +14,6 @@
                     @endif
                 </div>
                 <div class="col-lg-7" style="padding-bottom:120px">
-                    <div class="col-lg-7" style="padding-bottom:120px">
                         <form action="{{route('brands.store')}}" method="POST">
                             <div class="form-group">
                                 <label>Tên thương hiệu*</label>
@@ -34,7 +33,6 @@
                             <a href="{{route('brands.index')}}" class="btn btn-default">Trở về</a>
                             {{csrf_field()}}
                             </form>
-                    </div>
                 </div>
             </div>
         </div>

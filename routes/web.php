@@ -28,6 +28,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login:admin|employee|supplie
 
     Route::get('order/{id}/export','DetailOrderController@exportOrder')->name('exportOrder');
 
+    Route::get('order/detail/{id}/export','DetailOrderController@exportGuarantee')->name('exportGuarantee');
+
+    Route::post('product/detail/{id}/update','ProductController@updateDetailProduct')->name('updateDetailProduct');
+
 });
 Route::get('dang-nhap',['as'=>'dangnhap', 'uses'=>'PageController@getLogin']);
 
@@ -48,7 +52,7 @@ Route::group(['prefix'=>'profile'],function (){
     Route::post('sua','PageController@postEditUser');
 });
 
-Route::get('/comment','PageController@comment')->name('comment');
+Route::post('comment/{id}','PageController@comment')->name('feedback');
 
 Route::get('loai-san-pham/{type}',['as'=>'loaisanpham','uses'=>'PageController@getLoaisanpham']);
 

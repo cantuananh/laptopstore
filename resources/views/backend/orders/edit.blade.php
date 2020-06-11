@@ -8,8 +8,9 @@
                         <small>Sửa</small>
                     </h1>
                 </div>
-                <form action="{{route('orders.update',['order'=>$order->id])}}}" method="POST"
-                      enctype="multipart/form-data">
+                <div class="col-lg-7" style="padding-bottom:120px">
+                    <form action="{{route('orders.update',['order'=>$order->id])}}}" method="POST"
+                          enctype="multipart/form-data">
                         @if(!empty(session('message')))
                             <div class="alert alert-success" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
@@ -39,9 +40,10 @@
                         </div>
                         <button type="submit" class="btn btn-default" name='ok'>Lưu lại</button>
                         <a href="{{route('orders.index')}}" class="btn btn-default">Trở về</a>
-                    {{csrf_field()}}
-                    @method('PATCH')
-                </form>
+                        {{csrf_field()}}
+                        @method('PATCH')
+                    </form>
+                </div>
             </div>
         </div>
     </div>

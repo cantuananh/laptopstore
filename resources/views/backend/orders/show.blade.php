@@ -36,13 +36,13 @@
                             <td><img src="uploads/products/{{$item->detail_product->product->image}}" height="100"
                                      width="100">
                             <td>
-                                {{$item->detail_product->product->price}} <u>đ</u>
+                                {{number_format($item->detail_product->product->price)}} <u>đ</u>
                             </td>
                             <td>
                                 {{$item->quantity}}
                             </td>
                             <td>
-                                {{$item->quantity*$item->detail_product->product->price}} <u>đ</u>
+                                {{number_format($item->quantity*$item->detail_product->product->price)}} <u>đ</u>
                             </td>
                             <td class="center">
                                 <button class="btn btn-danger btnDeleteOrderProductModal btn-del" data-toggle="modal"
@@ -55,6 +55,9 @@
                                         data-target="#editOrderProductModal" data-id="{{$item->id}}"
                                         title="sua">
                                     <i class="fas fa-pencil-alt"></i></button>
+                                <a href="{{route('exportGuarantee',['id'=>$item->id])}}" class="btn btn-success"
+                                   style="color: #d40e0e;border-radius: 50%;background: yellow"><i
+                                        class="fas fa-file-pdf"></i></a>
                             </td>
                         </tr>
                     @endforeach

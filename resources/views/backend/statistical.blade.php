@@ -43,7 +43,7 @@
                 </div>
                 <h2 class="sub-header" style="font-size: 36px">Danh sách thành viên mới</h2>
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-striped table-bordered table-hover test table-id">
                         <thead>
                         <tr align="center">
                             <th>ID</th>
