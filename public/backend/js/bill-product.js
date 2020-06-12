@@ -16,7 +16,7 @@ $(function () {
     $('#handleAddBillProduct').click(function (event) {
         event.preventDefault();
         billProductData = $('#newResourceFormBillProduct').serialize();
-        billProductUrl = '/laptopstore/public/admin/billDetail';
+        billProductUrl = '/admin/billDetail';
         callApi(billProductData, billProductUrl, 'post')
             .done(response => {
                 $('#newBillProductModal').modal('hide');
@@ -32,7 +32,7 @@ $(function () {
 
     $(document).on("click", ".btnDeleteBillProductModal", function () {
         billproduct_id = $(this).attr('data-id');
-        billProductUrl1 = '/laptopstore/public/admin/billDetail/' + billproduct_id;
+        billProductUrl1 = '/admin/billDetail/' + billproduct_id;
         callApi(billproduct_id, billProductUrl1, 'delete')
             .done(response => {
                 swal("Thành công!", "Hãy bấm vào nút này!", "success");

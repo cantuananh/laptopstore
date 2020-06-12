@@ -48,34 +48,38 @@ class DetailBillController extends Controller
 
     public function store(StoreBillProductRequest $request)
     {
-        // update quantity product
-        $product = $this->product->getProductBy($request->product_id);
-        $quantity = $product->quantity + $request->quantity;
-        $product->update(['quantity' => $quantity]);
-        // create detail product
-        for ($i = 0; $i < $request->quantity; $i++) {
-            $seri = 'seri' . $i;
-            $data = [
-                'product_id' => $request->product_id,
-                'seri' => $request->$seri,
-                'status' => $request->product_id
+        try {
+            // update quantity product
+            $product = $this->product->getProductBy($request->product_id);
+            $quantity = $product->quantity + $request->quantity;
+            $product->update(['quantity' => $quantity]);
+            // create detail product
+            for ($i = 0; $i < $request->quantity; $i++) {
+                $seri = 'seri' . $i;
+                $data = [
+                    'product_id' => $request->product_id,
+                    'seri' => $request->$seri,
+                    'status' => $request->product_id
+                ];
+                $this->detailProduct->create($data);
+            }
+            // create bill detail
+            $detail_product = DetailProduct::orderBy('updated_at', 'DESC')->first();
+            $dataDetailProuduct = [
+                'detail_product_id' => $detail_product->id,
+                'bill_id' => $request->bill_id,
+                'quantity' => $request->quantity
             ];
-            $this->detailProduct->create($data);
+            $this->billDetail->create($dataDetailProuduct);
+            //update total price
+            $this->bill->addTotalPrice($request->product_id, $request->bill_id, $request);
+            return response()->json([
+                'status' => 200,
+                'data' => $dataDetailProuduct,
+            ]);
+        } catch (\Exception $exception) {
+
         }
-        // create bill detail
-        $detail_product = DetailProduct::orderBy('updated_at', 'DESC')->first();
-        $dataDetailProuduct = [
-            'detail_product_id' => $detail_product->id,
-            'bill_id' => $request->bill_id,
-            'quantity' => $request->quantity
-        ];
-        $this->billDetail->create($dataDetailProuduct);
-        //update total price
-        $this->bill->addTotalPrice($request->product_id, $request->bill_id, $request);
-        return response()->json([
-            'status' => 200,
-            'data' => $dataDetailProuduct,
-        ]);
     }
 
     public function show($id)

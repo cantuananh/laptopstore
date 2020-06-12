@@ -48,18 +48,22 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        $email = $request->email;
-        $password = $request->password;
-        if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            $role_ids = RoleUser::where('user_id', Auth::user()->id)->get();
-            foreach ($role_ids as $role_id) {
-                if ($role_id->role_id != 2) {
-                    return redirect()->route('home');
+        try {
+            $email = $request->email;
+            $password = $request->password;
+            if (Auth::attempt(['email' => $email, 'password' => $password])) {
+                $role_ids = RoleUser::where('user_id', Auth::user()->id)->get();
+                foreach ($role_ids as $role_id) {
+                    if ($role_id->role_id != 2) {
+                        return redirect()->route('home');
+                    }
                 }
+                return redirect()->route('index');
+            } else {
+                return redirect()->route('login')->with('error', 'Sai email hoặc mật khẩu!');
             }
-            return redirect()->route('index');
-        } else {
-            return redirect()->route('login')->with('error', 'Sai email hoặc mật khẩu!');
+        } catch (\Exception $e) {
+
         }
     }
 

@@ -65,13 +65,16 @@ class BillController extends Controller
 
     public function show($id)
     {
+        try {
+            $products = $this->product->all();
+            $product_items = BillDetail::getBillProductWhere($id);
+            $bill = $this->bill->getBillBy($id);
+            $user = User::getUserBy($bill->user_id);
 
-        $products = $this->product->all();
-        $product_items = BillDetail::getBillProductWhere($id);
-        $bill = $this->bill->getBillBy($id);
-        $user = User::getUserBy($bill->user_id);
+            return view('backend.bills.show', compact('bill', 'product_items', 'user', 'products'));
+        } catch (\Exception $exception) {
 
-        return view('backend.bills.show', compact('bill', 'product_items', 'user', 'products'));
+        }
     }
 
     /**
@@ -82,11 +85,15 @@ class BillController extends Controller
      */
     public function edit($id)
     {
-        $users = User::all();
-        $bill = $this->bill->getBillBy($id);
-        $suppliers = $this->supplier->all();
+        try {
+            $users = User::all();
+            $bill = $this->bill->getBillBy($id);
+            $suppliers = $this->supplier->all();
 
-        return view('backend.bills.edit', compact('bill', 'users','suppliers'));
+            return view('backend.bills.edit', compact('bill', 'users', 'suppliers'));
+        } catch (\Exception $exception) {
+
+        }
     }
 
     /**
@@ -98,10 +105,14 @@ class BillController extends Controller
      */
     public function update(BillRequest $request, $id)
     {
-        $bill = $this->bill->getBillBy($id);
-        $bill->update($request->all());
+        try {
+            $bill = $this->bill->getBillBy($id);
+            $bill->update($request->all());
 
-        return redirect()->route('bills.edit', ['bill' => $id])->with('message', 'Sửa hóa đơn thành công');
+            return redirect()->route('bills.edit', ['bill' => $id])->with('message', 'Sửa hóa đơn thành công');
+        } catch (\Exception $exception) {
+
+        }
     }
 
     /**
@@ -112,8 +123,12 @@ class BillController extends Controller
      */
     public function destroy($id)
     {
-        $this->bill->destroy($id);
+        try {
+            $this->bill->destroy($id);
 
-        return redirect()->route('bills.index')->with('message', 'Xóa hóa đơn thành công');
+            return redirect()->route('bills.index')->with('message', 'Xóa hóa đơn thành công');
+        } catch (\Exception $exception) {
+
+        }
     }
 }

@@ -57,7 +57,7 @@
                                                     @endif
                                                     <a href="{{route('chitietsanpham',$product->id)}}"><img
                                                             src="uploads/products/{{$product->image}}" alt=""
-                                                            height="250px"></a>
+                                                            height="250px" width="250px"></a>
                                                 </div>
                                                 <div class="single-item-body">
                                                     <p class="single-item-title">{{$product->name}}</p>

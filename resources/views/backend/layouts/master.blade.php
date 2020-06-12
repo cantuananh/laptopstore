@@ -41,7 +41,7 @@
     </nav>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <a href="{{route('statistical')}}" class="brand-link">
-            <img src="backend/dist/img/AdminLTELogo.png"
+            <img src="uploads/logo/laptop.png"
                  alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
                  style="opacity: .8">

@@ -39,7 +39,7 @@ Version: 1.0
 	16. BETA SLIDES TWITTER
 	17. BETA MEDIA QUERY
 	18. FOOTER SECTION
-        
+
 
 ============================================================================= */
 
@@ -3042,37 +3042,37 @@ background-repeat:no-repeat;
 background-position:right
 }
 
-#payment div.payment_box .wc-credit-card-form-card-number.visa,#payment div.payment_box .wc-credit-card-form-card-expiry.visa,#payment div.payment_box .wc-credit-card-form-card-cvc.visa {
-background-image:url(../images/icons/credit-cards/visa.png)
-}
+/*#payment div.payment_box .wc-credit-card-form-card-number.visa,#payment div.payment_box .wc-credit-card-form-card-expiry.visa,#payment div.payment_box .wc-credit-card-form-card-cvc.visa {*/
+/*background-image:url(../images/icons/credit-cards/visa.png)*/
+/*}*/
 
-#payment div.payment_box .wc-credit-card-form-card-number.mastercard,#payment div.payment_box .wc-credit-card-form-card-expiry.mastercard,#payment div.payment_box .wc-credit-card-form-card-cvc.mastercard {
-background-image:url(../images/icons/credit-cards/mastercard.png)
-}
+/*#payment div.payment_box .wc-credit-card-form-card-number.mastercard,#payment div.payment_box .wc-credit-card-form-card-expiry.mastercard,#payment div.payment_box .wc-credit-card-form-card-cvc.mastercard {*/
+/*background-image:url(../images/icons/credit-cards/mastercard.png)*/
+/*}*/
 
-#payment div.payment_box .wc-credit-card-form-card-number.laser,#payment div.payment_box .wc-credit-card-form-card-expiry.laser,#payment div.payment_box .wc-credit-card-form-card-cvc.laser {
-background-image:url(../images/icons/credit-cards/laser.png)
-}
+/*#payment div.payment_box .wc-credit-card-form-card-number.laser,#payment div.payment_box .wc-credit-card-form-card-expiry.laser,#payment div.payment_box .wc-credit-card-form-card-cvc.laser {*/
+/*background-image:url(../images/icons/credit-cards/laser.png)*/
+/*}*/
 
-#payment div.payment_box .wc-credit-card-form-card-number.dinersclub,#payment div.payment_box .wc-credit-card-form-card-expiry.dinersclub,#payment div.payment_box .wc-credit-card-form-card-cvc.dinersclub {
-background-image:url(../images/icons/credit-cards/diners.png)
-}
+/*#payment div.payment_box .wc-credit-card-form-card-number.dinersclub,#payment div.payment_box .wc-credit-card-form-card-expiry.dinersclub,#payment div.payment_box .wc-credit-card-form-card-cvc.dinersclub {*/
+/*background-image:url(../images/icons/credit-cards/diners.png)*/
+/*}*/
 
-#payment div.payment_box .wc-credit-card-form-card-number.maestro,#payment div.payment_box .wc-credit-card-form-card-expiry.maestro,#payment div.payment_box .wc-credit-card-form-card-cvc.maestro {
-background-image:url(../images/icons/credit-cards/maestro.png)
-}
+/*#payment div.payment_box .wc-credit-card-form-card-number.maestro,#payment div.payment_box .wc-credit-card-form-card-expiry.maestro,#payment div.payment_box .wc-credit-card-form-card-cvc.maestro {*/
+/*background-image:url(../images/icons/credit-cards/maestro.png)*/
+/*}*/
 
-#payment div.payment_box .wc-credit-card-form-card-number.jcb,#payment div.payment_box .wc-credit-card-form-card-expiry.jcb,#payment div.payment_box .wc-credit-card-form-card-cvc.jcb {
-background-image:url(../images/icons/credit-cards/jcb.png)
-}
+/*#payment div.payment_box .wc-credit-card-form-card-number.jcb,#payment div.payment_box .wc-credit-card-form-card-expiry.jcb,#payment div.payment_box .wc-credit-card-form-card-cvc.jcb {*/
+/*background-image:url(../images/icons/credit-cards/jcb.png)*/
+/*}*/
 
-#payment div.payment_box .wc-credit-card-form-card-number.amex,#payment div.payment_box .wc-credit-card-form-card-expiry.amex,#payment div.payment_box .wc-credit-card-form-card-cvc.amex {
-background-image:url(../images/icons/credit-cards/amex.png)
-}
+/*#payment div.payment_box .wc-credit-card-form-card-number.amex,#payment div.payment_box .wc-credit-card-form-card-expiry.amex,#payment div.payment_box .wc-credit-card-form-card-cvc.amex {*/
+/*background-image:url(../images/icons/credit-cards/amex.png)*/
+/*}*/
 
-#payment div.payment_box .wc-credit-card-form-card-number.discover,#payment div.payment_box .wc-credit-card-form-card-expiry.discover,#payment div.payment_box .wc-credit-card-form-card-cvc.discover {
-background-image:url(../images/icons/credit-cards/discover.png)
-}
+/*#payment div.payment_box .wc-credit-card-form-card-number.discover,#payment div.payment_box .wc-credit-card-form-card-expiry.discover,#payment div.payment_box .wc-credit-card-form-card-cvc.discover {*/
+/*background-image:url(../images/icons/credit-cards/discover.png)*/
+/*}*/
 
 #payment div.payment_box span.help {
 font-size:11px;
@@ -4711,7 +4711,7 @@ html{overflow-x:hidden;}
 .auto-width-left ul li a{padding:0px;}
 .auto-width-right{width:41%;}
 .auto-width-right ul li a{padding:0px 4px;}
-.pull-left.auto-width:{width:auto!important;}
+/*.pull-left.auto-width:{width:auto!important;}*/
 .beta-comp from{width:70%!important;}
 a#logo img{max-width:45%!important;}
 .beta-rotator canvas{width:98%!important;}
@@ -4901,7 +4901,7 @@ filter: alpha(opacity=100);}
    -o-transition: all 0.4s ease-in-out;
    -ms-transition: all 0.4s ease-in-out;
    transition: all 0.4s ease-in-out;}
-   
+
 .beta-timer{background: white;
 float: left;
 padding: 10px 14px;
@@ -4988,7 +4988,7 @@ li.box-port-filter {display:inline;}
 .box-port-filter p.work-item-actions{position: absolute;
 top: 40%;
 left: 35%;}
-.nivo-prevNav {     
+.nivo-prevNav {
     text-indent: -9999px;
     width: 40px;
     height: 40px;
@@ -4997,7 +4997,7 @@ left: 35%;}
     background-image: url('../images/nivo-left.png');
     background-repeat: no-repeat;
     background-position: center;
-    
+
     -webkit-transition: all 0.2s ease 0s;
     -moz-transition: all 0.2s ease 0s;
     -o-transition: all 0.2s ease 0s;
@@ -5005,7 +5005,7 @@ left: 35%;}
     transition: all 0.2s ease 0s;
 }
 
-.nivo-nextNav {    
+.nivo-nextNav {
     text-indent: -9999px;
     width: 40px;
     height: 40px;
@@ -5014,7 +5014,7 @@ left: 35%;}
     background-image: url('../images/nivo-right.png');
     background-repeat: no-repeat;
     background-position: center;
-    
+
     -webkit-transition: all 0.2s ease 0s;
     -moz-transition: all 0.2s ease 0s;
     -o-transition: all 0.2s ease 0s;
@@ -5032,7 +5032,7 @@ left: 35%;}
 	background-color:#f90;
 }
 .nivoSlider{
-    position: relative;  
+    position: relative;
     margin: 0 auto;
     height: auto;
     z-index: 100;
