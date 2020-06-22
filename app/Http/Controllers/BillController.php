@@ -131,4 +131,15 @@ class BillController extends Controller
 
         }
     }
+
+    public function updateStatus($id)
+    {
+        $bill = $this->bill->getBillBy($id);
+        if($bill->status == 1){
+            $bill->update(['status' => 2]);
+        } else {
+            $bill->update(['status' => 1]);
+        }
+        return redirect()->back();
+    }
 }

@@ -1,24 +1,11 @@
-@extends('frontend.layouts.master')
-@section('content')
-<div class="inner-header">
-    <div class="container">
-        <div class="pull-left">
-            <h6 class="inner-title">Sửa tài khoản</h6>
-        </div>
-        <div class="pull-right">
-            <div class="beta-breadcrumb">
-                <a href="{{route('index')}}">Trang chủ</a> / <span>Sửa tài khoản</span>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-
-<div class="container">
-    <div id="content">
+@extends('frontend.user')
+@section('content1')
+<div class="content-wrapper">
+    <div id="page-wrapper">
+        <div class="container-fluid">
         <form action="" method="post" class="beta-form-checkout">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <div class="row">
+            <div>
                 @if(count($errors)>0)
                         <div class="alert alert-danger">
                             @foreach($errors ->all() as $err)
@@ -85,14 +72,14 @@
                         <img src="uploads/users/{{Auth::user()->image}}" height="100" width="100">
                         <input type="file" class="form-control" name="image" placeholder="Nhập hình đại diện" value="{{Auth::user()->image}}"/>
                     </div>
-                    <div class="form-block">
-                        <button type="submit" class="btn btn-primary">Lưu</button>
-                        <a href="profile/thongtin" class="btn btn-primary">Trở về</a>
-                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                    <a href="profile/thongtin" class="btn btn-primary">Trở về</a>
                 </div>
                 <div class="col-sm-6"></div>
             </div>
+            {{csrf_field()}}
         </form>
+        </div>
     </div>
 </div>
 @endsection

@@ -163,7 +163,7 @@ class PageController extends Controller
 
     public function postEditUser(Request $request)
     {
-        try {
+
             $this->validate($request, [
                 'email' => 'required|email',
                 'name' => 'required|max:250',
@@ -210,8 +210,6 @@ class PageController extends Controller
                 $user->image = "default.jpg";
             $user->save();
             return redirect('profile/sua')->with('message', 'Sửa thông tin thành công');
-        } catch (\Exception $exception) {
-        }
     }
 
     public function comment($id, Request $request)

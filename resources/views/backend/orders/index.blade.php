@@ -48,6 +48,7 @@
                     <th>Ngày bán</th>
                     <th>Phương thức thanh toán</th>
                     <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
                     <th>Chức năng</th>
                 </tr>
                 </thead>
@@ -67,7 +68,15 @@
                             {{$date}}
                         </td>
                         <td> @if($order->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
-                        <td> {{number_format($order->total_price)}} <u>đ</u>  </td>
+                        <td> {{number_format($order->total_price)}} <u>đ</u></td>
+                        <td>
+                            <form action="{{route('updateOrderStatus',['id'=>$order->id])}}" method="POST">
+                                {!! csrf_field() !!}
+                                <button type="submit">
+                                    @if($order->status==1) Chưa thanh toán @else Đã thanh toán @endif
+                                </button>
+                            </form>
+                        </td>
                         <td>
                             <form action="{{route('orders.destroy',['order'=>$order->id])}}" method="POST">
                                 {!! csrf_field() !!}

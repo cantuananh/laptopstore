@@ -25,7 +25,6 @@
                     <th>ID</th>
                     <th>Số seri</th>
                     <th>Trạng thái</th>
-                    <th>Chức năng</th>
                 </tr>
                 </thead>
                 <tbody class="table__list_item">
@@ -35,19 +34,14 @@
                         <td>
                             {{$item->seri}}
                         </td>
-                        <td>
-                            @if($item->status == 1)
-                                Chưa bán
-                            @else
-                                Đã Bán
-                            @endif
-                        </td>
                         <td class="center">
                             <form action="{{route('updateDetailProduct',['id'=>$item->id])}}" method="POST">
                                 {!! csrf_field() !!}
-                                <button type="submit" class="btn btn-success"
-                                        style="color: #d40e0e;border-radius: 50%;background: #18bd0d"><i
-                                        class="fab fa-adn"></i>
+                                <button type="submit">  @if($item->status == 1)
+                                        Chưa bán
+                                    @else
+                                        Đã Bán
+                                    @endif
                                 </button>
                             </form>
                         </td>

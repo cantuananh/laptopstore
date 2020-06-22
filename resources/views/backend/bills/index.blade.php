@@ -42,6 +42,7 @@
                     <th>Nhà cung cấp</th>
                     <th>Phương thức thanh toán</th>
                     <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
                     <th>Chức năng</th>
                 </tr>
                 </thead>
@@ -63,6 +64,14 @@
                         <td> {{$bill->supplier->name}}</td>
                         <td> @if($bill->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
                         <td> {{ number_format($bill->total_price)}} <u>đ</u></td>
+                        <td>
+                            <form action="{{route('updateBillStatus',['id'=>$bill->id])}}" method="POST">
+                                {!! csrf_field() !!}
+                                <button type="submit">
+                                    @if($bill->status==1) Chưa thanh toán @else Đã thanh toán @endif
+                                </button>
+                            </form>
+                        </td>
                         <td>
                             <form action="{{route('bills.destroy',['bill'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}

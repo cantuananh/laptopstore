@@ -16,11 +16,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login:admin|employee|supplie
 
     Route::resource('bills', 'BillController');
 
+    Route::post('updateBillStatus/{id}', 'BillController@updateStatus')->name('updateBillStatus');
+
     Route::resource('billDetail', 'DetailBillController');
 
     Route::resource('orderDetail', 'DetailOrderController');
 
     Route::resource('orders', 'OrderController');
+
+    Route::post('updateOrderStatus/{id}', 'OrderController@updateStatus')->name('updateOrderStatus');
 
     Route::get('/statistical', 'StatisticalController@index')->name('statistical');
 

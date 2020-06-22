@@ -45,8 +45,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-        $users= $this->user->all();
-        return view('backend.orders.create',compact('users'));
+        $users = $this->user->all();
+        return view('backend.orders.create', compact('users'));
     }
 
     /**
@@ -80,7 +80,7 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        $users= $this->user->all();
+        $users = $this->user->all();
         $order = $this->order->getOrderBy($id);
 
         return view('backend.orders.edit', compact('users', 'order'));
@@ -112,5 +112,16 @@ class OrderController extends Controller
         $this->order->destroy($id);
 
         return redirect()->route('orders.index')->with('message', 'Xóa hóa đơn thành công');
+    }
+
+    public function updateStatus($id)
+    {
+        $orders = $this->order->getOrderBy($id);
+        if($orders->status == 1){
+            $orders->update(['status' => 2]);
+        } else {
+            $orders->update(['status' => 1]);
+        }
+        return redirect()->back();
     }
 }

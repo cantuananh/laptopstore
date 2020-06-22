@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Bill extends Model
 {
     protected $table = 'bills';
-    protected $fillable = ['user_id', 'supplier_id', 'payment', 'total_price'];
+    protected $fillable = ['user_id', 'supplier_id', 'payment', 'total_price', 'status'];
 
     public function user()
     {
