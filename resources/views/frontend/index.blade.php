@@ -38,18 +38,20 @@
                     <div class="col-sm-12">
                         <div class="beta-products-list">
                             <div class="beta-products-list">
-                                <h4>Tất cả sản phẩm</h4>
+                                <h4>Sản phẩm mới</h4>
                                 <div class="beta-products-details">
-                                    <p class="pull-left">Tìm thấy {{count($products)}} sản phẩm</p>
+                                    <p class="pull-left">Tìm thấy {{count($product_news)}} sản phẩm</p>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
-                                    @foreach($products as $product)
+                                    @foreach($product_news as $product)
                                         <div class="col-sm-3">
                                             <div class="single-item">
+                                                @if($product->cost > $product->price)
                                                     <div class="ribbon-wrapper">
                                                         <div class="ribbon sale">Sale</div>
                                                     </div>
+                                                @endif
                                                 <div class="single-item-header">
                                                     @if(!$product->quantity)
                                                         <span
@@ -62,8 +64,57 @@
                                                 <div class="single-item-body">
                                                     <p class="single-item-title">{{$product->name}}</p>
                                                     <p class="single-item-price" style="font-size: 18px">
+                                                        @if($product->cost > $product->price)
+                                                        <span class="flash-del">{{number_format($product->cost)}}đ</span>
+                                                        @endif
+                                                        <span class="flash-sale">{{number_format($product->price)}}đ</span>
+                                                    </p>
+                                                </div>
+                                                <div class="single-item-caption">
+                                                    <a class="add-to-cart pull-left"
+                                                       href="{{route('themgiohang',$product->id)}}"><i
+                                                            class="fa fa-shopping-cart"></i></a>
+                                                    <a class="beta-btn primary"
+                                                       href="{{route('chitietsanpham',$product->id)}}">Chi tiết<i
+                                                            class="fa fa-chevron-right"></i></a>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="space10">&nbsp;</div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="beta-products-list">
+                                <h4>Tất cả sản phẩm</h4>
+                                <div class="beta-products-details">
+                                    <p class="pull-left">Tìm thấy {{count($products)}} sản phẩm</p>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="row">
+                                    @foreach($products as $product)
+                                        <div class="col-sm-3">
+                                            <div class="single-item">
+                                                @if($product->cost > $product->price)
+                                                    <div class="ribbon-wrapper">
+                                                        <div class="ribbon sale">Sale</div>
+                                                    </div>
+                                                @endif
+                                                <div class="single-item-header">
+                                                    @if(!$product->quantity)
                                                         <span
-                                                            class="flash-del">{{number_format($product->price*1.1)}}đ</span>
+                                                            style="position: absolute; background-color: red;color: white;">Tạm hết hàng</span>
+                                                    @endif
+                                                    <a href="{{route('chitietsanpham',$product->id)}}"><img
+                                                            src="uploads/products/{{$product->image}}" alt=""
+                                                            height="250px" width="250px"></a>
+                                                </div>
+                                                <div class="single-item-body">
+                                                    <p class="single-item-title">{{$product->name}}</p>
+                                                    <p class="single-item-price" style="font-size: 18px">
+                                                        @if($product->cost > $product->price)
+                                                            <span class="flash-del">{{number_format($product->cost)}}đ</span>
+                                                        @endif
                                                         <span class="flash-sale">{{number_format($product->price)}}đ</span>
                                                     </p>
                                                 </div>

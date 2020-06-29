@@ -20,7 +20,7 @@
                     <div class="form-group">
                         <label>Tên sản phẩm</label>
                         <input class="form-control" name="name" placeholder="Nhập tên đầy đủ"
-                               value="{{$product->description}}"/>
+                               value="{{$product->name}}"/>
                         @error('name')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -43,8 +43,16 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label>Giá gốc</label>
+                        <input class="form-control" name="cost" placeholder="Nhập giá gốc"
+                               value="{{$product->cost}}"/>
+                        @error('cost')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label>Giá</label>
-                        <input class="form-control" name="price" placeholder="Nhập đơn giá"
+                        <input class="form-control" name="price" placeholder="Nhập giá bán"
                                value="{{$product->price}}"/>
                         @error('price')
                         <div class="alert alert-danger">{{ $message }}</div>

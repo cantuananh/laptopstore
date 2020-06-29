@@ -58,6 +58,8 @@ Route::group(['prefix'=>'profile'],function (){
 
 Route::post('comment/{id}','PageController@comment')->name('feedback');
 
+Route::get('order','PageController@order')->name('profile-order');
+
 Route::get('loai-san-pham/{type}',['as'=>'loaisanpham','uses'=>'PageController@getLoaisanpham']);
 
 Route::get('chi-tiet-san-pham/{id}',['as'=>'chitietsanpham', 'uses'=>'PageController@getChitietsanpham']);
@@ -71,6 +73,8 @@ Route::get('add-to-cart/{id}',['as'=>'themgiohang', 'uses'=>'CartController@getA
 Route::get('del-cart/{id}',['as'=>'xoagiohang', 'uses'=>'CartController@getDelItemCart']);
 
 Route::get('gio-hang',['as'=>'giohang', 'uses'=>'CartController@getListCart']);
+
+Route::post('sua-gio-hang/{id}',['as'=>'suagiohang', 'uses'=>'CartController@suaGioHang']);
 
 Route::get('/',['as'=>'trang-chu','uses'=>'PageController@getIndexPage']);
 

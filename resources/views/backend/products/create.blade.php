@@ -43,8 +43,16 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Giá</label>
-                            <input class="form-control" name="price" placeholder="Nhập đơn giá"
+                            <label>Giá Gốc</label>
+                            <input class="form-control" name="cost" placeholder="Nhập giá gốc"
+                                   value="{{old('cost')}}"/>
+                            @error('cost')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Giá Bán</label>
+                            <input class="form-control" name="price" placeholder="Nhập giá bán"
                                    value="{{old('price')}}"/>
                             @error('price')
                             <div class="alert alert-danger">{{ $message }}</div>

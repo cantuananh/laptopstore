@@ -28,7 +28,9 @@
                                 <p class="single-item-title" style="font-size: 25px">{{$detail_product->name}}</p>
                                 <div class="space20">&nbsp;</div>
                                 <p class="single-item-price" style="font-size: 25px">
-                                    <span class="flash-del">{{number_format($detail_product->price*1.1)}}<u>đ</u></span>
+                                    @if($detail_product->cost>$detail_product->price)
+                                        <span class="flash-del">{{number_format($detail_product->cost)}}<u>đ</u></span>
+                                    @endif
                                     <span class="flash-sale">{{number_format($detail_product->price)}}<u>đ</u></span>
                                 </p>
                             </div>
@@ -98,8 +100,9 @@
                                         <div class="single-item-body">
                                             <p class="single-item-title">{{$sptt->name}}</p>
                                             <p class="single-item-price" style="font-size: 18px">
-                                                <span
-                                                    class="flash-del">{{number_format($sptt->price*1.1)}}<u>đ</u></span>
+                                                @if($sptt->cost>$sptt->price)
+                                                <span class="flash-del">{{number_format($sptt->cost)}}<u>đ</u></span>
+                                                @endif
                                                 <span class="flash-sale">{{number_format($sptt->price)}}<u>đ</u></span>
                                             </p>
                                         </div>
@@ -130,8 +133,9 @@
                                         <div class="media-body">
                                             <p class="single-item-title" style="font-size: 18px">{{$sptt->name}}</p>
                                             <p class="single-item-price" style="font-size: 18px">
-                                                <span
-                                                    class="flash-del">{{number_format($sptt->price*1.1)}}<u>đ</u></span>
+                                                @if($sptt->cost>$sptt->price)
+                                                <span class="flash-del">{{number_format($sptt->cost)}}<u>đ</u></span>
+                                                @endif
                                                 <span class="flash-sale">{{number_format($sptt->price)}}<u>đ</u></span>
                                             </p>
                                         </div>

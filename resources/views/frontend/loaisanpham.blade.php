@@ -28,7 +28,7 @@
                     </div>
                     <div class="col-sm-9">
                         <div class="beta-products-list">
-                            <h4>Sản phẩm mới</h4>
+                            <h4>Tất cả sản phẩm thuộc {{$loai_sp->name}}</h4>
                             <div class="beta-products-details">
                                 <p class="pull-left">Tìm thấy {{count($chi_tiet)}} sản phẩm</p>
                                 <div class="clearfix"></div>

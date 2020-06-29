@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Admin | Laptop Store</title>
     <base href="{{asset('')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -129,13 +131,20 @@
     </aside>
 </div>
 <script src="plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+<script src="backend/js/bill-product.js"></script>
+<script src="backend/js/order-product.js"></script>
 <script src="backend/dist/js/adminlte.min.js"></script>
 <script src="backend/dist/js/demo.js"></script>
 <script src="backend/js/warning-delete.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="backend/js/count-up.js"></script>
-<script src="backend/js/bill-product.js"></script>
-<script src="backend/js/order-product.js"></script>
 <script src="backend/js/flot-data.js"></script>
 <script src="backend/js/morris-data.js"></script>
 <script src="backend/js/sb-admin-2.js"></script>

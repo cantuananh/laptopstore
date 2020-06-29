@@ -20,6 +20,7 @@ $factory->define(\App\Product::class, function (Faker $faker) {
         'name' => $faker->name,
         'brand_id' => \App\Brand::all()->random()->id,
         'description' => $faker->name,
+        'cost' => $faker->numberBetween(70000,80000),
         'price' => $faker->numberBetween(60000,70000),
         'ram' => $faker->numberBetween(60000,70000),
         'microprocessors' => $faker->numberBetween(60000,70000),

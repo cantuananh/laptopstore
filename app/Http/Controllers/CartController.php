@@ -3,32 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\DetailOrder;
-use App\DetailProduct;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
     public function getAddToCart(Request $request, $id)
     {
-        try {
-            $detail = Product::select('id', 'name', 'price', 'quantity', 'image')->find($id);
-            if (!$detail) return redirect(route('index'));
-            \Cart::add([
-                'id' => $id,
-                'name' => $detail->name,
-                'quantity' => 1,
-                'price' => $detail->price,
-                'attributes' => array(
-                    'image' => $detail->image
-                )
-            ]);
-            return redirect()->back();
-        } catch (\Exception $exception) {
-
-        }
+//        try {
+        $detail = Product::select('id', 'name', 'price', 'quantity', 'image')->find($id);
+        //    if (!$detail) return redirect(route('index'));
+        \Cart::add([
+            'id' => $id,
+            'name' => $detail->name,
+            'quantity' => 1,
+            'price' => $detail->price,
+            'attributes' => array(
+                'image' => $detail->image
+            )
+        ]);
+        //  dd(\Cart::getContent());
+        return redirect()->route('index');
+//        } catch (\Exception $exception) {
+//
+//        }
     }
 
     public function getDelItemCart($id)
@@ -41,6 +42,20 @@ class CartController extends Controller
     {
         $product_cart = \Cart::getContent();
         return view('frontend.gio_hang', compact('product_cart'));
+    }
+
+    public function suaGioHang(Request $request, $id)
+    {
+        \Cart::update($id, [
+            'quantity' => [
+                'relative' => false,
+                'value' => $request->qty,
+            ],
+        ]);
+
+        return response()->json([
+            'status' => 200,
+        ]);
     }
 
     public function getCheckout()

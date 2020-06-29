@@ -3,7 +3,7 @@
         <div class="container">
             <div class="pull-left auto-width-left">
                 <ul class="top-menu menu-beta l-inline">
-                    <li><a href=""><i class="fa fa-home"></i> Thôn Chùa, Đức Hòa, Sóc Sơn, Hà Nội</a></li>
+                    <li><a href=""><i class="fa fa-location-arrow"></i> Số 3 Đức Hòa, Sóc Sơn, Hà Nội</a></li>
                     <li><a href=""><i class="fa fa-phone"></i> 0343417170</a></li>
                 </ul>
             </div>
@@ -85,7 +85,7 @@
             <nav class="main-menu">
                 <ul class="l-inline ov">
                     <li><a href="{{route('index')}}">Trang chủ</a></li>
-                    <li><a href="{{route('index')}}">Loại Sản phẩm</a>
+                    <li><a href="{{route('loaisanpham',1)}}">Loại Sản phẩm</a>
                         <ul class="sub-menu">
                             @foreach($loai_sp as $loai)
                                 <li><a href="{{route('loaisanpham',$loai->id)}}">{{$loai->name}}</a></li>

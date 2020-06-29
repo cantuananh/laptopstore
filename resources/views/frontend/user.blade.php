@@ -21,7 +21,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="profile/thongtin" class="nav-link">
+                            <a href="order" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Đơn mua

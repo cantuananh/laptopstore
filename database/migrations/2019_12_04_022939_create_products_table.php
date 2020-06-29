@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('microprocessors');
             $table->string('screen');
             $table->string('description');
+            $table->bigInteger('cost');
             $table->bigInteger('price');
             $table->integer('quantity');
             $table->integer('guarantee_time');

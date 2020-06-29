@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAPTOP STORE</title>
+    <title>Laptop Dao Quang</title>
     <base href="{{asset('')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -26,6 +27,7 @@
 </div>
 
 @include('frontend.layouts.footer')
+<script src="plugins/jquery/jquery.min.js"></script>
 
 <script src="source/assets/dest/js/jquery.js"></script>
 <script src="source/assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
@@ -40,6 +42,17 @@
 <script src="source/assets/dest/js/waypoints.min.js"></script>
 <script src="source/assets/dest/js/wow.min.js"></script>
 <script src="source/assets/dest/js/custom2.js"></script>
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+<script src="frontend/js/cart.js"></script>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
 <script>
     $(document).ready(function($) {
         $(window).scroll(function(){

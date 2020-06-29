@@ -18,7 +18,7 @@
         <div id="content">
 
             <form action="{{route('giohang')}}" method="post" class="beta-form-checkout">
-                <input type="hidden" name="_tocken" value="{{csrf_token()}}">
+                <input type="hidden" name="csrf-token" value="{{csrf_token()}}">
                 <table class="table">
                     <thead>
                     <tr>
@@ -32,25 +32,37 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php $i =1?>
+                    <?php $i = 1?>
                     @foreach($product_cart as $cart)
-                    <tr>
-                        <td>#{{$i}}</td>
-                        <td>{{$cart->name}}</td>
-                        <td> <img height="100px" width="90px" src="uploads/products/{{$cart->attributes->image}}" alt="" class="pull-left"></td>
-                        <td>{{number_format($cart->price)}}đ</td>
-                        <td> {{number_format($cart->quantity)}}</td>
-                        <td>{{number_format($cart->price * $cart->quantity)}}<u>đ</u> </td>
-                        <td>
-                            <a href="{{url('del-cart',['id'=>$cart['id']])}}"><i class="fa fa-trash-o"></i>Xóa</a>
-                        </td>
-                    </tr>
-                    <?php $i++?>
+                        <tr>
+                            <td>#{{$i}}</td>
+                            <td>{{$cart->name}}</td>
+                            <td><img height="100px" width="90px" src="uploads/products/{{$cart->attributes->image}}"
+                                     alt="" class="pull-left"></td>
+                            <td>{{number_format($cart->price)}}đ</td>
+                            <td>
+                                <input id="qty-{{$cart->id}}" value="{{$cart->quantity}}" type="number" min="1">
+                                <a class="quantity-update btn-danger" cart="{{$cart->id}}">Cập nhật</a>
+                            </td>
+                            <td>
+                                {{number_format($cart->price * $cart->quantity)}}<u>đ</u></td>
+                            <td>
+                                <a href="{{url('del-cart',['id'=>$cart['id']])}}"><i class="fa fa-trash-o"></i>Xóa</a>
+                            </td>
+                        </tr>
+                        <?php $i++?>
                     @endforeach
                     </tbody>
                 </table>
-                <h5 class="class pull-right">Tổng tiền thanh toán: {{number_format(\Cart::getSubTotal())}}<u>đ</u>   <a href="{{route('dathang')}}" class="btn btn-success">Thanh Toán</a></h5>
+                <h5 class="class pull-right">Tổng tiền thanh toán: {{number_format(\Cart::getSubTotal())}}<u>đ</u> <a
+                        href="{{route('dathang')}}" class="btn btn-success">Thanh Toán</a></h5>
             </form>
         </div>
     </div>
+@endsection
+@section('js')
+    <script>
+        function tang(obj) {
+        }
+    </script>
 @endsection

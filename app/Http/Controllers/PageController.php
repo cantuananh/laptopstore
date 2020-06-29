@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\DetailOrder;
 use App\FeedBack;
+use App\Order;
 use App\Product;
 use App\Slide;
 use App\User;
@@ -27,7 +29,8 @@ class PageController extends Controller
         $name = $request->input('name');
         $slides = Slide::all();
         $products = $this->product->getSearch($name);
-        return view('frontend/index', compact('products', 'slides'));
+        $product_news = $this->product->orderBy('created_at', 'desc')->take(4)->get();
+        return view('frontend/index', compact('products', 'slides','product_news'));
     }
 
     public function getLoaisanpham($type)
@@ -51,7 +54,7 @@ class PageController extends Controller
             $id = $request->id;
             $feed_backs = FeedBack::where('product_id', $request->id)->paginate(3);
             $detail_product = Product::where('id', $request->id)->first();
-            $sanpham_tuongtu = Product::paginate(6);
+            $sanpham_tuongtu = Product::where('brand_id',$detail_product->brand_id)->paginate(6);
             $sanpham_noibat = Product::where('price', '<>', 0)->paginate(8);
             return view('frontend.chitietsanpham', compact('detail_product', 'sanpham_tuongtu', 'sanpham_noibat', 'feed_backs', 'id', 'check'));
         } catch (\Exception $exception) {
@@ -225,5 +228,11 @@ class PageController extends Controller
 
         }
         return back();
+    }
+
+    public function order()
+    {
+        $orders = Order::where('user_id',Auth::user()->id)->get();
+        return view('frontend.order',compact('orders'));
     }
 }

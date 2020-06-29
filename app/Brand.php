@@ -23,7 +23,7 @@ class Brand extends Model
             $query->orwhere('name', 'like', '%' . $name . '%');
         })
             ->when($description, function ($query) use ($description) {
-                $query->orwhere('description', $description);
+                $query->orwhere('description', 'like', '%' . $description . '%');
             })
             ->latest('id')
             ->paginate(5);

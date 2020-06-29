@@ -19,9 +19,9 @@ class UserController extends Controller
     protected $role;
     protected $roleUser;
 
-    public function __construct()
+    public function __construct(User $user)
     {
-        $this->user = new User();
+        $this->user = $user;
         $this->role = new Role();
         $this->roleUser = new RoleUser();
     }
@@ -95,7 +95,7 @@ class UserController extends Controller
         $user = $this->user->getUserBy($id);
         $data = $request->except('image');
         $data['image'] = $this->updateImage($request, $user->image, $this->imagePath);
-        $this->user->update(['name' => $request->name]);
+        $this->user->update($data);
         $user->roles()->sync($data['roles']);
 
         return redirect()->route('users.edit', ['user' => $id])->with('message', 'Sửa thành công');
