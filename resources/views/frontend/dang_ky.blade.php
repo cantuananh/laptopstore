@@ -21,6 +21,7 @@
             <div class="row">
                 @if(count($errors)>0)
                         <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             @foreach($errors ->all() as $err)
                                 {{$err}}<br>
                             @endforeach
@@ -45,11 +46,11 @@
                     <div class="space20">&nbsp;</div>
                     <div class="form-block">
                         <label for="your_last_name">Họ tên*</label>
-                        <input type="text" name="name" id="your_last_name">
+                        <input type="text" name="name" id="your_last_name" value="{!! old('name')!!}">
                     </div>
                     <div class="form-block">
                         <label for="email">Địa chỉ email*</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" value="{!! old('email')!!}">
                     </div>
                     <div class="form-block">
                         <label for="phone">Mật khẩu*</label>
@@ -61,14 +62,14 @@
                     </div>
                     <div class="form-block">
                         <label for="adress">Địa chỉ*</label>
-                        <input type="text" name="address" id="adress" value="Hà nội">
+                        <input type="text" name="address" id="adress" value="Hà nội" value="{!! old('adress')!!}">
                     </div>
                     <div class="form-block">
                         <label for="phone">Số điện thoại*</label>
-                        <input type="text" id="phone" name="phone">
+                        <input type="text" id="phone" name="phone" value="{!! old('phone')!!}">
                     </div>
                     <div class="form-group">
-                        <label style="margin-right: 20px">Giới tính</label>
+                        <label style="margin-right: 20px">Giới tính*</label>
                         <label class="radio-inline">
                             <input name="rdoGender" value="0" type="radio" checked="">Nữ
                         </label>
@@ -77,8 +78,8 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label>Ngày sinh</label>
-                        <input type='date' class="form-control" name="birthday" placeholder="Nhập vào ngày sinh" />
+                        <label>Ngày sinh*</label>
+                        <input type='date' class="form-control" name="birthday" placeholder="Nhập vào ngày sinh" value="{!! old('birthday')!!}"/>
                     </div>
                     <div class="form-group">
                         <label>Ảnh đại diện</label>

@@ -6,6 +6,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
+                    @if(session()->has('quantity'))
+                        <div class="alert alert-warning">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            {{ session()->get('quantity') }}
+                        </div>
+                    @endif
                     <h1 class="page-header">Hóa Đơn Bán
                         <small>Chi tiết</small>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#newOrderProductModal"
@@ -45,16 +51,16 @@
                                 {{number_format($item->quantity*$item->detail_product->product->price)}} <u>đ</u>
                             </td>
                             <td class="center">
-                                <button class="btn btn-danger btnDeleteOrderProductModal btn-del" data-toggle="modal"
-                                        style="border-radius: 50%"
-                                        data-target="#btnDeleteOrderDetailModal" data-id="{{$item->id}}"
-                                        title="xoa">
-                                    <i class="far fa-trash-alt"></i></button>
-                                <button class="btn btn-primary btnEditOrderProductModal" data-toggle="modal"
-                                        style="border-radius: 50%"
-                                        data-target="#editOrderProductModal" data-id="{{$item->id}}"
-                                        title="sua">
-                                    <i class="fas fa-pencil-alt"></i></button>
+{{--                                <button class="btn btn-danger btnDeleteOrderProductModal btn-del" data-toggle="modal"--}}
+{{--                                        style="border-radius: 50%"--}}
+{{--                                        data-target="#btnDeleteOrderDetailModal" data-id="{{$item->id}}"--}}
+{{--                                        title="xoa">--}}
+{{--                                    <i class="far fa-trash-alt"></i></button>--}}
+{{--                                <button class="btn btn-primary btnEditOrderProductModal" data-toggle="modal"--}}
+{{--                                        style="border-radius: 50%"--}}
+{{--                                        data-target="#editOrderProductModal" data-id="{{$item->id}}"--}}
+{{--                                        title="sua">--}}
+{{--                                    <i class="fas fa-pencil-alt"></i></button>--}}
                                 <a href="{{route('exportGuarantee',['id'=>$item->id])}}" class="btn btn-success"
                                    style="color: #d40e0e;border-radius: 50%;background: yellow"><i
                                         class="fas fa-file-pdf"></i></a>

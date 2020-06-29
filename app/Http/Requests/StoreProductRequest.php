@@ -32,7 +32,6 @@ class StoreProductRequest extends FormRequest
             "ram" => "required",
             "microprocessors" => "required",
             "screen" => "required",
-            "quantity" => "required|numeric",
             "guarantee_time" => "required|numeric",
             'image' => 'mimes:jpeg,jpg,png,gif|required'
         ];
@@ -52,8 +51,6 @@ class StoreProductRequest extends FormRequest
             "price.numeric" => "Giá bán phải là số",
             "ram.required" => "Bạn phải nhập dung lượng ram",
             "screen.required" => "Bạn phải nhập độ rộng màn hình",
-            "quantity.required" => "Bạn phải nhập số lượng",
-            "quantity.numeric" => "Số lượng phải là số",
             "guarantee_time.required" => "Bạn phải nhập thời gian bảo hành",
             "guarantee_time.numeric" => "Thời gian bảo hành phải là số",
             "microprocessors.required" => "Bạn phải nhập vi xử lý",

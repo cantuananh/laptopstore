@@ -25,7 +25,7 @@ $(function () {
               location.reload();
             })
             .fail(error => {
-
+                location.reload();
             });
     });
 

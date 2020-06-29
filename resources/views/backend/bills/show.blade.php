@@ -6,6 +6,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
+                    @if(session()->has('seri'))
+                        <div class="alert alert-warning">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            {{ session()->get('seri') }}
+                        </div>
+                    @endif
                     <h1 class="page-header">Phiếu nhập kho
                         <small>Chi tiết</small>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#newBillProductModal"
@@ -26,7 +32,7 @@
                         <th>Số lượng</th>
                         <th>Đơn giá</th>
                         <th>Thành tiền</th>
-                        <th>Chức năng</th>
+{{--                        <th>Chức năng</th>--}}
                     </tr>
                     </thead>
                     <tbody class="table__list_item">
@@ -45,18 +51,18 @@
                             <td>
                                 {{$item->detail_product->product->price*$item->quantity}}
                             </td>
-                            <td class="center">
-                                <button class="btn btn-danger btnDeleteBillProductModal btn-del" data-toggle="modal"
-                                        style="border-radius: 50%"
-                                        data-target="#btnDeleteBillDetailModal" data-id="{{$item->id}}"
-                                        title="Xóa">
-                                    <i class="far fa-trash-alt"></i></button>
-                                <button class="btn btn-primary btnEditBillProductModal" data-toggle="modal"
-                                        style="border-radius: 50%"
-                                        data-target="#editBillProductModal" data-id="{{$item->id}}"
-                                        title="Sửa">
-                                    <i class="fas fa-pencil-alt"></i></button>
-                            </td>
+{{--                            <td class="center">--}}
+{{--                                <button class="btn btn-danger btnDeleteBillProductModal btn-del" data-toggle="modal"--}}
+{{--                                        style="border-radius: 50%"--}}
+{{--                                        data-target="#btnDeleteBillDetailModal" data-id="{{$item->id}}"--}}
+{{--                                        title="Xóa">--}}
+{{--                                    <i class="far fa-trash-alt"></i></button>--}}
+{{--                                <button class="btn btn-primary btnEditBillProductModal" data-toggle="modal"--}}
+{{--                                        style="border-radius: 50%"--}}
+{{--                                        data-target="#editBillProductModal" data-id="{{$item->id}}"--}}
+{{--                                        title="Sửa">--}}
+{{--                                    <i class="fas fa-pencil-alt"></i></button>--}}
+{{--                            </td>--}}
                         </tr>
                     @endforeach
                     </tbody>

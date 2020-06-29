@@ -55,7 +55,7 @@
                         <input type="text" id="phone" name="phone" value="{!! Auth::user()->phone!!}">
                     </div>
                     <div class="form-group">
-                        <label style="margin-right: 20px">Giới tính</label>
+                        <label style="margin-right: 20px">Giới tính*</label>
                         <label class="radio-inline">
                             <input name="rdoGender" value="0" @if(Auth::user()->gender==0) checked @endif type="radio" checked="">Nữ
                         </label>
@@ -64,7 +64,7 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label>Ngày sinh</label>
+                        <label>Ngày sinh*</label>
                         <input type='date' class="form-control" name="birthday" placeholder="Nhập vào ngày sinh" value="{!! Auth::user()->birthday!!}"/>
                     </div>
                     <div class="form-group">

@@ -94,7 +94,6 @@ class PageController extends Controller
 
     public function postSignup(Request $request)
     {
-        try {
             $this->validate($request, [
                 'email' => 'required|email|unique:users,email',
                 'name' => 'required|max:250',
@@ -142,9 +141,6 @@ class PageController extends Controller
                 $user->image = "default.jpg";
             $user->save();
             return redirect()->back()->with('message', 'Đã tạo tài khoản thành công');
-        } catch (\Exception $exception) {
-
-        }
     }
 
     public function getLogout()

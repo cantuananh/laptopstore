@@ -51,6 +51,10 @@ class DetailOrderController extends Controller
         // update quantity product
         $product = $this->product->getProductBy($request->product_id);
         $quantity = $product->quantity - $request->quantity;
+        if($quantity<0){
+            session()->flash('quantity', 'Số lượng vượt quá số lượng trong kho.');
+            return false;
+        }
         $product->update(['quantity' => $quantity]);
         // create bill detail
         $detail_product = DetailProduct::orderBy('updated_at', 'DESC')->first();

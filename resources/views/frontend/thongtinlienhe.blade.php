@@ -28,7 +28,7 @@
 
                 <h6 class="contact-title">Địa chỉ</h6>
                 <p>
-                  Số 6, Đức Hòa, Sóc Sơn, Hà Nội.
+                  Số 3, Đức Hòa, Sóc Sơn, Hà Nội.
                 </p>
                 <div class="space20">&nbsp;</div>
                 <h6 class="contact-title">Liên hệ</h6>

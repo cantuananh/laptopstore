@@ -29,7 +29,7 @@
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
                             <div class="counter" data-count="{{$category}}">0</div>
-                            Thể loại
+                            Thương hiệu
                         </h4>
                     </div>
                     <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">

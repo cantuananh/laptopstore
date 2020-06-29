@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Admin | Laptop Store</title>
+    <title>Admin | Laptop Đào Quang</title>
     <base href="{{asset('')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +47,7 @@
                  alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">Laptop Store</span>
+            <span class="brand-text font-weight-light">Trang quản trị</span>
         </a>
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -123,7 +123,7 @@
         <div class="float-right d-none d-sm-block">
             <b>Version</b>
         </div>
-        <strong>Copyright &copy; 2018-2020 <a href="https://www.facebook.com/daotrongquang">laptopstore</a>.</strong>
+        <strong>Copyright &copy; 2019-2020 <a href="https://www.facebook.com/daotrongquang">laptopdaoquang</a>.</strong>
         All rights
         reserved.
     </footer>

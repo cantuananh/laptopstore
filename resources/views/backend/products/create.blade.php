@@ -91,14 +91,6 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Số lượng</label>
-                            <input class="form-control" name="quantity" placeholder="Nhập số lượng"
-                                   value="{{old('quantity')}}"/>
-                            @error('quantity')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
                             <label>Thời gian bảo hành</label>
                             <input class="form-control" name="guarantee_time" placeholder="Nhập thời gian bảo hành"
                                    value="{{old('guarantee_time')}}"/>

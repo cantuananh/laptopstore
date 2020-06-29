@@ -54,12 +54,20 @@ class DetailBillController extends Controller
             $quantity = $product->quantity + $request->quantity;
             $product->update(['quantity' => $quantity]);
             // create detail product
+            for ($i = 1; $i < $request->quantity; $i++) {
+                $seri = 'seri' . $i;
+                $seri1 = 'seri' . ($i-1);
+                if($request->$seri == $request->$seri1){
+                    session()->flash('seri', 'Số seri phải khác nhau.');
+                    return false;
+                }
+            }
             for ($i = 0; $i < $request->quantity; $i++) {
                 $seri = 'seri' . $i;
                 $data = [
                     'product_id' => $request->product_id,
-                    'seri' => $request->$seri,
-                    'status' => $request->product_id
+                    'seri' => $request->$seri . mt_rand(10, 99),
+                    'status' => 1
                 ];
                 $this->detailProduct->create($data);
             }

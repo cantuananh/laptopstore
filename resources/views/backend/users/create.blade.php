@@ -50,7 +50,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label style="margin-right: 20px">Giới tính</label>
+                            <label style="margin-right: 20px">Giới tính*</label>
                             <label class="radio-inline">
                                 <input name="gender" value="0" type="radio" checked="">Nữ
                             </label>
