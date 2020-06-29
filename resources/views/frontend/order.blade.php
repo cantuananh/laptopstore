@@ -26,10 +26,10 @@
                         @endforeach
                         <div class="form-block">
                             <label for="name">Số hóa đơn: {{$order->id}}</label>
-                            <label for="email">Tổng tiền: {{$order->total_price}}</label>
+                            <label for="email">Tổng tiền: {{number_format($order->total_price)}}<u>đ</u></label>
                         </div>
                         <label for="name">Ngày mua hàng: {{$order->created_at}}</label> <br>
-                        @if($order->payment == 1)
+                        @if($order->status == 1)
                             <label for="name">Thanh toán: Chưa thanh toán</label>
                         @else
                             <label for="name">Thanh toán: Đã thanh toán</label>
