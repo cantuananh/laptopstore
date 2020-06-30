@@ -14,10 +14,12 @@
                     @endif
                     <h1 class="page-header">Hóa Đơn Bán
                         <small>Chi tiết</small>
+                        @if($order->status == 1)
                         <button class="btn btn-primary" data-toggle="modal" data-target="#newOrderProductModal"
                                 value="{{$order->id}}" style="color: white;border-radius: 50%"><i
                                 class="fas fa-plus-circle"></i>
                         </button>
+                        @endif
                         <a href="{{route('orders.index')}}" class="btn btn-primary"
                            style="color: white;border-radius: 50%"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                     </h1>

@@ -14,10 +14,12 @@
                     @endif
                     <h1 class="page-header">Phiếu nhập kho
                         <small>Chi tiết</small>
+                        @if($bill->status == 1)
                         <button class="btn btn-primary" data-toggle="modal" data-target="#newBillProductModal"
                                 value="{{$bill->id}}" style="color: white;border-radius: 50%"><i
                                 class="fas fa-plus-circle"></i>
                         </button>
+                        @endif
                         <a href="{{route('bills.index')}}" class="btn btn-primary"
                            style="color: white;border-radius: 50%"><i class="fa fa-arrow-left"
                                                                       aria-hidden="true"></i></a>
@@ -49,7 +51,7 @@
                                 {{$item->detail_product->product->price}} <u>đ</u>
                             </td>
                             <td>
-                                {{$item->detail_product->product->price*$item->quantity}}
+                                {{$item->detail_product->product->price*$item->quantity}} <u>đ</u>
                             </td>
 {{--                            <td class="center">--}}
 {{--                                <button class="btn btn-danger btnDeleteBillProductModal btn-del" data-toggle="modal"--}}

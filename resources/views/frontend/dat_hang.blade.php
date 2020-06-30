@@ -16,7 +16,7 @@
 
     <div class="container">
         <div id="content">
-            <form action="" method="post" class="beta-form-checkout">
+            <form action="{{route('dathang')}}" method="post" class="beta-form-checkout">
                 <div class="row">
                     <div class="col-sm-6">
                         <h4>Thông tin</h4>

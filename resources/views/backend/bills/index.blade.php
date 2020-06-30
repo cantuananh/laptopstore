@@ -76,12 +76,14 @@
                             <form action="{{route('bills.destroy',['bill'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 @method('DELETE')
+                                @if($bill->status == 1)
                                 <button type="submit" class="btn btn-danger btn-del"
                                         style="border-radius: 50%" title="xoa">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
                                 <a href="{{route('bills.edit',['bill'=>$bill->id])}}" class="btn btn-primary"
                                    style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
+                                @endif
                                 <a href="{{route('bills.show',['bill'=>$bill->id])}}" class="btn btn-success"
                                    style="color: white;border-radius: 50%"><i class="fas fa-arrow-alt-circle-right"></i></a>
                                 <a href="{{route('exportBill',['id'=>$bill->id])}}" class="btn btn-success"

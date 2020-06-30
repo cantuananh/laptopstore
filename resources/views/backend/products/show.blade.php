@@ -6,6 +6,9 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">Chi tiết sản phẩm
                         <small>Chi tiết</small>
+                        <a href="{{route('products.index')}}" class="btn btn-primary"
+                           style="color: white;border-radius: 50%"><i class="fa fa-arrow-left"
+                                                                      aria-hidden="true"></i></a>
                     </h1>
                 </div>
             </div>

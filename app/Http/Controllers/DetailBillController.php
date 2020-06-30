@@ -72,7 +72,7 @@ class DetailBillController extends Controller
                 $this->detailProduct->create($data);
             }
             // create bill detail
-            $detail_product = DetailProduct::orderBy('updated_at', 'DESC')->first();
+            $detail_product = DetailProduct::where('status',1)->orderBy('updated_at', 'DESC')->first();
             $dataDetailProuduct = [
                 'detail_product_id' => $detail_product->id,
                 'bill_id' => $request->bill_id,

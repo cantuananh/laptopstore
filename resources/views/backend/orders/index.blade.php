@@ -6,8 +6,8 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">Hóa Đơn Bán
                         <small>Danh sách</small>
-                        <a href="{{route('orders.create')}}" class="btn btn-primary"
-                           style="color: white;border-radius: 50%"><i class="fas fa-plus-circle"></i></a>
+                            <a href="{{route('orders.create')}}" class="btn btn-primary"
+                               style="color: white;border-radius: 50%"><i class="fas fa-plus-circle"></i></a>
                     </h1>
                 </div>
                 @if(session('message'))
@@ -81,14 +81,17 @@
                             <form action="{{route('orders.destroy',['order'=>$order->id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 @method('DELETE')
+                                @if($order->status == 1)
                                 <button type="submit" class="btn btn-danger btn-del"
                                         style="border-radius: 50%" title="Xóa">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
-                                <a href="{{route('orders.edit',['order'=>$order->id])}}" class="btn btn-primary"
-                                   style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="{{route('orders.show',['order'=>$order->id])}}" class="btn btn-success"
-                                   style="color: white;border-radius: 50%"><i class="fas fa-arrow-alt-circle-right"></i></a>
+                                    <a href="{{route('orders.edit',['order'=>$order->id])}}" class="btn btn-primary"
+                                       style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
+                                @endif
+                                    <a href="{{route('orders.show',['order'=>$order->id])}}" class="btn btn-success"
+                                       style="color: white;border-radius: 50%"><i
+                                            class="fas fa-arrow-alt-circle-right"></i></a>
                                 <a href="{{route('exportOrder',['id'=>$order->id])}}" class="btn btn-success"
                                    style="color: #d40e0e;border-radius: 50%;background: yellow"><i
                                         class="fas fa-file-pdf"></i></a>

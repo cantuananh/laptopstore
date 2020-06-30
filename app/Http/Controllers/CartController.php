@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DetailOrder;
+use App\DetailProduct;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
@@ -66,7 +67,6 @@ class CartController extends Controller
 
     public function postCheckout(Request $request)
     {
-        try {
             //Kiêm tra xem số lượng mỗi sản phẩm có còn trong kho hàng nữa không
             $flag = true;
             $list_soil_out = "";
@@ -109,9 +109,10 @@ class CartController extends Controller
 
                 $product_cart = \Cart::getContent();
                 foreach ($product_cart as $product) {
+                    $detail_product = DetailProduct::where('status',1)->where('product_id', $product->id)->orderBy('updated_at', 'DESC')->first();
                     $detail = new DetailOrder();
                     $detail->order_id = $customer->id;
-                    $detail->detail_product_id = $product->id;
+                    $detail->detail_product_id = $detail_product->id;
                     $detail->quantity = $product->quantity;
                     $detail->save();
                     $detail_p = Product::where('id', $product->id)->first();
@@ -122,9 +123,5 @@ class CartController extends Controller
                 \Cart::clear();
                 return redirect('user/dat-hang')->with('thanhcong', "Bạn đã đặt hàng thành công. Quay lại trang chủ để xem những sảm phẩm khác nhé!");
             }
-
-        } catch (\Exception $exception) {
-
-        }
     }
 }
