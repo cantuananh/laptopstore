@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <base href="{{asset('')}}">
     <style>
         @font-face {
@@ -48,34 +48,34 @@
 <div>
     <div class="ban1">
         <img src="uploads/logo/laptop.png" height="73px" width="129px" alt="logo" class="img">
-        <p style="color: black" class="divp">LAPTOP DAO QUANG</p>
+        <p style="color: black" class="divp">Laptop Đào Quang</p>
     </div>
     <div class="ban2">
-        <p>Dia chi: So 14 Duc Hoa, Soc Son, Ha Noi</p>
-        <p>So dien thoai: 0343417170</p>
+        <p>Địa chỉ: số 3 Đức Hòa, Sóc Sơn, Hà Nội</p>
+        <p>Số điện thoại: 0343417170</p>
         <p>Email: aovanquang@gmail.com</p>
         <p>Website: https://laptopdaoquang.com</p>
     </div>
 </div>
-<h1 class="h1" style="color: #970fc7; text-align: center">PHIEU BAO HANH</h1>
-<h2 style="color: white ; background: red; text-align: center" class="tex">Vui long trinh phieu khi co nhu cau sua chua
-    - bao hanh</h2>
+<h1 class="h1" style="color: #970fc7; text-align: center">PHIẾU BẢO HÀNH</h1>
+<h2 style="color: white ; background: red; text-align: center" class="tex">Vui lòng trình phiếu khi có nhu cầu sửa chữa
+    - bảo hành</h2>
 <div class="form-control-range control">
-    <p style="color: black" class="tex">San pham: {{$detail_order->detail_product->product->name}}</p>
-    <p style="color: black" class="tex">Khach hang: {{$order->user->name}}</P>
-    <p style="color: black" class="tex">So dien thoai: {{$order->user->phone}}</P>
-    <p style="color: black" class="tex">Ngay mua: {{$detail_order->updated_at}}</P>
+    <p style="color: black" class="tex">Sản phẩm: {{$detail_order->detail_product->product->name}}</p>
+    <p style="color: black" class="tex">Khách hàng: {{$order->user->name}}</P>
+    <p style="color: black" class="tex">Số điện thoại: {{$order->user->phone}}</P>
+    <p style="color: black" class="tex">Ngày mua: {{$detail_order->updated_at}}</P>
     @for($i = 0 ; $i< $detail_order->quantity ; $i++)
-        <p style="color: black" class="tex">So seri {{$i+1}}: ..............................</P>
+        <p style="color: black" class="tex">Số seri {{$i+1}}: ..............................</P>
     @endfor
-    <p style="color: black" class="tex">Thoi gian bao hanh: {{$detail_order->detail_product->product->guarantee_time}}
-        thang</p>
-    <label style="color: black" class="lab">Cua hang(ky ten hoac dong dau):</label> &nbsp;&nbsp;&nbsp;
-    <label style="color: black" class="lab">Khach hang(ky ten):</label>
+    <p style="color: black" class="tex">Thời gian bảo hành: {{$detail_order->detail_product->product->guarantee_time}}
+        tháng</p>
+    <label style="color: black" class="lab">Cửa hàng(ký tên hoặc đóng dấu):</label> &nbsp;&nbsp;&nbsp;
+    <label style="color: black" class="lab">Khách hàng(ký tên):</label>
     <br><br> <br><br>
     <hr>
-    <p style="color: red" class="tex">*Chu y: Bat ky mot su thay doi bo sung nao khac voi noi dung cua phieu nay se
-        khong co gia tri bao hanh.</p>
+    <p style="color: red" class="tex">*Chú ý: Bất kỳ một sự thay đổi bổ sung nào khác với nội dung cua phiếu này sẽ
+        không có giá trị bảo hành.</p>
 </div>
 </body>
 </html>

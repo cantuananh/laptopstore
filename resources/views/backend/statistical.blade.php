@@ -41,7 +41,7 @@
                         </h4>
                     </div>
                 </div>
-                <h2 class="sub-header" style="font-size: 36px">Danh sách thành viên mới</h2>
+                <h2 class="sub-header" style="font-size: 36px">Danh sách 5 thành viên mới đăng ký</h2>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover test table-id">
                         <thead>

@@ -110,6 +110,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item has-treeview">
+                        <a href="{{route('kekhai')}}" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p>
+                                Thống kê
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Bill;
 use App\Product;
 use App\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\Input;
 
 class StatisticalController extends Controller
 {
@@ -20,4 +23,33 @@ class StatisticalController extends Controller
         return view('backend.statistical', compact('user', 'product', 'category', 'bill', 'user_new'));
     }
 
+    public function thongke()
+    {
+        $days = 30;
+
+        $range = Carbon::now()->subDays($days);
+
+        $stats = DB::table('orders')
+            ->where('created_at', '>=', $range)
+            ->groupBy('date')
+            ->orderBy('date', 'ASC')
+            ->get([
+                DB::raw('Date(created_at) as date'),
+                DB::raw('COUNT(*) as value')
+            ]);
+
+        return $stats;
+    }
+    public function kekhai()
+    {
+        $range = Carbon::now()->subMonth(5);
+        $orderYear = DB::table('bills')
+            ->select(DB::raw('month(created_at) as getYear'), DB::raw('COUNT(*) as value'))
+            ->where('created_at', '>=', $range)
+            ->groupBy('getYear')
+            ->orderBy('getYear', 'ASC')
+            ->get();
+
+        return view('backend.thongke',compact('orderYear'));
+    }
 }

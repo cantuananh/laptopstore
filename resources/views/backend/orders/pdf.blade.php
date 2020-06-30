@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <base href="{{asset('')}}">
     <style>
         @font-face {
@@ -49,24 +49,24 @@
 <div>
     <div class="ban1">
         <img src="uploads/logo/laptop.png" height="73px" width="129px" alt="logo" class="img">
-        <p style="color: black" class="divp">LAPTOP DAO QUANG</p>
+        <p style="color: black" class="divp">Laptop Đào Quang</p>
     </div>
     <div class="ban2">
-        <p>Dia chi: So 14 Duc Hoa, Soc Son, Ha Noi</p>
-        <p>So dien thoai: 0343417170</p>
+        <p>Địa chỉ: số 3 Đức Hòa, Sóc Sơn, Hà Nội</p>
+        <p>Số điện thoại: 0343417170</p>
         <p>Email: aovanquang@gmail.com</p>
         <p>Website: https://laptopdaoquang.com</p>
     </div>
 </div>
-<h1 class="h1" style="color: #970fc7; text-align: center">HOA DON BAN</h1>
+<h1 class="h1" style="color: #970fc7; text-align: center">HÓA ĐƠN BÁN</h1>
 <div class="col-lg-12">
     <table class="table__info-customer">
         <tr>
-            <td>Khach hang</td>
+            <td>Khách hàng</td>
             <td>{{$order->user->name}}</td>
         </tr>
         <tr>
-            <td>Dien thoai</td>
+            <td>Điện thoại</td>
             <td>{{$order->user->phone}}</td>
         </tr>
         <tr>
@@ -74,8 +74,8 @@
             <td>{{$order->user->email}}</td>
         </tr>
         <tr>
-            <td>Tong tien</td>
-            <td>{{number_format($order->total_price)}} dong</td>
+            <td>Tổng tiền</td>
+            <td>{{number_format($order->total_price)}} đồng</td>
         </tr>
     </table>
 </div>
@@ -85,9 +85,9 @@
         <thead>
         <tr>
             <th>STT</th>
-            <th>ten san pham</th>
-            <th>don gia</th>
-            <th>so luong</th>
+            <th>Tên sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
         </tr>
         </thead>
         <tbody>
@@ -96,7 +96,7 @@
             <tr>
                 <td>{{$stt}}</td>
                 <td>{{$item->detail_product->product->name}}</td>
-                <td>{{number_format($item->detail_product->product->price)}} dong</td>
+                <td>{{number_format($item->detail_product->product->price)}} đồng</td>
                 <td>{{$item->quantity}}</td>
             {{$stt++}}
         @endforeach

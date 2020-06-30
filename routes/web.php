@@ -6,6 +6,10 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'login:admin|employee|supplier'], function () {
 
+    Route::get('/thongke', 'StatisticalController@thongke')->name('thong');
+
+    Route::get('/kekhai', 'StatisticalController@kekhai')->name('kekhai');
+
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource('brands', 'BrandController');
