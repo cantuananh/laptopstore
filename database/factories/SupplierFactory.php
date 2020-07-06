@@ -21,6 +21,7 @@ $factory->define(\App\Supplier::class, function (Faker $faker) {
         'name' => $faker->name,
         'phone' =>$faker->phoneNumber,
         'address' => $faker->address,
+        'percent_discount' => 0,
         'created_at' => $faker->dateTime,
         'updated_at' =>$faker->dateTime
     ];

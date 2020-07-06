@@ -4,19 +4,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => 'login:admin|employee|supplier'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'login:admin|employee'], function () {
 
     Route::get('/thongke', 'StatisticalController@thongke')->name('thong');
 
-    Route::get('/kekhai', 'StatisticalController@kekhai')->name('kekhai');
+    Route::get('/kekhai', 'StatisticalController@kekhai')->name('kekhai')->middleware('login:admin');
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::resource('brands', 'BrandController');
+    Route::resource('brands', 'BrandController')->middleware('login:admin');
 
-    Route::resource('products', 'ProductController');
+    Route::resource('products', 'ProductController')->middleware('login:admin');
 
     Route::resource('users', 'UserController')->middleware('login:admin');
+
+    Route::get('profile', 'UserController@profile')->name('users.profile');
+    Route::get('profile/sua','UserController@getEditUser');
+
+    Route::post('profile/sua','UserController@postEditUser');
 
     Route::resource('bills', 'BillController');
 

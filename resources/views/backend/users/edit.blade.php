@@ -74,7 +74,8 @@
                                 <div class="col-lg-5">
                                     <a href=""><img src="{{asset('uploads/users/'.$user->image)}}" class="rounded-circle"
                                                     alt="image"
-                                                    width="100" height="150"></a>
+                                                    height="100px"
+                                                    width="150px"></a>
                                 </div>
                                 <input type='file' class="form-control" name="image"
                                        placeholder="Nhập vào ảnh đại diện"/>

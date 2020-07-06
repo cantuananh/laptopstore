@@ -9,6 +9,7 @@ use App\RoleUser;
 use App\Traits\StoreImageTrait;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -116,4 +117,64 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('message', 'Xóa thành công');
     }
 
+    public function profile()
+    {
+        return view('backend.profile');
+    }
+
+    public function getEditUser()
+    {
+        return view('backend.edit_profile');
+    }
+
+    public function postEditUser(Request $request)
+    {
+
+        $this->validate($request, [
+            'email' => 'required|email',
+            'name' => 'required|max:250',
+            'address' => 'required|max:250',
+            'password' => 'required|max:12|min:6',
+            'repassword' => 'required|same:password|min:6|max:12',
+            'phone' => 'required',
+            'birthday' => 'required',
+        ], [
+            "email.email" => "Chưa đúng định dạng email",
+            "email.required" => "Bạn phải nhập email",
+            "name.required" => "Bạn phải nhập tên",
+            "name.max" => "Tên không quá 250 kí tự",
+            "password.required" => "Bạn phải nhập mật khẩu",
+            "password.min" => "Mật khẩu ít nhất 6 kí tự",
+            "password.max" => "Mật khẩu không quá 12 kí tự",
+            "repassword.required" => "Bạn phải nhập lại mật khẩu",
+            "repassword.same" => "Mật khẩu không khớp nhau",
+            "repassword.min" => "Nhập lại mật khẩu ít nhất 6 kí tự",
+            "repassword.max" => "Nhập lại mật khẩu không quá 12 kí tự",
+            "phone.required" => "Bạn phải nhập số điện thoại",
+            "birthday.required" => "Bạn phải nhập ngày sinh",
+            "address.required" => "Bạn phải nhập địa chỉ",
+            "address.max" => "Địa chỉ không quá 250 kí tự",
+        ]);
+        $user = User::find(Auth::user()->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->phone = $request->phone;
+        $user->gender = $request->rdoGender;
+        $user->birthday = $request->birthday;
+        $user->status = Auth::user()->status;
+        $user->address = $request->address;
+        $user->address = $request->address;
+        $get_image = $request->file('image');
+        if ($get_image) {
+            $get_name_image = $get_image->getClientOriginalName();
+            $get_image->move('uploads/users', $get_name_image);
+            $user->image = $get_name_image;
+            $user->save();
+            return redirect('profile/sua')->with('message', 'Sửa thông tin thành công');
+        } else
+            $user->image = "default.jpg";
+        $user->save();
+        return redirect('admin/profile/sua')->with('message', 'Sửa thông tin thành công');
+    }
 }

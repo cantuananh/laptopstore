@@ -29,7 +29,7 @@ class PageController extends Controller
         $name = $request->input('name');
         $slides = Slide::all();
         $products = $this->product->getSearch($name);
-        $product_news = $this->product->orderBy('created_at', 'desc')->take(4)->get();
+        $product_news = $this->product->orderBy('created_at', 'desc')->where('deleted_at', null)->take(4)->get();
         return view('frontend/index', compact('products', 'slides','product_news'));
     }
 

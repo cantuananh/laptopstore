@@ -50,8 +50,8 @@
                     <tr class="odd gradeX">
                         <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
-                        <td><img src="uploads/users/{{$user->image}}" height="100"
-                                 width="150">
+                        <td><img src="uploads/users/{{$user->image}}" height="100px"
+                                 width="150px">
                         </td>
                         <td>{{$user->email}}</td>
                         <td>

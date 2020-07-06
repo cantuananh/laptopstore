@@ -67,8 +67,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="space10">&nbsp;</div>
                                 @endforeach
+                                    <div class="space10">&nbsp;</div>
                             </div>
                             <div class="row">{{$chi_tiet->links()}}</div>
                         </div>
@@ -115,8 +115,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="space10">&nbsp;</div>
                                 @endforeach
+                                    <div class="space10">&nbsp;</div>
                             </div>
                             <div class="row">{{$sp_khac->links()}}</div>
                             <div class="space40">&nbsp;</div>

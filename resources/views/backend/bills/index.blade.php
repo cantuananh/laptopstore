@@ -63,7 +63,7 @@
                         </td>
                         <td> {{$bill->supplier->name}}</td>
                         <td> @if($bill->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
-                        <td> {{ number_format($bill->total_price)}} <u>đ</u></td>
+                        <td> {{ number_format($bill->total_price-$bill->total_price*($bill->supplier->percent_discount/100))}} <u>đ</u></td>
                         <td>
                             <form action="{{route('updateBillStatus',['id'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}

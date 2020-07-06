@@ -56,7 +56,7 @@
                          alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="{{route('statistical')}}" class="d-block">{{Auth::guard()->user()->name}}</a>
+                    <a href="{{route('users.profile')}}" class="d-block">{{Auth::guard()->user()->name}}</a>
                 </div>
             </div>
             <nav class="mt-2">

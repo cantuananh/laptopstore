@@ -5,7 +5,7 @@
             <div class="bannercontainer">
                 <div class="banner">
                     <ul>
-                        @foreach($slides as $slide)
+                        @foreach($slides as $sl)
                             <li data-transition="boxfade" data-slotamount="20" class="active-revslide"
                                 style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
                                 <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined"
@@ -16,9 +16,9 @@
                                      data-oheight="undefined">
                                     <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover"
                                          data-bgposition="center center" data-bgrepeat="no-repeat"
-                                         data-lazydone="undefined" src="uploads/slides/{{$slide->image}}"
-                                         data-src="uploads/slides/{{$slide->image}}"
-                                         style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('uploads/slides/{{$slide->image}}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
+                                         data-lazydone="undefined" src="uploads/slides/{{$sl->image}}"
+                                         data-src="uploads/slides/{{$sl->image}}"
+                                         style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url('uploads/slides/{{$sl->image}}'); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit;">
                                     </div>
                                 </div>
                             </li>
@@ -65,9 +65,11 @@
                                                     <p class="single-item-title">{{$product->name}}</p>
                                                     <p class="single-item-price" style="font-size: 18px">
                                                         @if($product->cost > $product->price)
-                                                        <span class="flash-del">{{number_format($product->cost)}}đ</span>
+                                                            <span
+                                                                class="flash-del">{{number_format($product->cost)}}đ</span>
                                                         @endif
-                                                        <span class="flash-sale">{{number_format($product->price)}}đ</span>
+                                                        <span
+                                                            class="flash-sale">{{number_format($product->price)}}đ</span>
                                                     </p>
                                                 </div>
                                                 <div class="single-item-caption">
@@ -81,8 +83,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="space10">&nbsp;</div>
                                     @endforeach
+                                    <div class="space10">&nbsp;</div>
                                 </div>
                             </div>
                             <div class="beta-products-list">
@@ -113,9 +115,11 @@
                                                     <p class="single-item-title">{{$product->name}}</p>
                                                     <p class="single-item-price" style="font-size: 18px">
                                                         @if($product->cost > $product->price)
-                                                            <span class="flash-del">{{number_format($product->cost)}}đ</span>
+                                                            <span
+                                                                class="flash-del">{{number_format($product->cost)}}đ</span>
                                                         @endif
-                                                        <span class="flash-sale">{{number_format($product->price)}}đ</span>
+                                                        <span
+                                                            class="flash-sale">{{number_format($product->price)}}đ</span>
                                                     </p>
                                                 </div>
                                                 <div class="single-item-caption">
@@ -129,14 +133,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="space10">&nbsp;</div>
                                     @endforeach
+                                    <div class="space10">&nbsp;</div>
                                 </div>
                                 <div class="row">{{$products->links()}}</div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 @endsection

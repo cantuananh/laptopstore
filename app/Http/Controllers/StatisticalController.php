@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bill;
+use App\Order;
 use App\Product;
 use App\User;
 use Carbon\Carbon;
@@ -17,10 +18,10 @@ class StatisticalController extends Controller
         $user_new = User::latest('id')->limit(5)->get();
         $product = Product::all()->count();
         $bill = Bill::all()->count();
-        $category = Bill::all()->count();
+        $order = Order::all()->count();
         $user = User::all()->count();
 
-        return view('backend.statistical', compact('user', 'product', 'category', 'bill', 'user_new'));
+        return view('backend.statistical', compact('user', 'product', 'order', 'bill', 'user_new'));
     }
 
     public function thongke()
@@ -31,6 +32,7 @@ class StatisticalController extends Controller
 
         $stats = DB::table('orders')
             ->where('created_at', '>=', $range)
+            ->where('deleted_at', null)
             ->groupBy('date')
             ->orderBy('date', 'ASC')
             ->get([
@@ -46,6 +48,7 @@ class StatisticalController extends Controller
         $orderYear = DB::table('bills')
             ->select(DB::raw('month(created_at) as getYear'), DB::raw('COUNT(*) as value'))
             ->where('created_at', '>=', $range)
+            ->where('deleted_at', null)
             ->groupBy('getYear')
             ->orderBy('getYear', 'ASC')
             ->get();

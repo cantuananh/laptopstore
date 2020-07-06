@@ -28,8 +28,8 @@
                         <img src="{{asset('\uploads\charts\circle.png')}}"
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
-                            <div class="counter" data-count="{{$category}}">0</div>
-                            Thương hiệu
+                            <div class="counter" data-count="{{$order}}">0</div>
+                            Hóa đơn bán
                         </h4>
                     </div>
                     <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
@@ -37,7 +37,7 @@
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
                             <div class="counter" data-count="{{$bill}}">0</div>
-                            Hóa đơn nhập
+                            Phiếu nhập kho
                         </h4>
                     </div>
                 </div>
