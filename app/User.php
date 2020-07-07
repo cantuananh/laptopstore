@@ -73,7 +73,7 @@ class User extends Authenticatable
             ->paginate(5);
     }
 
-    public static function getUserBy($id)
+    public function getUserBy($id)
     {
         return User::findOrFail($id);
     }

@@ -67,7 +67,7 @@ class OrderController extends Controller
         $products = $this->product->all();
         $product_items = DetailOrder::getOrderProductWhere($id);
         $order = $this->order->getOrderBy($id);
-        $user = User::getUserBy($order->user_id);
+        $user = $this->user->getUserBy($order->user_id);
 
         return view('backend.orders.show', compact('order', 'product_items', 'user', 'products'));
     }

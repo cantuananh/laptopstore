@@ -16,12 +16,14 @@ class BillController extends Controller
     protected $bill;
     protected $product;
     protected $supplier;
+    protected $user;
 
     public function __construct()
     {
         $this->bill = new Bill();
         $this->product = new Product();
         $this->supplier = new Supplier();
+        $this->user = new User();
     }
 
     /**
@@ -69,7 +71,7 @@ class BillController extends Controller
             $products = $this->product->all();
             $product_items = BillDetail::getBillProductWhere($id);
             $bill = $this->bill->getBillBy($id);
-            $user = User::getUserBy($bill->user_id);
+            $user = $this->user->getUserBy($bill->user_id);
 
             return view('backend.bills.show', compact('bill', 'product_items', 'user', 'products'));
         } catch (\Exception $exception) {
