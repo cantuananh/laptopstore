@@ -51,13 +51,13 @@ class DetailOrderController extends Controller
         // update quantity product
         $product = $this->product->getProductBy($request->product_id);
         $quantity = $product->quantity - $request->quantity;
-        if($quantity<0){
+        if ($quantity < 0) {
             session()->flash('quantity', 'Số lượng vượt quá số lượng trong kho.');
             return false;
         }
         $product->update(['quantity' => $quantity]);
         // create bill detail
-        $detail_product = DetailProduct::where('status',1)->where('product_id', $product->id)->orderBy('updated_at', 'DESC')->first();
+        $detail_product = DetailProduct::where('status', 1)->where('product_id', $product->id)->orderBy('updated_at', 'DESC')->first();
         $dataDetailProuduct = [
             'detail_product_id' => $detail_product->id,
             'order_id' => $request->order_id,
@@ -74,7 +74,7 @@ class DetailOrderController extends Controller
 
     public function show($id)
     {
-       //
+        //
     }
 
     /**
@@ -124,8 +124,10 @@ class DetailOrderController extends Controller
     {
         $detail_order = $this->detailOrder->getOrderProductBy($id);
         $order = $this->order->getOrderBy($detail_order->order_id);
-        $pdf = PDF::loadView('backend.orders.order_detail.guarantee', compact('detail_order', 'order'));
+        $productDetail = $this->detailProduct->findOrFail($detail_order->detail_product_id);
+        $detail = DetailProduct::where('product_id', $productDetail->product_id)->where('status', 1)->get();
+        $pdf = PDF::loadView('backend.orders.order_detail.guarantee', compact('detail_order', 'order', 'detail'));
         return $pdf->download('invoice.pdf');
-      //  return view('backend.orders.order_detail.guarantee', compact('detail_order', 'order'));
+        // return view('backend.orders.order_detail.guarantee', compact('detail_order', 'order', 'detail'));
     }
 }

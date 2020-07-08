@@ -66,7 +66,7 @@
     <p style="color: black" class="tex">Số điện thoại: {{$order->user->phone}}</P>
     <p style="color: black" class="tex">Ngày mua: {{$detail_order->updated_at}}</P>
     @for($i = 0 ; $i< $detail_order->quantity ; $i++)
-        <p style="color: black" class="tex">Số seri {{$i+1}}: ..............................</P>
+        <p style="color: black" class="tex">Số seri: {{$detail[$i]->seri}}</P>
     @endfor
     <p style="color: black" class="tex">Thời gian bảo hành: {{$detail_order->detail_product->product->guarantee_time}}
         tháng</p>
