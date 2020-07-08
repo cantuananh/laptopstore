@@ -3,11 +3,12 @@
 <div class="content-wrapper">
     <div id="page-wrapper">
         <div class="container-fluid">
-        <form action="" method="post" class="beta-form-checkout">
+        <form action="" method="post" class="beta-form-checkout" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div>
                 @if(count($errors)>0)
                         <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                             @foreach($errors ->all() as $err)
                                 {{$err}}<br>
                             @endforeach
@@ -57,10 +58,10 @@
                     <div class="form-group">
                         <label style="margin-right: 20px">Giới tính*</label>
                         <label class="radio-inline">
-                            <input name="rdoGender" value="0" @if(Auth::user()->gender==0) checked @endif type="radio" checked="">Nữ
+                            <input name="gender" value="0" @if(Auth::user()->gender==0) checked @endif type="radio" checked="">Nữ
                         </label>
                         <label class="radio-inline">
-                            <input name="rdoGender" value="1" @if(Auth::user()->gender==1) checked @endif type="radio">Nam
+                            <input name="gender" value="1" @if(Auth::user()->gender==1) checked @endif type="radio">Nam
                         </label>
                     </div>
                     <div class="form-group">

@@ -22,6 +22,7 @@ trait StoreImageTrait
 
     public function updateImage($image, $currentName, $imagePath)
     {
+        dd($image->hasFile('image'));
         if ($image->hasFile('image')) {
             $images = $image->file('image');
             $this->deleteImage($currentName,$imagePath);

@@ -8,6 +8,7 @@ use App\FeedBack;
 use App\Order;
 use App\Product;
 use App\Slide;
+use App\Traits\StoreImageTrait;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +16,9 @@ use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
+    use StoreImageTrait;
+
+    protected $imagePath = "uploads/users/";
     protected $product;
     protected $brand;
 
@@ -188,26 +192,10 @@ class PageController extends Controller
                 "address.required" => "Bạn phải nhập địa chỉ",
                 "address.max" => "Địa chỉ không quá 250 kí tự",
             ]);
-            $user = User::find(Auth::user()->id);
-            $user->name = $request->name;
-            $user->email = $request->email;
-            $user->password = bcrypt($request->password);
-            $user->phone = $request->phone;
-            $user->gender = $request->rdoGender;
-            $user->birthday = $request->birthday;
-            $user->status = Auth::user()->status;
-            $user->address = $request->address;
-            $user->address = $request->address;
-            $get_image = $request->file('image');
-            if ($get_image) {
-                $get_name_image = $get_image->getClientOriginalName();
-                $get_image->move('uploads/users', $get_name_image);
-                $user->image = $get_name_image;
-                $user->save();
-                return redirect('profile/sua')->with('message', 'Sửa thông tin thành công');
-            } else
-                $user->image = "default.jpg";
-            $user->save();
+        $user = User::findOrFail(Auth::user()->id);
+        $data = $request->except('image');
+        $data['image'] = $this->updateImage($request, $user->image, $this->imagePath);
+        $user->update($data);
             return redirect('profile/sua')->with('message', 'Sửa thông tin thành công');
     }
 
