@@ -66,7 +66,7 @@ class DetailBillController extends Controller
                 $seri = 'seri' . $i;
                 $data = [
                     'product_id' => $request->product_id,
-                    'seri' => $request->$seri . mt_rand(10, 99),
+                    'seri' => $request->$seri,
                     'status' => 1
                 ];
                 $this->detailProduct->create($data);
