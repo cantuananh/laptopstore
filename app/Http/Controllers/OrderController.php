@@ -117,11 +117,10 @@ class OrderController extends Controller
     public function updateStatus($id)
     {
         $orders = $this->order->getOrderBy($id);
-        if($orders->status == 1){
+        if ($orders->status == 1) {
             $orders->update(['status' => 2]);
-        } else {
-            $orders->update(['status' => 1]);
         }
+
         return redirect()->back();
     }
 }

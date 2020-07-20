@@ -8,6 +8,7 @@ use App\DetailProduct;
 use App\Http\Requests\StoreBillProductRequest;
 use App\Http\Requests\UpdateBillProductRequest;
 use App\Product;
+use App\Supplier;
 use Barryvdh\DomPDF\Facade as PDF;
 
 class DetailBillController extends Controller
@@ -138,8 +139,9 @@ class DetailBillController extends Controller
     public function exportBill($id)
     {
         $bill = $this->bill->getBillBy($id);
+        $giamgia = Supplier::findOrFail($bill->supplier_id)->percent_discount;
         $product_items = $this->billDetail->where('bill_id', $id)->get();
-        $pdf = PDF::loadView('backend.bills.pdf', compact('bill', 'product_items'));
+        $pdf = PDF::loadView('backend.bills.pdf', compact('bill', 'product_items','giamgia'));
         return $pdf->download('invoice.pdf');
     }
 }

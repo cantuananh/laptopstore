@@ -12,16 +12,17 @@
                             {{ session()->get('quantity') }}
                         </div>
                     @endif
-                    <h1 class="page-header">Hóa Đơn Bán
+                    <h1 class="page-header">Hóa Đơn Bán Hàng
                         <small>Chi tiết</small>
                         @if($order->status == 1)
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#newOrderProductModal"
-                                value="{{$order->id}}" style="color: white;border-radius: 50%"><i
-                                class="fas fa-plus-circle"></i>
-                        </button>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#newOrderProductModal"
+                                    value="{{$order->id}}" style="color: white;border-radius: 50%"><i
+                                    class="fas fa-plus-circle"></i>
+                            </button>
                         @endif
                         <a href="{{route('orders.index')}}" class="btn btn-primary"
-                           style="color: white;border-radius: 50%"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+                           style="color: white;border-radius: 50%"><i class="fa fa-arrow-left"
+                                                                      aria-hidden="true"></i></a>
                     </h1>
                 </div>
                 <table class="table table-striped table-bordered table-hover">
@@ -30,6 +31,8 @@
                         <th>ID</th>
                         <th>Sản phẩm</th>
                         <th>Hình ảnh</th>
+                        <th>Mô tả</th>
+                        <th>Thời gian bảo hành</th>
                         <th>Đơn giá</th>
                         <th>Số lượng</th>
                         <th>Thành tiền</th>
@@ -42,7 +45,13 @@
                             <td>{{$item->id}}</td>
                             <td>{{$item->detail_product->product->name}}</td>
                             <td><img src="uploads/products/{{$item->detail_product->product->image}}" height="100"
-                                     width="100">
+                                     width="100"></td>
+                            <td>
+                                {{$item->detail_product->product->name}} . Ram {{$item->detail_product->product->ram}} GB , Màn hình: {{$item->detail_product->product->screen }}, Vi xử lý: {{$item->detail_product->product->microprocessors}}
+                            </td>
+                            <td>
+                                {{$item->detail_product->product->guarantee_time}} Tháng
+                            </td>
                             <td>
                                 {{number_format($item->detail_product->product->price)}} <u>đ</u>
                             </td>
@@ -53,16 +62,16 @@
                                 {{number_format($item->quantity*$item->detail_product->product->price)}} <u>đ</u>
                             </td>
                             <td class="center">
-{{--                                <button class="btn btn-danger btnDeleteOrderProductModal btn-del" data-toggle="modal"--}}
-{{--                                        style="border-radius: 50%"--}}
-{{--                                        data-target="#btnDeleteOrderDetailModal" data-id="{{$item->id}}"--}}
-{{--                                        title="xoa">--}}
-{{--                                    <i class="far fa-trash-alt"></i></button>--}}
-{{--                                <button class="btn btn-primary btnEditOrderProductModal" data-toggle="modal"--}}
-{{--                                        style="border-radius: 50%"--}}
-{{--                                        data-target="#editOrderProductModal" data-id="{{$item->id}}"--}}
-{{--                                        title="sua">--}}
-{{--                                    <i class="fas fa-pencil-alt"></i></button>--}}
+                                {{--                                <button class="btn btn-danger btnDeleteOrderProductModal btn-del" data-toggle="modal"--}}
+                                {{--                                        style="border-radius: 50%"--}}
+                                {{--                                        data-target="#btnDeleteOrderDetailModal" data-id="{{$item->id}}"--}}
+                                {{--                                        title="xoa">--}}
+                                {{--                                    <i class="far fa-trash-alt"></i></button>--}}
+                                {{--                                <button class="btn btn-primary btnEditOrderProductModal" data-toggle="modal"--}}
+                                {{--                                        style="border-radius: 50%"--}}
+                                {{--                                        data-target="#editOrderProductModal" data-id="{{$item->id}}"--}}
+                                {{--                                        title="sua">--}}
+                                {{--                                    <i class="fas fa-pencil-alt"></i></button>--}}
                                 <a href="{{route('exportGuarantee',['id'=>$item->id])}}" class="btn btn-success"
                                    style="color: #d40e0e;border-radius: 50%;background: yellow"><i
                                         class="fas fa-file-pdf"></i></a>

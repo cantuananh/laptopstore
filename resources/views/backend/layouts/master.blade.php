@@ -98,7 +98,7 @@
                         <a href="{{route('orders.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>
-                                Hóa đơn bán
+                                Hóa Đơn Bán Hàng
                             </p>
                         </a>
                     </li>

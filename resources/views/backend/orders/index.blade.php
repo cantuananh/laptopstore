@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Hóa Đơn Bán
+                    <h1 class="page-header">Hóa Đơn Bán Hàng
                         <small>Danh sách</small>
                             <a href="{{route('orders.create')}}" class="btn btn-primary"
                                style="color: white;border-radius: 50%"><i class="fas fa-plus-circle"></i></a>
@@ -92,9 +92,11 @@
                                     <a href="{{route('orders.show',['order'=>$order->id])}}" class="btn btn-success"
                                        style="color: white;border-radius: 50%"><i
                                             class="fas fa-arrow-alt-circle-right"></i></a>
+                                @if($order->status == 2)
                                 <a href="{{route('exportOrder',['id'=>$order->id])}}" class="btn btn-success"
                                    style="color: #d40e0e;border-radius: 50%;background: yellow"><i
                                         class="fas fa-file-pdf"></i></a>
+                                @endif
                             </form>
                         </td>
                     </tr>

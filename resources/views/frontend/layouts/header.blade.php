@@ -60,7 +60,7 @@
                                 @endforeach
                                 <div class="cart-caption">
                                     <div class="cart-total text-right">Tổng
-                                        tiền: {{number_format(\Cart::getSubTotal())}}<span
+                                        tiền: {{number_format(\Cart::getSubTotal())}} <u>đ</u><span
                                             class="cart-total-value"></span></div>
                                     <div class="clearfix"></div>
                                     <div class="center">

@@ -50,6 +50,10 @@ Route::get('dang-nhap',['as'=>'dangnhap', 'uses'=>'PageController@getLogin']);
 
 Route::post('dang-nhap',['as'=>'dangnhap', 'uses'=>'PageController@postLogin']);
 
+Route::get('dang-nhap-dat-hang',['as'=>'dangnhapdathang', 'uses'=>'PageController@getLoginDatHang']);
+
+Route::post('dang-nhap-dat-hang',['as'=>'dangnhapdathang', 'uses'=>'PageController@postLoginDatHang']);
+
 Route::get('dang-xuat',['as'=>'dangxuat', 'uses'=>'PageController@getLogout']);
 
 Route::get('dang-ky',['as'=>'dangky', 'uses'=>'PageController@getSignup']);
@@ -91,7 +95,7 @@ Route::get('danh-muc/{id}/{url}',['as'=>'chuyen-muc','uses'=>'PageController@get
 
 Route::get('san-pham/{id}/{url}',['as'=>'san-pham','uses'=>'PageController@getDetailProduct']);
 
-Route::group(['prefix'=>'user','middleware'=>'LoginUser'], function (){
+Route::group(['prefix'=>'user','middleware'=>'LoginDatHang'], function (){
 
     Route::get('dat-hang',['as'=>'dathang', 'uses'=>'CartController@getCheckout']);
 

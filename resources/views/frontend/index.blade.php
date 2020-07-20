@@ -96,42 +96,45 @@
                                 <div class="row">
                                     @foreach($products as $product)
                                         <div class="col-sm-3">
-                                            <div class="single-item">
-                                                @if($product->cost > $product->price)
-                                                    <div class="ribbon-wrapper">
-                                                        <div class="ribbon sale">Sale</div>
-                                                    </div>
-                                                @endif
-                                                <div class="single-item-header">
-                                                    @if(!$product->quantity)
-                                                        <span
-                                                            style="position: absolute; background-color: red;color: white;">Tạm hết hàng</span>
+                                            <div class="fix-sp">
+                                                <div class="single-item">
+                                                    @if($product->cost > $product->price)
+                                                        <div class="ribbon-wrapper">
+                                                            <div class="ribbon sale">Sale</div>
+                                                        </div>
                                                     @endif
-                                                    <a href="{{route('chitietsanpham',$product->id)}}"><img
-                                                            src="uploads/products/{{$product->image}}" alt=""
-                                                            height="250px" width="250px"></a>
-                                                </div>
-                                                <div class="single-item-body">
-                                                    <p class="single-item-title">{{$product->name}}</p>
-                                                    <p class="single-item-price" style="font-size: 18px">
-                                                        @if($product->cost > $product->price)
+                                                    <div class="single-item-header">
+                                                        @if(!$product->quantity)
                                                             <span
-                                                                class="flash-del">{{number_format($product->cost)}}đ</span>
+                                                                style="position: absolute; background-color: red;color: white;">Tạm hết hàng</span>
                                                         @endif
-                                                        <span
-                                                            class="flash-sale">{{number_format($product->price)}}đ</span>
-                                                    </p>
-                                                </div>
-                                                <div class="single-item-caption">
-                                                    <a class="add-to-cart pull-left"
-                                                       href="{{route('themgiohang',$product->id)}}"><i
-                                                            class="fa fa-shopping-cart"></i></a>
-                                                    <a class="beta-btn primary"
-                                                       href="{{route('chitietsanpham',$product->id)}}">Chi tiết<i
-                                                            class="fa fa-chevron-right"></i></a>
-                                                    <div class="clearfix"></div>
+                                                        <a href="{{route('chitietsanpham',$product->id)}}"><img
+                                                                src="uploads/products/{{$product->image}}" alt=""
+                                                                height="250px" width="250px"></a>
+                                                    </div>
+                                                    <div class="single-item-body">
+                                                        <p class="single-item-title">{{$product->name}}</p>
+                                                        <p class="single-item-price" style="font-size: 18px">
+                                                            @if($product->cost > $product->price)
+                                                                <span
+                                                                    class="flash-del">{{number_format($product->cost)}}đ</span>
+                                                            @endif
+                                                            <span
+                                                                class="flash-sale">{{number_format($product->price)}}đ</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="single-item-caption">
+                                                        <a class="add-to-cart pull-left"
+                                                           href="{{route('themgiohang',$product->id)}}"><i
+                                                                class="fa fa-shopping-cart"></i></a>
+                                                        <a class="beta-btn primary"
+                                                           href="{{route('chitietsanpham',$product->id)}}">Chi tiết<i
+                                                                class="fa fa-chevron-right"></i></a>
+                                                        <div class="clearfix"></div>
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     @endforeach
                                     <div class="space10">&nbsp;</div>

@@ -41,6 +41,11 @@
             margin-left: 100px;
         }
 
+        .lab {
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+
         .ban1 {
             float: left;
             padding-right: 130px;
@@ -82,7 +87,7 @@
         </tr>
         <tr>
             <td>Tổng tiền</td>
-            <td>{{number_format($bill->total_price)}} đồng</td>
+            <td>{{number_format($bill->total_price*(100-$giamgia)/100)}} đồng</td>
         </tr>
     </table>
 </div>
@@ -109,6 +114,9 @@
         @endforeach
         </tbody>
     </table>
+    <br>
+    <br>
+    <label style="color: black" class="lab">Người nhập hàng(ký tên)</label> &nbsp;&nbsp;&nbsp;
 </div>
 </body>
 </html>

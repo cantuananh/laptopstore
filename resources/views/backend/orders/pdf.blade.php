@@ -43,6 +43,10 @@
         .divp {
             margin-left: 90px;
         }
+        .lab {
+            margin-left: 70px;
+            margin-right: 70px;
+        }
     </style>
 </head>
 <body>
@@ -58,7 +62,7 @@
         <p>Website: https://laptopdaoquang.com</p>
     </div>
 </div>
-<h1 class="h1" style="color: #970fc7; text-align: center">HÓA ĐƠN BÁN</h1>
+<h1 class="h1" style="color: #970fc7; text-align: center">HÓA ĐƠN BÁN HÀNG</h1>
 <div class="col-lg-12">
     <table class="table__info-customer">
         <tr>
@@ -102,6 +106,12 @@
         @endforeach
         </tbody>
     </table>
+    <br>
+    <br>
+    <div class="form-control-range control">
+    <label style="color: black" class="lab">Người bán hàng(ký tên):</label> &nbsp;&nbsp;&nbsp;
+    <label style="color: black" class="lab">Khách hàng(ký tên):</label>
+    </div>
 </div>
 </body>
 </html>

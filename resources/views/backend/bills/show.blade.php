@@ -31,6 +31,8 @@
                         <th>Mã sản phẩm</th>
                         <th>Sản phẩm</th>
                         <th>Hình ảnh</th>
+                        <th>Mô tả</th>
+                        <th>Thời gian bảo hành</th>
                         <th>Số lượng</th>
                         <th>Đơn giá</th>
                         <th>Thành tiền</th>
@@ -43,7 +45,13 @@
                             <td>{{$item->detail_product->product->id}}</td>
                             <td>{{$item->detail_product->product->name}}</td>
                             <td><img src="uploads/products/{{$item->detail_product->product->image}}" height="100"
-                                     width="100">
+                                     width="100"></td>
+                            <td>
+                                {{$item->detail_product->product->descriptionf}} . Ram {{$item->detail_product->product->ram}} GB , Màn hình: {{$item->detail_product->product->screen }}, Vi xử lý: {{$item->detail_product->product->microprocessors}}
+                            </td>
+                            <td>
+                                {{$item->detail_product->product->guarantee_time}} Tháng
+                            </td>
                             <td>
                                 {{$item->quantity}}
                             </td>

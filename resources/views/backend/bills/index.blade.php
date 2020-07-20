@@ -86,9 +86,11 @@
                                 @endif
                                 <a href="{{route('bills.show',['bill'=>$bill->id])}}" class="btn btn-success"
                                    style="color: white;border-radius: 50%"><i class="fas fa-arrow-alt-circle-right"></i></a>
+                                @if($bill->status == 2)
                                 <a href="{{route('exportBill',['id'=>$bill->id])}}" class="btn btn-success"
                                    style="color: #e00a0a;border-radius: 50%; background: yellow"><i
                                         class="fas fa-file-pdf"></i></a>
+                                @endif
                             </form>
                         </td>
                     </tr>
