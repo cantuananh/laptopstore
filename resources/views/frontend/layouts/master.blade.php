@@ -20,7 +20,7 @@
 <body>
 @include('frontend.layouts.header')
 
-<div class="rev-slider">
+<div class="rev-slider" style="background-color: #D6EAF8">
 
     @yield('content')
 
