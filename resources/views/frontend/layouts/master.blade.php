@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laptop Đào Quang</title>
+    <title>IT Laptop</title>
     <base href="{{asset('')}}">
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -54,13 +54,14 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
 <script>
-    $(document).ready(function($) {
-        $(window).scroll(function(){
-            if($(this).scrollTop()>150){
-                $(".header-bottom").addClass('fixNav')
-            }else{
-                $(".header-bottom").removeClass('fixNav')
-            }}
+    $(document).ready(function ($) {
+        $(window).scroll(function () {
+                if ($(this).scrollTop() > 150) {
+                    $(".header-bottom").addClass('fixNav')
+                } else {
+                    $(".header-bottom").removeClass('fixNav')
+                }
+            }
         )
     })
 </script>
