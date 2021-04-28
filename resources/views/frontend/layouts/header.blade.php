@@ -3,18 +3,19 @@
         <div class="container">
             <div class="pull-left auto-width-left">
                 <ul class="top-menu menu-beta l-inline">
-                    <li><a href=""><i class="fa fa-location-arrow"></i> Số 3 Đức Hòa, Sóc Sơn, Hà Nội</a></li>
-                    <li><a href=""><i class="fa fa-phone"></i> 0343417170</a></li>
+                    <li><a href=""><i class="fa fa-location-arrow"></i>Xóm Mơ Nồng, Kim Quan, Thạch Thất, Hà Nội</a>
+                    </li>
+                    <li><a href=""><i class="fa fa-phone"></i>0348158822</a></li>
                 </ul>
             </div>
             <div class="pull-right auto-width-right">
                 <ul class="top-details menu-beta l-inline">
                     @if(Auth::check())
-                        <li><a href="profile/thongtin">Chào mừng: {{Auth::user()->name}}</a></li>
-                        <li><a href="{{route('dangxuat')}}">Đăng xuất</a></li>
+                        <li><a href="profile/thongtin">Welcome: {{Auth::user()->name}}</a></li>
+                        <li><a href="{{route('dangxuat')}}">Logout</a></li>
                     @else
-                        <li><a href="{{route('dangky')}}">Đăng kí</a></li>
-                        <li><a href="{{route('dangnhap')}}">Đăng nhập</a></li>
+                        <li><a href="{{route('dangky')}}">Register</a></li>
+                        <li><a href="{{route('dangnhap')}}">Login</a></li>
                     @endif
 
                 </ul>
@@ -31,7 +32,7 @@
                 <div class="space10">&nbsp;</div>
                 <div class="beta-comp">
                     <form role="search" method="get" id="searchform" action="{{route('index')}}">
-                        <input type="text" value="" name="name" id="s" placeholder="Nhập từ khóa..."/>
+                        <input type="text" value="" name="name" id="s" placeholder="Enter keywords..."/>
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
                     </form>
                 </div>
