@@ -13,7 +13,6 @@
             <div class="clearfix"></div>
         </div>
     </div>
-
     <div class="container">
         <div id="content">
             <form action="{{route('dathang')}}" method="post" class="beta-form-checkout">
@@ -23,7 +22,8 @@
                         <div class="space20">&nbsp;</div>
                         @if(count($errors)>0)
                             <div class="alert alert-danger">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                                </button>
                                 <strong>Warning!!</strong>
                                 @foreach($errors->all() as $err)
                                     <br>{{$err}}
@@ -32,13 +32,15 @@
                         @endif
                         @if(session('loi'))
                             <div class="alert alert-danger">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                                </button>
                                 {{session('loi')}}
                             </div>
                         @endif
                         @if(session('thanhcong'))
                             <div class="alert alert-success">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                                </button>
                                 {{session('thanhcong')}}
                             </div>
                         @endif
@@ -51,7 +53,7 @@
                             <input id="gender" type="radio" class="input" name="gender" value="nam
                              " checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
                             <input id="gender" type="radio" class="input" name="gender" value="nu
-                             "  style="width: 10%"><span style="margin-right: 10%">Nữ</span>
+                             " style="width: 10%"><span style="margin-right: 10%">Nữ</span>
                         </div>
                         <div class="form-block">
                             <label for="address">Địa chỉ*</label>
@@ -73,50 +75,61 @@
                             <div class="your-order-head"><h5>Đơn hàng của bạn</h5></div>
                             <div class="your-order-body">
                                 <div class="your-order-item">
-                                     <div>
-                                     @foreach($product_cart as $cart)
-                                        <div class="media">
-                                            <img height="150px" width="130px" src="uploads/products/{{$cart->attributes->image}}" alt="" class="pull-left">
-                                            <div class="media-body">
-                                                <p class="font-large"></p>
-                                                <span class="color-gray your-order-info">Sản phẩm: {{$cart->name}}</span>
-                                                <span class="color-gray your-order-info">Đơn giá: {{number_format($cart->price)}}đ</span>
-                                                <span class="color-gray your-order-info">Số lương: {{number_format($cart->quantity)}} </span>
+                                    <div>
+                                        @foreach($product_cart as $cart)
+                                            <div class="media">
+                                                <img height="150px" width="130px"
+                                                     src="uploads/products/{{$cart->attributes->image}}" alt=""
+                                                     class="pull-left">
+                                                <div class="media-body">
+                                                    <p class="font-large"></p>
+                                                    <span
+                                                        class="color-gray your-order-info">Sản phẩm: {{$cart->name}}</span>
+                                                    <span class="color-gray your-order-info">Đơn giá: {{number_format($cart->price)}}đ</span>
+                                                    <span
+                                                        class="color-gray your-order-info">Số lương: {{number_format($cart->quantity)}} </span>
+                                                </div>
                                             </div>
-                                        </div>
-                                     @endforeach
-                                     </div>
+                                        @endforeach
+                                    </div>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="your-order-item">
                                     <div class="pull-left"><p class="your-order-f18">Tổng tiền: </p></div>
-                                    <div class="pull-right"><h5 class="color-black">{{number_format(\Cart::getSubTotal())}}<u>đ</u></h5></div>
+                                    <div class="pull-right"><h5
+                                            class="color-black">{{number_format(\Cart::getSubTotal())}}<u>đ</u></h5>
+                                    </div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
                             <div class="your-order-head"><h5>Hình thức thanh toán</h5></div>
-
                             <div class="your-order-body">
                                 <ul class="payment_methods methods">
                                     <li class="payment_method_bacs">
-                                        <input id="payment_method_bacs" type="radio" class="input-radio" name="payment" value="1" checked="checked" data-order_button_text="">
+                                        <input id="payment_method_bacs" type="radio" class="input-radio" name="payment"
+                                               value="1" checked="checked" data-order_button_text="">
                                         <label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
                                         <div class="payment_box payment_method_bacs" style="display: block;">
-                                           Cửa hàng sẽ gửi hàng đến địa chỉ của bạn. Bạn xem hàng rồi thanh toán cho nhân viên cửa hàng.
+                                            Cửa hàng sẽ gửi hàng đến địa chỉ của bạn. Bạn xem hàng rồi thanh toán cho
+                                            nhân viên cửa hàng.
                                         </div>
                                     </li>
                                     <li class="payment_method_cheque">
-                                        <input id="payment_method_cheque" type="radio" class="input-radio" name="payment" value="0" data-order_button_text="">
+                                        <input id="payment_method_cheque" type="radio" class="input-radio"
+                                               name="payment" value="0" data-order_button_text="">
                                         <label for="payment_method_cheque">Chuyển khoản </label>
                                         <div class="payment_box payment_method_cheque" style="display: block;">
-                                            Bạn vui lòng chuyển Tiền qua số tài khoản:0231231232 với nội dung là: ID + Họ tên + Tên sản phẩm + ngày đặt.
+                                            Bạn vui lòng chuyển Tiền qua số tài khoản:0231231232 với nội dung là: ID +
+                                            Họ tên + Tên sản phẩm + ngày đặt.
                                         </div>
                                     </li>
-
                                 </ul>
                             </div>
                             @if(\Cart::getSubTotal())
-                            <div class="text-center"><button  type="submit" class="beta-btn primary" name="ok">Hãy Đặt hàng <i class="fa fa-chevron-right"></i></button></div>
+                                <div class="text-center">
+                                    <button type="submit" class="beta-btn primary" name="ok">Hãy Đặt hàng <i
+                                            class="fa fa-chevron-right"></i></button>
+                                </div>
                             @endif
                         </div>
                     </div>

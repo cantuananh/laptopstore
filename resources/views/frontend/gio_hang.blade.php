@@ -13,10 +13,8 @@
             <div class="clearfix"></div>
         </div>
     </div>
-
     <div class="container">
         <div id="content">
-
             <form action="{{route('giohang')}}" method="post" class="beta-form-checkout">
                 <input type="hidden" name="csrf-token" value="{{csrf_token()}}">
                 <table class="table">

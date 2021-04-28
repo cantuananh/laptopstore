@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="row">
                                     @foreach($products as $product)
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 list-product">
                                             <div class="fix-sp">
                                                 <div class="single-item">
                                                     @if($product->cost > $product->price)
@@ -146,4 +146,15 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection
+
+<style>
+    .single-item-caption {
+        margin-top: 0.7rem !important;
+    }
+
+    .list-product {
+        margin-top: 1.6rem;
+    }
+</style>

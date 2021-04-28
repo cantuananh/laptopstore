@@ -5,7 +5,7 @@
                 <ul class="top-menu menu-beta l-inline">
                     <li><a href=""><i class="fa fa-location-arrow"></i>Xóm Mơ Nồng, Kim Quan, Thạch Thất, Hà Nội</a>
                     </li>
-                    <li><a href=""><i class="fa fa-phone"></i>0348158822</a></li>
+                    <li><a href=""><i class="fa fa-phone"></i>Liên hệ: 0348158822</a></li>
                 </ul>
             </div>
             <div class="pull-right auto-width-right">
@@ -26,7 +26,8 @@
     <div class="header-body">
         <div class="container beta-relative">
             <div class="pull-left">
-                <a href="#" id="logo"><img src="uploads/logo/laptop.png" height="100px" width="250px" alt="image"></a>
+                <a href="#" id="logo"><img src="uploads/logo/IT_laptop_logo.png" height="50px" width="150px"
+                                           alt="image"></a>
             </div>
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
@@ -101,3 +102,11 @@
         </div>
     </div>
 </div>
+
+<style>
+    .fa.fa-times {
+        position: relative;
+        top: 1.6px;
+        right: 0.9px;
+    }
+</style>

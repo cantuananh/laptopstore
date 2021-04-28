@@ -61,13 +61,13 @@
 <div>
     <div class="ban1">
         <img src="uploads/logo/laptop.png" height="73px" width="129px" alt="logo" class="img">
-        <p style="color: black" class="divp">Laptop Đào Quang</p>
+        <p style="color: black" class="divp">IT Laptop</p>
     </div>
     <div class="ban2">
-        <p>Địa chỉ: số 3 Đức Hòa, Sóc Sơn, Hà Nội</p>
-        <p>Số điện thoại: 0343417170</p>
-        <p>Email: aovanquang@gmail.com</p>
-        <p>Website: https://laptopdaoquang.com</p>
+        <p>Địa chỉ: Xóm Mơ Nồng, Kim Quan, Thạch Thất, Hà Nội.</p>
+        <p>Số điện thoại: 0348158822</p>
+        <p>Email: anh.ct@deha-soft.com</p>
+        <p>Website: https://itlaptop.com</p>
     </div>
 </div>
 <h1 style="color: red; text-align: center">PHIẾU NHẬP KHO</h1>

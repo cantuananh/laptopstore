@@ -126,7 +126,7 @@
                         <div class="row">{{$sanpham_tuongtu->links()}}</div>
                     </div>
                 </div>
-                <div class="col-sm-3 aside">
+                <div class="col-sm-3 list-product aside">
                     <div class="widget">
                         <h3 class="widget-title">Tất cả sản phẩm</h3>
                         <div class="widget-body">
@@ -156,3 +156,13 @@
     </div>
     </div>
 @endsection
+
+<style>
+    .single-item-caption {
+        margin-top: 0.7rem !important;
+    }
+
+    .list-product {
+        margin-top: 1.6rem;
+    }
+</style>

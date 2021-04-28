@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('content')
-    <div class="inner-header">
+    <div class="inner-header" style="background-color: #D6EAF8">
         <div class="container">
             <div class="pull-left">
                 <h6 class="inner-title">Loại sản phẩm {{$loai_sp->name}}</h6>
@@ -39,7 +39,7 @@
                                         <div class="single-item">
                                             <div class="ribbon-wrapper">
                                                 @if($sp->cost>$sp->price)
-                                                <div class="ribbon sale">Sale</div>
+                                                    <div class="ribbon sale">Sale</div>
                                                 @endif
                                             </div>
                                             <div class="single-item-header">
@@ -68,7 +68,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                    <div class="space10">&nbsp;</div>
+                                <div class="space10">&nbsp;</div>
                             </div>
                             <div class="row">{{$chi_tiet->links()}}</div>
                         </div>
@@ -83,7 +83,7 @@
                             </div>
                             <div class="row">
                                 @foreach($sp_khac as $spkhac)
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 list-product">
                                         <div class="single-item">
                                             <div class="ribbon-wrapper">
                                                 @if($spkhac->cost>$spkhac->price)
@@ -116,11 +116,10 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                    <div class="space10">&nbsp;</div>
+                                <div class="space10">&nbsp;</div>
                             </div>
                             <div class="row">{{$sp_khac->links()}}</div>
                             <div class="space40">&nbsp;</div>
-
                         </div>
                     </div>
                 </div>
@@ -128,3 +127,13 @@
         </div>
     </div>
 @endsection
+
+<style>
+    .single-item-caption {
+        margin-top: 0.7rem !important;
+    }
+
+    .list-product {
+        margin-top: 1.6rem;
+    }
+</style>
