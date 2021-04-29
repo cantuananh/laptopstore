@@ -20,32 +20,36 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>STT</th>
-                        <th>Tên</th>
-                        <th>Hình ảnh</th>
-                        <th>Giá</th>
-                        <th>Số lượng</th>
-                        <th>Thành tiền</th>
-                        <th>Thao tác</th>
+                        <th class="text-center">STT</th>
+                        <th class="text-center">Tên</th>
+                        <th class="text-center">Hình ảnh</th>
+                        <th class="text-center">Giá</th>
+                        <th class="text-center">Số lượng</th>
+                        <th class="text-center">Thành tiền</th>
+                        <th class="text-center">Thao tác</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php $i = 1?>
                     @foreach($product_cart as $cart)
                         <tr>
-                            <td>#{{$i}}</td>
+                            <td class="text-center">{{$i}}</td>
                             <td>{{$cart->name}}</td>
-                            <td><img height="100px" width="90px" src="uploads/products/{{$cart->attributes->image}}"
+                            <td class="text-center"><img height="100px" width="130px" src="uploads/products/{{$cart->attributes->image}}"
                                      alt="" class="pull-left"></td>
                             <td>{{number_format($cart->price)}}đ</td>
-                            <td>
-                                <input id="qty-{{$cart->id}}" value="{{$cart->quantity}}" type="number" min="1">
-                                <a class="quantity-update btn-danger" cart="{{$cart->id}}">Cập nhật</a>
+                            <td class="text-center">
+                                <input id="qty-{{$cart->id}}"
+                                       value="{{$cart->quantity}}"
+                                       type="number"
+                                       min="1"
+                                       class="product-number">
+                                <button class="quantity-update btn-success" cart="{{$cart->id}}">Update</button>
                             </td>
-                            <td>
+                            <td class="text-center">
                                 {{number_format($cart->price * $cart->quantity)}}<u>đ</u></td>
-                            <td>
-                                <a href="{{url('del-cart',['id'=>$cart['id']])}}"><i class="fa fa-trash-o"></i>Xóa</a>
+                            <td class="text-center">
+                                <a href="{{url('del-cart',['id'=>$cart['id']])}}"><i class="fa fa-trash-o text-danger icons-delete-product"></i>Xóa</a>
                             </td>
                         </tr>
                         <?php $i++?>
@@ -64,3 +68,17 @@
         }
     </script>
 @endsection
+
+<style>
+    .product-number {
+        width: 40% !important;
+    }
+
+    .quantity-update {
+        opacity: 0.5;
+    }
+
+    .icons-delete-product {
+        font-size: 1rem;
+    }
+</style>

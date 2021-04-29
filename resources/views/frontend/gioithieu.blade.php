@@ -33,8 +33,8 @@
                     </div>
                 </div>
                 <div class="col-sm-6 wow fadeInRight">
-                    <div class="beta-person media ">
-                        <img class="pull-left" src="uploads/introduce/banner1.jpg" height="350px" width="600px" alt="">\
+                    <div class="beta-person media">
+                        <img class="pull-left" src="uploads/introduce/banner1.jpg" height="350px" width="600px" alt="">
                         <div class="media-body beta-person-body">
                             <h5>Chất lượng và bảo hành tốt</h5>
                             <p class="font-large">Tất cả sản phẩm tại cửa hàng đều là chính hãng.</p>
@@ -47,3 +47,9 @@
         </div>
     </div>
 @endsection
+
+<style>
+    .font-large {
+        margin-top: 0.9rem;
+    }
+</style>

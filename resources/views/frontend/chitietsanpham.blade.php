@@ -45,7 +45,7 @@
                     <div class="space40">&nbsp;</div>
                     <div class="woocommerce-tabs">
                         <ul class="tabs">
-                            <li><a href="#tab-description">Mô tả</a></li>
+                            <li><a href="#tab-description"><b>Mô tả</b></a></li>
                         </ul>
                         <div class="panel" id="tab-description">
                             <p>
@@ -55,22 +55,22 @@
                                 <br> Bộ nhớ: {{$detail_product->ram}} GB
                             </p>
                             <br>
-
                             <form action="{{route('feedback',['id' => $id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 <label>Bình luận của bạn</label>
                                 <br>
-                                <input type="text" name="comment" maxlength="80" placeholder="Nhập bình luận của bạn về sản phẩm!">
+                                <input type="text" name="comment" maxlength="80"
+                                       placeholder="Nhập bình luận của bạn về sản phẩm!">
                                 <br>
                                 @if($check)
-                                <button type="submit" class="btn btn-primary ">Đánh giá sản
-                                    phẩm</button>
+                                    <button type="submit" class="btn btn-primary ">Đánh giá sản
+                                        phẩm
+                                    </button>
                                 @else
                                     <a href="{{route('dangnhap')}}" class="btn btn-primary">Đánh giá sản
                                         phẩm</a>
                                 @endif
                             </form>
-
                             <hr>
                             <p>
                             @foreach($feed_backs as $fb)
@@ -106,7 +106,8 @@
                                             <p class="single-item-title">{{$sptt->name}}</p>
                                             <p class="single-item-price" style="font-size: 18px">
                                                 @if($sptt->cost>$sptt->price)
-                                                <span class="flash-del">{{number_format($sptt->cost)}}<u>đ</u></span>
+                                                    <span
+                                                        class="flash-del">{{number_format($sptt->cost)}}<u>đ</u></span>
                                                 @endif
                                                 <span class="flash-sale">{{number_format($sptt->price)}}<u>đ</u></span>
                                             </p>
@@ -139,7 +140,8 @@
                                             <p class="single-item-title" style="font-size: 18px">{{$sptt->name}}</p>
                                             <p class="single-item-price" style="font-size: 18px">
                                                 @if($sptt->cost>$sptt->price)
-                                                <span class="flash-del">{{number_format($sptt->cost)}}<u>đ</u></span>
+                                                    <span
+                                                        class="flash-del">{{number_format($sptt->cost)}}<u>đ</u></span>
                                                 @endif
                                                 <span class="flash-sale">{{number_format($sptt->price)}}<u>đ</u></span>
                                             </p>

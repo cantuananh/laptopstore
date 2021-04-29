@@ -74,9 +74,11 @@
                                                 </div>
                                                 <div class="single-item-caption">
                                                     <a class="add-to-cart pull-left"
+                                                       title="Thêm vào giỏ hàng"
                                                        href="{{route('themgiohang',$product->id)}}"><i
                                                             class="fa fa-shopping-cart"></i></a>
                                                     <a class="beta-btn primary"
+                                                       title="Chi tiết sản phẩm"
                                                        href="{{route('chitietsanpham',$product->id)}}">Chi tiết<i
                                                             class="fa fa-chevron-right"></i></a>
                                                     <div class="clearfix"></div>
@@ -125,9 +127,11 @@
                                                     </div>
                                                     <div class="single-item-caption">
                                                         <a class="add-to-cart pull-left"
+                                                           title="Thêm vào giỏ hàng"
                                                            href="{{route('themgiohang',$product->id)}}"><i
                                                                 class="fa fa-shopping-cart"></i></a>
                                                         <a class="beta-btn primary"
+                                                           title="Chi tiết sản phẩm"
                                                            href="{{route('chitietsanpham',$product->id)}}">Chi tiết<i
                                                                 class="fa fa-chevron-right"></i></a>
                                                         <div class="clearfix"></div>
@@ -156,5 +160,9 @@
 
     .list-product {
         margin-top: 1.6rem;
+    }
+
+    .pagination {
+        padding-left: 0.9rem !important;
     }
 </style>

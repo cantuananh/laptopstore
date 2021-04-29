@@ -1,4 +1,4 @@
-<div id="header">
+<div id="header" style="background-color: #f4f6f6">
     <div class="header-top">
         <div class="container">
             <div class="pull-left auto-width-left">
@@ -39,13 +39,15 @@
                 </div>
                 @if($product_cart->count())
                     <div class="beta-comp">
-                        <div class="cart">
+                        <div class="cart" title="Xem giỏ hàng">
                             <div class="beta-select"><i class="fa fa-shopping-cart"></i>Giỏ hàng
                                 ({{$product_cart->count()}})<i class="fa fa-chevron-down"></i></div>
-                            <div class="beta-dropdown cart-body">
+                            <div class="beta-dropdown cart-body" style="background-color: #f4f6f6">
                                 @foreach($product_cart as $cart)
                                     <div class="cart-item">
-                                        <a class="cart-item-delete" href="{{url('del-cart',['id'=>$cart['id']])}}"><i
+                                        <a class="cart-item-delete"
+                                           title="Xoá khỏi giỏ hàng"
+                                           href="{{url('del-cart',['id'=>$cart['id']])}}"><i
                                                 class="fa fa-times"></i></a>
                                         <div class="media">
                                             <a class="pull-left" href="#"><img
@@ -67,7 +69,10 @@
                                     <div class="clearfix"></div>
                                     <div class="center">
                                         <div class="space10">&nbsp;</div>
-                                        <a href="{{route('giohang')}}" class="beta-btn primary text-center">Đặt hàng <i
+                                        <a href="{{route('giohang')}}"
+                                           title="Đặt hàng"
+                                           class="beta-btn order primary text-center"
+                                        ><b>Đặt hàng</b><i
                                                 class="fa fa-chevron-right"></i></a>
                                     </div>
                                 </div>
@@ -108,5 +113,15 @@
         position: relative;
         top: 1.6px;
         right: 0.9px;
+    }
+
+    .beta-btn.order {
+        background-color: #006899;
+        color: white;
+    }
+
+    .fa.fa-shopping-cart {
+        color: #DC7633 !important;
+        font-size: 1.5rem !important;
     }
 </style>
