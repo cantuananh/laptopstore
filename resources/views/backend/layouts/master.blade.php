@@ -126,13 +126,10 @@
             @yield('content')
         </div>
     </div>
-    <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-            <b>Version</b>
-        </div>
-        <strong>Copyright &copy; 2019-2020 <a href="https://www.facebook.com/daotrongquang">IT laptop</a>.</strong>
-        All rights
-        reserved.
+    <footer class="main-footer text-center">
+        <strong>Copyright &copy; 2021 <a href="https://www.facebook.com/daotrongquang">IT laptop - Cấn Tuấn
+                Anh</a>.</strong>
+        All rights reserved.
     </footer>
     <aside class="control-sidebar control-sidebar-dark">
     </aside>

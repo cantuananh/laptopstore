@@ -42,7 +42,6 @@
                             @endif
                         </div>
                         <div class="form-group">
-                            <a href="admin/profile/sua" class="btn btn-primary">Sửa thông tin</a>
                             @if(Auth::user()->level == 1)
                                 <a href="admin/" class="btn btn-primary">Trang quản trị</a>
                             @endif

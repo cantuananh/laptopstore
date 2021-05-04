@@ -68,11 +68,11 @@
                         <td class="text-center">
                             <form action="{{route('updateBillStatus',['id'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}
-                                    @if($bill->status == 1)
-                                        <i class="fas fa-check-circle" title="Chưa thanh toán"></i>
-                                    @else
-                                        <i class="fas fa-check-circle" title="Đã thanh toán" style="color: green"></i>
-                                    @endif
+                                @if($bill->status == 1)
+                                    <i class="fas fa-check-circle" title="Chưa thanh toán"></i>
+                                @else
+                                    <i class="fas fa-check-circle" title="Đã thanh toán" style="color: green"></i>
+                                @endif
                             </form>
                         </td>
                         <td class="text-center">

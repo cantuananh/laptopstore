@@ -4,8 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Hóa Đơn Bán Hàng
-                        <small>Sửa</small>
+                    <h1 class="page-header">Sửa hoá đơn bán hàng
                     </h1>
                 </div>
                 <div class="col-lg-7" style="padding-bottom:120px">
@@ -29,17 +28,13 @@
                         </div>
                         <div class="form-group">
                             <label>Phương thức thanh toán</label>
-                            <label class="radio-inline">
-                                <input name="payment" value="1" {{$order->payment == 1 ? 'checked': ''}} type="radio">Tiền
-                                mặt
-                            </label>
-                            <label class="radio-inline">
-                                <input name="payment" value="0" {{$order->payment == 2 ? 'checked': ''}} type="radio">Qua
-                                thẻ
-                            </label>
+                            <div class="radio-inline">
+                                <input name="payment" value="1" {{$order->payment == 1 ? 'checked': ''}} type="radio"> Tiền mặt
+                                <input name="payment" value="0" {{$order->payment == 2 ? 'checked': ''}} type="radio"> Qua thẻ
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-default" name='ok'>Lưu lại</button>
-                        <a href="{{route('orders.index')}}" class="btn btn-default">Trở về</a>
+                        <button type="submit" class="btn btn-success" name='ok'>Lưu lại</button>
+                        <a href="{{route('orders.index')}}" class="btn btn-primary">Trở về</a>
                         {{csrf_field()}}
                         @method('PATCH')
                     </form>

@@ -4,8 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Hóa Đơn Bán Hàng
-                        <small>Thêm</small>
+                    <h1 class="page-header">Thêm hóa đơn bán hàng
                     </h1>
                 </div>
                 <div class="col-lg-7" style="padding-bottom:120px">
@@ -36,15 +35,14 @@
                         </div>
                         <div class="form-group">
                             <label>Phương thức thanh toán</label>
-                            <label class="radio-inline">
-                                <input name="payment" value="1" checked="" type="radio">Tiền mặt
-                            </label>
-                            <label class="radio-inline">
-                                <input name="payment" value="2" type="radio">Qua thẻ
-                            </label>
+                            <div class="radio-inline">
+                                <input name="payment" value="1" checked="" type="radio"> Tiền mặt
+                                <input name="payment" value="2" type="radio"> Qua thẻ
+
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-default">Thêm</button>
-                        <a href="{{route('orders.index')}}" class="btn btn-default">Trở về</a>
+                        <button type="submit" class="btn btn-success">Thêm</button>
+                        <a href="{{route('orders.index')}}" class="btn btn-primary">Trở về</a>
                         {{csrf_field()}}
                     </form>
                 </div>
