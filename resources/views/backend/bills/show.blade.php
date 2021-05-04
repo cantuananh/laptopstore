@@ -12,17 +12,17 @@
                             {{ session()->get('seri') }}
                         </div>
                     @endif
-                    <h1 class="page-header">Phiếu nhập kho
-                        <small>Chi tiết</small>
+                    <h1 class="page-header text-center">Chi tiết phiếu nhập kho
                         @if($bill->status == 1)
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#newBillProductModal"
+                        <button class="btn btn-success" data-toggle="modal" data-target="#newBillProductModal"
+                                title="Thêm chi tiết phiếu nhập kho"
                                 value="{{$bill->id}}" style="color: white;border-radius: 50%"><i
                                 class="fas fa-plus-circle"></i>
                         </button>
                         @endif
                         <a href="{{route('bills.index')}}" class="btn btn-primary"
-                           style="color: white;border-radius: 50%"><i class="fa fa-arrow-left"
-                                                                      aria-hidden="true"></i></a>
+                           title="Trở về"
+                           style="color: white;border-radius: 50%"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                     </h1>
                 </div>
                 <table class="table table-striped table-bordered table-hover">

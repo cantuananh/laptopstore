@@ -25,7 +25,7 @@
                     <input type="text" class="col-lg-4" name="brand_id"
                            placeholder="Nhập loai hàng..." style="margin-right: 5px">
                     <button type="submit" class="col-lg-1"
-                    title="Tìm kiếm sản phẩm">
+                            title="Tìm kiếm sản phẩm">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
@@ -52,7 +52,7 @@
                         <td>{{$product->name}}</td>
                         <td class="text-center">{{$product->brand->name}}</td>
                         <td class="text-center"><img src="uploads/products/{{$product->image}}" height="100"
-                                 width="150">
+                                                     width="150">
                         </td>
                         <td class="text-center">{{$product->microprocessors}}</td>
                         <td class="text-center">{{$product->screen}}</td>

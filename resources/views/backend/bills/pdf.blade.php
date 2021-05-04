@@ -12,17 +12,17 @@
     <link href="admin_source/css/mycss.css" rel="stylesheet" type="text/css">
     <style>
         @font-face {
-            font-family: ipag, Tahoma,'Roboto',Sans-Serif;
+            font-family: ipag, Tahoma, 'Roboto', Sans-Serif;
             font-style: normal;
             font-weight: normal;
         }
 
         body {
-            font-family: ipag ,Tahoma, 'Roboto', Sans-Serif;
+            font-family: ipag, Tahoma, 'Roboto', Sans-Serif;
         }
 
         table {
-            font-family: ipag,Tahoma, Roboto,Sans-Serif;
+            font-family: ipag, Tahoma, Roboto, Sans-Serif;
             border-collapse: collapse;
             width: 100%;
         }

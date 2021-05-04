@@ -41,15 +41,13 @@
                         </div>
                         <div class="form-group">
                             <label>Phương thức thanh toán</label>
-                            <label class="radio-inline">
-                                <input name="payment" value="1" checked="" type="radio">Tiền mặt
-                            </label>
-                            <label class="radio-inline">
-                                <input name="payment" value="2" type="radio">Qua thẻ
-                            </label>
+                            <div class="radio-inline">
+                                <input name="payment" value="1" checked="" type="radio"> Tiền mặt
+                                <input name="payment" value="2" type="radio"> Qua thẻ
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-default">Thêm</button>
-                        <a href="{{route('bills.index')}}" class="btn btn-default">Trở về</a>
+                        <button type="submit" class="btn btn-success">Thêm</button>
+                        <a href="{{route('bills.index')}}" class="btn btn-primary">Trở về</a>
                         {{csrf_field()}}
                     </form>
                 </div>

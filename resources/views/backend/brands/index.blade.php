@@ -40,7 +40,7 @@
             @foreach($brands as $brand)
                 <tr class="odd gradeX">
                     <td class="text-center">{{$brand->id}}</td>
-                    <td class="text-center" >{{$brand->name}}</td>
+                    <td class="text-center">{{$brand->name}}</td>
                     <td>{{$brand->description}}</td>
                     <td class="text-center">
                         <form action="{{route('brands.destroy',['brand'=>$brand->id])}}" method="POST">
