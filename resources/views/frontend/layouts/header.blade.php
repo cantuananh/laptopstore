@@ -122,6 +122,6 @@
 
     .fa.fa-shopping-cart {
         color: #DC7633 !important;
-        font-size: 1.5rem !important;
+        font-size: 1rem !important;
     }
 </style>

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('content')
-    <div class="inner-header">
+    <div class="inner-header" style="background-color: #D6EAF8">
         <div class="container">
             <div class="pull-left">
                 <h6 class="inner-title">Đơn đặt hàng</h6>
@@ -18,7 +18,7 @@
             <form action="{{route('dathang')}}" method="post" class="beta-form-checkout">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h4>Thông tin</h4>
+                        <h4>Thông tin cá nhân</h4>
                         <div class="space20">&nbsp;</div>
                         @if(count($errors)>0)
                             <div class="alert alert-danger">
@@ -45,7 +45,7 @@
                             </div>
                         @endif
                         <div class="form-block">
-                            <label for="name">Họ tên*</label>
+                            <label for="name">Họ tên (<span style="color: red">*</span>)</label>
                             <input type="text" id="name" name="name" value="{{get_data_user('web','name')}}">
                         </div>
                         <div class="form-block">
@@ -56,12 +56,12 @@
                              " style="width: 10%"><span style="margin-right: 10%">Nữ</span>
                         </div>
                         <div class="form-block">
-                            <label for="address">Địa chỉ*</label>
+                            <label for="address">Địa chỉ (<span style="color: red">*</span>)</label>
                             <input type="text" id="address" name="address" value="{{get_data_user('web','address')}}">
                         </div>
 
                         <div class="form-block">
-                            <label for="phone">Điện thoại*</label>
+                            <label for="phone">Điện thoại (<span style="color: red">*</span>)</label>
                             <input type="text" id="phone" name="phone" value="{{get_data_user('web','phone')}}">
                         </div>
 
@@ -77,17 +77,17 @@
                                 <div class="your-order-item">
                                     <div>
                                         @foreach($product_cart as $cart)
-                                            <div class="media">
-                                                <img height="150px" width="130px"
+                                            <div class="media content-product">
+                                                <img height="100px" width="140px"
                                                      src="uploads/products/{{$cart->attributes->image}}" alt=""
                                                      class="pull-left">
-                                                <div class="media-body">
-                                                    <p class="font-large"></p>
+                                                <div class="media-body content-product">
+                                                    <p class="font-large content-product"></p>
                                                     <span
-                                                        class="color-gray your-order-info">Sản phẩm: {{$cart->name}}</span>
-                                                    <span class="color-gray your-order-info">Đơn giá: {{number_format($cart->price)}}đ</span>
+                                                        class="color-black your-order-info ">Sản phẩm: {{$cart->name}}</span>
+                                                    <span class="color-black your-order-info">Đơn giá: {{number_format($cart->price)}}đ</span>
                                                     <span
-                                                        class="color-gray your-order-info">Số lương: {{number_format($cart->quantity)}} </span>
+                                                        class="color-black your-order-info">Số lương: {{number_format($cart->quantity)}} </span>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -110,7 +110,7 @@
                                                value="1" checked="checked" data-order_button_text="">
                                         <label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
                                         <div class="payment_box payment_method_bacs" style="display: block;">
-                                            Cửa hàng sẽ gửi hàng đến địa chỉ của bạn. Bạn xem hàng rồi thanh toán cho
+                                            Cửa hàng sẽ gửi hàng đến địa chỉ của bạn. Sau đó bạn có thế kiểm tra hàng rồi thanh toán cho
                                             nhân viên cửa hàng.
                                         </div>
                                     </li>
@@ -119,7 +119,7 @@
                                                name="payment" value="0" data-order_button_text="">
                                         <label for="payment_method_cheque">Chuyển khoản </label>
                                         <div class="payment_box payment_method_cheque" style="display: block;">
-                                            Bạn vui lòng chuyển Tiền qua số tài khoản:0231231232 với nội dung là: ID +
+                                            Bạn vui lòng chuyển tiền qua số tài khoản ACB: 6978367 - CAN TUAN ANH với nội dung là: ID +
                                             Họ tên + Tên sản phẩm + ngày đặt.
                                         </div>
                                     </li>
@@ -139,3 +139,10 @@
         </div>
     </div>
 @endsection
+
+<style>
+    .content-product {
+        margin-top: 0.6rem;
+    }
+</style>
+

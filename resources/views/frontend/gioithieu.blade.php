@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-sm-6 wow fadeInLeft">
                     <div class="beta-person media">
-                        <img class="pull-left" src="uploads/introduce/banner2.png" height="350px" width="600px" alt="">
+                        <img class="pull-left" src="uploads/introduce/banner3.png" height="350px" width="600px" alt="">
                         <div class="media-body beta-person-body">
                             <h5>Sản phẩm đa dạng</h5>
                             <p class="font-large">Sản phẩm của chúng tôi đa dạng về thương hiệu.</p>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-sm-6 wow fadeInRight">
                     <div class="beta-person media">
-                        <img class="pull-left" src="uploads/introduce/banner1.jpg" height="350px" width="600px" alt="">
+                        <img class="pull-left" src="uploads/introduce/banner4.jpg" height="350px" width="600px" alt="">
                         <div class="media-body beta-person-body">
                             <h5>Chất lượng và bảo hành tốt</h5>
                             <p class="font-large">Tất cả sản phẩm tại cửa hàng đều là chính hãng.</p>

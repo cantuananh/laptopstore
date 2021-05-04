@@ -79,6 +79,7 @@
                                                             class="fa fa-shopping-cart"></i></a>
                                                     <a class="beta-btn primary"
                                                        title="Chi tiết sản phẩm"
+                                                       style="color: black"
                                                        href="{{route('chitietsanpham',$product->id)}}">Chi tiết<i
                                                             class="fa fa-chevron-right"></i></a>
                                                     <div class="clearfix"></div>
@@ -131,6 +132,7 @@
                                                            href="{{route('themgiohang',$product->id)}}"><i
                                                                 class="fa fa-shopping-cart"></i></a>
                                                         <a class="beta-btn primary"
+                                                           style="color: black"
                                                            title="Chi tiết sản phẩm"
                                                            href="{{route('chitietsanpham',$product->id)}}">Chi tiết<i
                                                                 class="fa fa-chevron-right"></i></a>

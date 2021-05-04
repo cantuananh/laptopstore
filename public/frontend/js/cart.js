@@ -3,15 +3,16 @@ function callAjax1(url, data = null, type = 'get') {
         url: url,
         type: type,
         data: data,
-        dataType: 'json',
+        dataType: 'json'
     });
 }
 
 $(function () {
     $('.quantity-update').click(function (event) {
+        event.preventDefault();
         let id = $(this).attr('cart');
-        let url = '/sua-gio-hang/'+ id;
-        let quantity = $('#qty-'+id).val();
+        let url = '/sua-gio-hang/' + id;
+        let quantity = $('#qty-' + id).val();
         let data = {
             "qty": quantity,
             "_token": $('meta[name="csrf-token"]').attr('content')

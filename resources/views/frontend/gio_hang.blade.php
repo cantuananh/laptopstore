@@ -35,8 +35,9 @@
                         <tr>
                             <td class="text-center">{{$i}}</td>
                             <td>{{$cart->name}}</td>
-                            <td class="text-center"><img height="100px" width="130px" src="uploads/products/{{$cart->attributes->image}}"
-                                     alt="" class="pull-left"></td>
+                            <td class="text-center"><img height="100px" width="130px"
+                                                         src="uploads/products/{{$cart->attributes->image}}"
+                                                         alt="" class="pull-left"></td>
                             <td>{{number_format($cart->price)}}đ</td>
                             <td class="text-center">
                                 <input id="qty-{{$cart->id}}"
@@ -44,20 +45,25 @@
                                        type="number"
                                        min="1"
                                        class="product-number">
-                                <button class="quantity-update btn-success" cart="{{$cart->id}}">Update</button>
+                                <button class="quantity-update btn-success" title="Cập nhật số lượng"
+                                        cart="{{$cart->id}}"><b>Update</b></button>
                             </td>
                             <td class="text-center">
                                 {{number_format($cart->price * $cart->quantity)}}<u>đ</u></td>
                             <td class="text-center">
-                                <a href="{{url('del-cart',['id'=>$cart['id']])}}"><i class="fa fa-trash-o text-danger icons-delete-product"></i>Xóa</a>
+                                <a href="{{url('del-cart',['id'=>$cart['id']])}}"><i
+                                        class="fa fa-trash-o text-danger icons-delete-product"></i>Xoá</a>
                             </td>
                         </tr>
                         <?php $i++?>
                     @endforeach
                     </tbody>
                 </table>
-                <h5 class="class pull-right">Tổng tiền thanh toán: {{number_format(\Cart::getSubTotal())}}<u>đ</u> <a
-                        href="{{route('dathang')}}" class="btn btn-success">Thanh Toán</a></h5>
+                <h5 class="class pull-right">Tổng tiền thanh toán: <b>{{number_format(\Cart::getSubTotal())}}</b><u>đ</u></h5>
+                <br>
+                <div class="pay-product">
+                    <a href="{{route('dathang')}}" class="btn btn-warning pay-btn"><b class="pay-text">Thanh toán</b></a>
+                </div>
             </form>
         </div>
     </div>
@@ -75,10 +81,31 @@
     }
 
     .quantity-update {
-        opacity: 0.5;
+        border-radius: 10px 10px 10px 10px;
     }
 
     .icons-delete-product {
         font-size: 1rem;
+    }
+
+    .pay-product {
+        position: absolute;
+
+        right: 50%;
+        margin-top: 2.5rem !important;
+    }
+
+    #content {
+        height: 53%;
+    }
+
+    .pay-btn {
+        height: 3rem;
+        width: 10rem;
+    }
+
+    .pay-text {
+        position: relative;
+        top: 0.4rem;
     }
 </style>
