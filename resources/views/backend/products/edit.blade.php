@@ -3,8 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Sản Phẩm
-                    <small>Sửa</small>
+                <h1 class="page-header">Sửa sản phẩm
                 </h1>
             </div>
             <div class="col-lg-7" style="padding-bottom:120px">
@@ -18,7 +17,7 @@
                         </div>
                     @endif
                     <div class="form-group">
-                        <label>Tên sản phẩm</label>
+                        <label>Tên sản phẩm (<span style="color: red">*</span>)</label>
                         <input class="form-control" name="name" placeholder="Nhập tên đầy đủ"
                                value="{{$product->name}}"/>
                         @error('name')
@@ -26,7 +25,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Thương hiệu</label>
+                        <label>Thương hiệu (<span style="color: red">*</span>)</label>
                         <select class="form-control" name="brand_id">
                             @foreach($brands as $brand)
                                 <option value='{{$brand->id}}'>{{$brand->name}}</option>
@@ -34,7 +33,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Mô tả</label>
+                        <label>Mô tả (<span style="color: red">*</span>)</label>
                         <textarea id="description" class="form-control" name="description" rows="4" cols="5"
                                   placeholder="Nhập mô tả">
                                         {{$product->description}}</textarea>
@@ -43,7 +42,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Giá gốc</label>
+                        <label>Giá gốc (<span style="color: red">*</span>)</label>
                         <input class="form-control" name="cost" placeholder="Nhập giá gốc"
                                value="{{$product->cost}}"/>
                         @error('cost')
@@ -51,7 +50,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Giá</label>
+                        <label>Giá (<span style="color: red">*</span>)</label>
                         <input class="form-control" name="price" placeholder="Nhập giá bán"
                                value="{{$product->price}}"/>
                         @error('price')
@@ -59,7 +58,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Ram</label>
+                        <label>Ram (<span style="color: red">*</span>)</label>
                         <input class="form-control" name="ram" placeholder="Nhập dung lượng ram"
                                value="{{$product->ram}}"/>
                         @error('ram')
@@ -67,7 +66,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Màn hình</label>
+                        <label>Màn hình (<span style="color: red">*</span>)</label>
                         <input class="form-control" name="screen" placeholder="Nhập độ lớn màn hình"
                                value="{{$product->screen}}"/>
                         @error('screen')
@@ -75,7 +74,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Vi xử lý</label>
+                        <label>Vi xử lý (<span style="color: red">*</span>)</label>
                         <input class="form-control" name="microprocessors" placeholder="Nhập vi xử lý"
                                value="{{$product->microprocessors}}"/>
                         @error('microprocessors')
@@ -93,15 +92,15 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label>Thời gian bảo hành</label>
+                        <label>Thời gian bảo hành (<span style="color: red">*</span>)</label>
                         <input class="form-control" name="guarantee_time" placeholder="Nhập thời gian bảo hành"
                                value="{{$product->guarantee_time}}"/>
                         @error('guarantee_time')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-default" name='ok'>Lưu lại</button>
-                    <a href="{{route('products.index')}}" class="btn btn-default">Trở về</a>
+                    <button type="submit" class="btn btn-success" name='ok'>Lưu lại</button>
+                    <a href="{{route('products.index')}}" class="btn btn-primary">Trở về</a>
                     {{csrf_field()}}
                     @method('PATCH')
                 </form>

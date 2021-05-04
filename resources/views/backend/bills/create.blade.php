@@ -4,8 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Phiếu nhập kho
-                        <small>Thêm</small>
+                    <h1 class="page-header">Thêm phiếu nhập kho
                     </h1>
                 </div>
                 <div class="col-lg-7" style="padding-bottom:120px">

@@ -4,19 +4,19 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Chi tiết sản phẩm
-                        <small>Chi tiết</small>
+                    <h1 class="page-header text-center">Chi tiết sản phẩm
                         <a href="{{route('products.index')}}" class="btn btn-primary"
+                           title="Trở về"
                            style="color: white;border-radius: 50%"><i class="fa fa-arrow-left"
                                                                       aria-hidden="true"></i></a>
                     </h1>
                 </div>
             </div>
             <form action="{{route('products.show',['product'=>$id])}}" method="get" role="search">
-                <div class="input-group">
+                <div class="input-group d-flex justify-content-center">
                     <input type="text" class="col-lg-3" name="seri"
                            placeholder="Nhập số seri..." style="margin-right: 5px">
-                    <button type="submit" class="col-lg-2">
+                    <button type="submit" class="col-lg-1">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
@@ -33,19 +33,18 @@
                 <tbody class="table__list_item">
                 @foreach($product_items as $item)
                     <tr class="odd gradeX">
-                        <td>{{$item->id}}</td>
-                        <td>
+                        <td class="text-center align-middle">{{$item->id}}</td>
+                        <td class="align-middle">
                             {{$item->seri}}
                         </td>
-                        <td class="center">
+                        <td class="text-center ">
                             <form action="{{route('updateDetailProduct',['id'=>$item->id])}}" method="POST">
                                 {!! csrf_field() !!}
-                                <button type="submit">  @if($item->status == 1)
-                                        Chưa bán
-                                    @else
-                                        Đã Bán
-                                    @endif
-                                </button>
+                                @if($item->status == 1)
+                                    <i class="fas fa-check-circle" title="Chưa bán"></i>
+                                @else
+                                    <i class="fas fa-check-circle" title="Đã bán" style="color: green"></i>
+                                @endif
                             </form>
                         </td>
                     </tr>
@@ -56,3 +55,9 @@
     </div>
     </div>
 @endsection
+
+<style>
+    .fas.fa-check-circle {
+        font-size: 1.5rem;
+    }
+</style>

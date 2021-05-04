@@ -4,10 +4,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Phiếu nhập kho
-                        <small>Danh sách</small>
-                        <a href="{{route('bills.create')}}" class="btn btn-primary"
-                           style="color: white;border-radius: 50%"><i class="fas fa-plus-circle"></i></a>
+                    <h1 class="page-header text-center">Danh sách phiếu nhập kho
+                        <a href="{{route('bills.create')}}"
+                           title="Thêm phiếu nhập kho"
+                           style="color: green; font-size: 1.5rem"><i class="fas fa-plus-circle"></i></a>
                     </h1>
                 </div>
                 @if(session('message'))
@@ -19,15 +19,15 @@
                 @endif
             </div>
             <form action="{{route('bills.index')}}" method="get" role="search">
-                <div class="input-group">
+                <div class="input-group d-flex justify-content-center">
                     <input type="text" name="name"
-                           placeholder="Nhập tên..." style="width: 50%;margin-right: 10px">
+                           placeholder="Nhập tên phiếu nhập kho..." style="width: 50%;margin-right: 10px">
                     <select style="width: 20%; height: 25px; margin-right: 10px" name="payment">
                         <option value="">Tất cả</option>
                         <option value="1">Tiền mặt</option>
                         <option value="0">Qua thẻ</option>
                     </select>
-                    <button type="submit" style="width: 20%">
+                    <button type="submit" style="width: 20%" class="col-lg-1" title="Thêm phiếu nhập kho">
                         <span class="fas fa-search"></span>
                     </button>
                 </div>
@@ -49,9 +49,9 @@
                 <tbody>
                 @foreach($bills as $bill)
                     <tr class="odd gradeX">
-                        <td>{{$bill->id}}</td>
+                        <td class="text-center">{{$bill->id}}</td>
                         <td>{{$bill->user->name}}</td>
-                        <td>
+                        <td class="text-center">
                             <?php Carbon\Carbon::setLocale('vi');
                             if (Carbon\Carbon::createFromTimestamp(strtotime($bill->created_at))->diffInHours() >= 24) {
                                 $date = $bill->created_at;
@@ -63,33 +63,41 @@
                         </td>
                         <td> {{$bill->supplier->name}}</td>
                         <td> @if($bill->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
-                        <td> {{ number_format($bill->total_price-$bill->total_price*($bill->supplier->percent_discount/100))}} <u>đ</u></td>
-                        <td>
+                        <td> {{ number_format($bill->total_price-$bill->total_price*($bill->supplier->percent_discount/100))}}
+                            <u>đ</u></td>
+                        <td class="text-center">
                             <form action="{{route('updateBillStatus',['id'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}
-                                <button type="submit">
-                                    @if($bill->status==1) Chưa thanh toán @else Đã thanh toán @endif
-                                </button>
+                                    @if($bill->status == 1)
+                                        <i class="fas fa-check-circle" title="Chưa thanh toán"></i>
+                                    @else
+                                        <i class="fas fa-check-circle" title="Đã thanh toán" style="color: green"></i>
+                                    @endif
                             </form>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <form action="{{route('bills.destroy',['bill'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 @method('DELETE')
                                 @if($bill->status == 1)
-                                <button type="submit" class="btn btn-danger btn-del"
-                                        style="border-radius: 50%" title="xoa">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                                <a href="{{route('bills.edit',['bill'=>$bill->id])}}" class="btn btn-primary"
-                                   style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
+                                    <button type="submit" class="btn btn-danger btn-del"
+                                            style="border-radius: 50%" title="Xoá phiếu nhập kho">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                    <a href="{{route('bills.edit',['bill'=>$bill->id])}}"
+                                       title="Chỉnh sửa phiếu nhập kho"
+                                       class="btn btn-warning"
+                                       style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
                                 @endif
-                                <a href="{{route('bills.show',['bill'=>$bill->id])}}" class="btn btn-success"
-                                   style="color: white;border-radius: 50%"><i class="fas fa-arrow-alt-circle-right"></i></a>
+                                <a href="{{route('bills.show',['bill'=>$bill->id])}}"
+                                   title="Xem phiếu nhập kho"
+                                   class="btn btn-primary"
+                                   style="color: white;border-radius: 50%"><i class="fas fa-eye"></i></a>
                                 @if($bill->status == 2)
-                                <a href="{{route('exportBill',['id'=>$bill->id])}}" class="btn btn-success"
-                                   style="color: #e00a0a;border-radius: 50%; background: yellow"><i
-                                        class="fas fa-file-pdf"></i></a>
+                                    <a href="{{route('exportBill',['id'=>$bill->id])}}" class="btn btn-success"
+                                       title="Xuất file PDF"
+                                       style="color: white;border-radius: 50%;">
+                                        <i class="fas fa-download"></i></a>
                                 @endif
                             </form>
                         </td>
@@ -101,3 +109,9 @@
         </div>
     </div>
 @endsection
+
+<style>
+    .fas.fa-check-circle {
+        font-size: 1.5rem;
+    }
+</style>

@@ -4,10 +4,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Sản phẩm
-                        <small>Danh sách</small>
-                        <a href="{{route('products.create')}}" class="btn btn-primary"
-                           style="color: white;border-radius: 50%"><i class="fas fa-plus-circle"></i></a>
+                    <h1 class="page-header text-center">Danh sách sản phẩm
+                        <a href="{{route('products.create')}}"
+                           title="Thêm sản phẩm"
+                           style="color: green; font-size: 1.5rem;"><i class="fas fa-plus-circle"></i></a>
                     </h1>
                 </div>
                 @if(session('message'))
@@ -19,12 +19,13 @@
                 @endif
             </div>
             <form action="{{route('products.index')}}" method="get" role="search">
-                <div class="input-group">
+                <div class="input-group d-flex justify-content-center">
                     <input type="text" class="col-lg-4" name="name"
-                           placeholder="Nhập tên..." style="margin-right: 5px">
+                           placeholder="Nhập tên loại hàng..." style="margin-right: 5px">
                     <input type="text" class="col-lg-4" name="brand_id"
                            placeholder="Nhập loai hàng..." style="margin-right: 5px">
-                    <button type="submit" class="col-lg-2">
+                    <button type="submit" class="col-lg-1"
+                    title="Tìm kiếm sản phẩm">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
@@ -47,28 +48,31 @@
                 <tbody>
                 @foreach($products as $product)
                     <tr class="odd gradeX">
-                        <td>{{$product->id}}</td>
+                        <td class="text-center">{{$product->id}}</td>
                         <td>{{$product->name}}</td>
-                        <td>{{$product->brand->name}}</td>
-                        <td><img src="uploads/products/{{$product->image}}" height="100"
+                        <td class="text-center">{{$product->brand->name}}</td>
+                        <td class="text-center"><img src="uploads/products/{{$product->image}}" height="100"
                                  width="150">
                         </td>
-                        <td>{{$product->microprocessors}}</td>
-                        <td>{{$product->screen}}</td>
-                        <td>{{number_format($product->price)}} <u>đ</u></td>
-                        <td>{{$product->quantity}}</td>
-                        <td>
+                        <td class="text-center">{{$product->microprocessors}}</td>
+                        <td class="text-center">{{$product->screen}}</td>
+                        <td class="text-center">{{number_format($product->price)}} <u>đ</u></td>
+                        <td class="text-center">{{$product->quantity}}</td>
+                        <td class="text-center">
                             <form action="{{route('products.destroy',['product'=>$product->id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-del"
+                                        title="Xoá sản phẩm"
                                         style="border-radius: 50%" title="Xóa">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
-                                <a href="{{route('products.edit',['product'=>$product->id])}}" class="btn btn-primary"
-                                   style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="{{route('products.show',['product'=>$product->id])}}" class="btn btn-success"
-                                   style="color: white;border-radius: 50%"><i class="fas fa-arrow-alt-circle-right"></i></a>
+                                <a href="{{route('products.edit',['product'=>$product->id])}}" class="btn btn-warning"
+                                   title="Chỉnh sửa sản phẩm"
+                                   style="border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="{{route('products.show',['product'=>$product->id])}}" class="btn btn-primary"
+                                   title="Xem sản phẩm"
+                                   style="color: white;border-radius: 50%"><i class="fas fa-eye"></i></a>
                             </form>
                         </td>
                     </tr>

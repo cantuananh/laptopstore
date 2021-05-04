@@ -7,7 +7,7 @@
                     <h1 class="page-header">
                     </h1>
                 </div>
-                <div class="row placeholders">
+                <div class="row placeholders statistical">
                     <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
                         <img src="{{asset('\uploads\charts\circle.png')}}"
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
@@ -41,7 +41,7 @@
                         </h4>
                     </div>
                 </div>
-                <h2 class="sub-header" style="font-size: 36px">Danh sách 5 thành viên mới đăng ký</h2>
+                <div class="sub-header m-auto" style="font-size: 36px">Danh sách 5 thành viên mới đăng ký</div>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover test table-id">
                         <thead>
@@ -67,5 +67,12 @@
             </div>
         </div>
     </div>
-
 @endsection
+
+<style>
+    .statistical {
+        position: absolute;
+        left: 36%;
+        top: 56%;
+    }
+</style>
