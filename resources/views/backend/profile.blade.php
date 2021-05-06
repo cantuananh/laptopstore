@@ -2,11 +2,11 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-7" style="padding-bottom:120px">
+            <div class="col-lg-7 position-content" style="padding-bottom:120px">
                 <form action="" method="post" class="beta-form-checkout">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="col-sm-6">
-                        <h4>Thông tin tài khoản</h4>
+                        <h2>Thông tin tài khoản</h2>
                         <div class="space20">&nbsp;</div>
                         <div class="form-group">
                             <label for="name">Họ tên: </label> {{Auth::user()->name}}
@@ -53,3 +53,11 @@
         </div>
     </div>
 @endsection
+
+<style>
+    .position-content {
+        padding-top: 3rem !important;
+    }
+</style>
+
+

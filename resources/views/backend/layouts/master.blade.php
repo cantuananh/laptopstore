@@ -46,7 +46,7 @@
                  alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light" style="font-size: 15px;">Trang quản trị</span>
+            <span class="brand-text font-weight-light" style="font-size: 15px;"><b>Trang quản trị</b></span>
         </a>
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -121,7 +121,7 @@
             </nav>
         </div>
     </aside>
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="background-color: #D6EAF8">
         <div id="page-wrapper">
             @yield('content')
         </div>
