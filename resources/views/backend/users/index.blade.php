@@ -20,16 +20,16 @@
             </div>
             <form action="{{route('users.index')}}" method="get" role="search">
                 <div class="input-group d-flex justify-content-center">
-                    <input type="text" class="col-lg-3" name="name"
+                    <input type="text" class="col-lg-2" name="name"
                            placeholder="Nhập tên..." style="margin-right: 5px">
-                    <select style="width: 100px; height: 25px; margin-right: 10px" name="role" class="col-lg-1">
-                        <option value="">all</option>
+                    <select style="margin-right: 10px" name="role" class="col-lg-1">
+                        <option value="">Tất cả</option>
                         @foreach($roles as $role)
                             <option
                                 value="{{$role->name}}" {{request()->input('role')==$role->name?'selected':''}}>{{$role->name}}</option>
                         @endforeach
                     </select>
-                    <button type="submit" class="col-lg-1">
+                    <button type="submit" class="btn-search">
                         <span class="fas fa-search"></span>
                     </button>
                 </div>
@@ -86,5 +86,12 @@
 <style>
     .fas.fa-plus-circle {
         font-size: 1.5rem;
+    }
+
+    .btn-search {
+        background-color: #498EBC;
+        border: unset !important;
+        border-radius: 5px;
+        color: white;
     }
 </style>

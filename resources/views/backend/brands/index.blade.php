@@ -17,11 +17,11 @@
         </div>
         <form action="{{route('brands.index')}}" method="get" role="search">
             <div class="input-group d-flex justify-content-center">
-                <input type="text" class="col-lg-4" name="name"
-                       placeholder="Nhập tên thương hiệu..." style="margin-right: 10px">
-                <input type="text" class="col-lg-4" name="description"
-                       placeholder="Nhập mô tả..." style="margin-right: 10px">
-                <button type="submit" title="Tìm kiếm thương hiệu" class="col-lg-1">
+                <input type="text" class="col-lg-2" name="name"
+                       placeholder="Nhập tên thương hiệu..." style="margin-right: 5px">
+                <input type="text" class="col-lg-2" name="description"
+                       placeholder="Nhập mô tả..." style="margin-right: 5px">
+                <button type="submit" title="Tìm kiếm thương hiệu" class="btn-search">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
@@ -62,3 +62,12 @@
         {{$brands->links()}}
     </div>
 @endsection
+
+<style>
+    .btn-search {
+        background-color: #498EBC;
+        border: unset !important;
+        border-radius: 5px;
+        color: white;
+    }
+</style>

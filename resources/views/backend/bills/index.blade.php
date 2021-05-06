@@ -20,14 +20,14 @@
             </div>
             <form action="{{route('bills.index')}}" method="get" role="search">
                 <div class="input-group d-flex justify-content-center">
-                    <input type="text" name="name"
-                           placeholder="Nhập tên phiếu nhập kho..." style="width: 50%;margin-right: 10px">
-                    <select style="width: 20%; height: 25px; margin-right: 10px" name="payment">
+                    <input type="text" name="name" style="margin-right: 5px"
+                           placeholder="Nhập tên nhân viên..." class="col-lg-2">
+                    <select name="payment" class="col-lg-1" style="margin-right: 5px">
                         <option value="">Tất cả</option>
                         <option value="1">Tiền mặt</option>
                         <option value="0">Qua thẻ</option>
                     </select>
-                    <button type="submit" style="width: 20%" class="col-lg-1" title="Thêm phiếu nhập kho">
+                    <button type="submit" class="btn-search" title="Thêm phiếu nhập kho">
                         <span class="fas fa-search"></span>
                     </button>
                 </div>
@@ -113,5 +113,12 @@
 <style>
     .fas.fa-check-circle {
         font-size: 1.5rem;
+    }
+
+    .btn-search {
+        background-color: #498EBC;
+        border: unset !important;
+        border-radius: 5px;
+        color: white;
     }
 </style>

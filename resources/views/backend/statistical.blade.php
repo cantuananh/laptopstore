@@ -8,7 +8,7 @@
                     </h1>
                 </div>
                 <div class="row placeholders statistical">
-                    <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
+                    <div class="col-xs-6 col-sm-3 placeholder">
                         <img src="{{asset('\uploads\charts\circle.png')}}"
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
@@ -16,7 +16,7 @@
                             Thành viên
                         </h4>
                     </div>
-                    <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
+                    <div class="col-xs-6 col-sm-3 placeholder">
                         <img src="{{asset('\uploads\charts\circle.png')}}"
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
@@ -24,7 +24,7 @@
                             Sản phẩm
                         </h4>
                     </div>
-                    <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
+                    <div class="col-xs-6 col-sm-3 placeholder">
                         <img src="{{asset('\uploads\charts\circle.png')}}"
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
@@ -32,7 +32,7 @@
                             Hóa đơn bán
                         </h4>
                     </div>
-                    <div class="col-xs-6 col-sm-3 placeholder" style="position: relative">
+                    <div class="col-xs-6 col-sm-3 placeholder">
                         <img src="{{asset('\uploads\charts\circle.png')}}"
                              width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                         <h4 style="position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%); color: white;">
@@ -40,29 +40,6 @@
                             Phiếu nhập kho
                         </h4>
                     </div>
-                </div>
-                <div class="sub-header m-auto" style="font-size: 36px">Danh sách 5 thành viên mới đăng ký</div>
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover test table-id">
-                        <thead>
-                        <tr align="center">
-                            <th>Họ Tên</th>
-                            <th>Email</th>
-                            <th>Số điện thoại</th>
-                            <th>Địa chỉ</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($user_new as $user)
-                            <tr class="odd gradeX">
-                                <td>{{$user->name}}</td>
-                                <td>{{$user->email}}</td>
-                                <td>{{$user->phone}}</td>
-                                <td>{{$user->address}}</td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
@@ -73,6 +50,6 @@
     .statistical {
         position: absolute;
         left: 36%;
-        top: 56%;
+        top: 10%;
     }
 </style>

@@ -42,6 +42,7 @@ class StatisticalController extends Controller
 
         return $stats;
     }
+
     public function kekhai()
     {
         $range = Carbon::now()->subMonth(5);
@@ -53,6 +54,6 @@ class StatisticalController extends Controller
             ->orderBy('getYear', 'ASC')
             ->get();
 
-        return view('backend.thongke',compact('orderYear'));
+        return view('backend.thongke', compact('orderYear'));
     }
 }
