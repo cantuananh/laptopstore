@@ -35,17 +35,17 @@
                     <h6 class="contact-title">Liên hệ</h6>
                     <p>
                         Chúng tôi luôn giải đáp những thắc mắc của bạn! <br>
-                        <a href="anh.ct@deha-soft.com">anh.ct@deha-soft.com</a>
+                        Mobile phone: 0348158822
                     </p>
                     <div class="space20">&nbsp;</div>
                     <h6 class="contact-title">Khẩu hiệu</h6>
                     <p>
-                        Chúng tôi luôn nhìn vào sự hài lòng của khách hàng để hoàn thiện hơn.<br>
-                        <a href="anh.ct@deha-soft.com">anh.ct@deha-soft.com</a>
+                        Chúng tôi luôn nhìn vào sự hài lòng của khách
+                        <br>hàng để hoàn thiện hơn.
                     </p>
                 </div>
                 <div class="col-sm-6">
-                    <img class="pull-left" src="uploads/slides/banner14.png" height="320px" width="500px" alt="">
+                    <img class="pull-left" src="uploads/slides/banner8.png" height="320px" width="1200px" alt="">
                 </div>
             </div>
         </div>

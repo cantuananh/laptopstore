@@ -38,9 +38,9 @@
                     <div class="col-sm-12">
                         <div class="beta-products-list">
                             <div class="beta-products-list">
-                                <h4>Sản phẩm mới</h4>
+                                <h4>Sản phẩm mới:</h4>
                                 <div class="beta-products-details">
-                                    <p class="pull-left">Tìm thấy {{count($product_news)}} sản phẩm</p>
+                                    <p class="pull-left">Tìm thấy <b>{{count($product_news)}}</b> sản phẩm</p>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">
@@ -91,9 +91,9 @@
                                 </div>
                             </div>
                             <div class="beta-products-list">
-                                <h4>Tất cả sản phẩm</h4>
+                                <h4>Tất cả sản phẩm:</h4>
                                 <div class="beta-products-details">
-                                    <p class="pull-left">Tìm thấy {{count($products)}} sản phẩm</p>
+                                    <p class="pull-left">Tìm thấy <b>{{count($products)}}</b> sản phẩm</p>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="row">

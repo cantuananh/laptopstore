@@ -3,7 +3,7 @@
     <div class="inner-header" style="background-color: #D6EAF8">
         <div class="container">
             <div class="pull-left">
-                <h6 class="inner-title">Loại sản phẩm {{$loai_sp->name}}</h6>
+                <h6 class="inner-title">Loại sản phẩm "{{$loai_sp->name}}"</h6>
             </div>
             <div class="pull-right">
                 <div class="beta-breadcrumb font-large">
@@ -28,9 +28,9 @@
                     </div>
                     <div class="col-sm-9">
                         <div class="beta-products-list">
-                            <h4>Tất cả sản phẩm thuộc {{$loai_sp->name}}</h4>
+                            <h4>Tất cả sản phẩm thuộc "{{$loai_sp->name}}"</h4>
                             <div class="beta-products-details">
-                                <p class="pull-left">Tìm thấy {{count($chi_tiet)}} sản phẩm</p>
+                                <p class="pull-left">Tìm thấy <b>{{count($chi_tiet)}}</b> sản phẩm:</p>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="row">
@@ -78,9 +78,9 @@
                         </div>
                         <div class="space50">&nbsp;</div>
                         <div class="beta-products-list">
-                            <h4>Sản phẩm khác</h4>
+                            <h4>Sản phẩm khác:</h4>
                             <div class="beta-products-details">
-                                <p class="pull-left">Tìm thấy {{count($sp_khac)}} sản phẩm</p>
+                                <p class="pull-left">Tìm thấy <b>{{count($sp_khac)}}</b> sản phẩm</p>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="row">
