@@ -30,9 +30,10 @@
         <ul class="navbar-nav ml-auto">
             <ul class="nav navbar-top-links navbar-right">
                 @if(Auth::guard()->check())
-                    <a href="" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i
-                            class="fa fa-lock"></i>Logout</a>
+                    <a href=""
+                       onclick="event.preventDefault();
+                       document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i> Logout</a>
                     <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                         @csrf
                     </form>

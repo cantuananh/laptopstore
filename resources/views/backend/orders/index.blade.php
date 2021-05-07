@@ -40,7 +40,7 @@
                 </div>
             </form>
             <br>
-            <table class="table table-striped table-bordered table-hover test table-id">
+            <table class="table table-striped table-bordered table-hover test table-id col-10 m-auto">
                 <thead>
                 <tr align="center">
                     <th>Mã hóa đơn</th>
@@ -111,7 +111,7 @@
                 @endif
                 </tbody>
             </table>
-            {{$orders->links()}}
+            <div class="paginate-item">{{$orders->links()}}</div>
         </div>
     </div>
 @endsection
@@ -126,5 +126,10 @@
         border: unset !important;
         border-radius: 5px;
         color: white;
+    }
+
+    .paginate-item {
+        padding-left: 9.8rem !important;
+        padding-top: 2rem;
     }
 </style>

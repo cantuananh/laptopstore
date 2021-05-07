@@ -28,17 +28,20 @@
                     <h2>Thông tin liên hệ</h2>
                     <div class="space20">&nbsp;</div>
                     <h6 class="contact-title">Địa chỉ</h6>
+                    <br>
                     <p>
-                        Xóm Mơ Nồng, Kim Quan, Thạch Thất, Hà Nội.
+                        <i class="fa fa-location-arrow"></i> Xóm Mơ Nồng, Kim Quan, Thạch Thất, Hà Nội.
                     </p>
                     <div class="space20">&nbsp;</div>
                     <h6 class="contact-title">Liên hệ</h6>
+                    <br>
                     <p>
                         Chúng tôi luôn giải đáp những thắc mắc của bạn! <br>
-                        Mobile phone: 0348158822
+                        <i class="fa fa-phone"></i> 0348158822
                     </p>
                     <div class="space20">&nbsp;</div>
                     <h6 class="contact-title">Khẩu hiệu</h6>
+                    <br>
                     <p>
                         Chúng tôi luôn nhìn vào sự hài lòng của khách
                         <br>hàng để hoàn thiện hơn.

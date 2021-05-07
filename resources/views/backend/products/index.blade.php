@@ -31,7 +31,7 @@
                 </div>
             </form>
             <br>
-            <table class="table table-hover table-bordered table-striped">
+            <table class="table table-hover table-bordered table-striped col-10 m-auto">
                 <thead>
                 <tr align="center">
                     <th>ID</th>
@@ -79,7 +79,7 @@
                 @endforeach
                 </tbody>
             </table>
-            {{$products->links()}}
+            <div class="paginate-item">{{$products->links()}}</div>
         </div>
     </div>
 @endsection
@@ -89,5 +89,10 @@
         border: unset !important;
         border-radius: 5px;
         color: white;
+    }
+
+    .paginate-item {
+        padding-left: 9.8rem !important;
+        padding-top: 2rem;
     }
 </style>
