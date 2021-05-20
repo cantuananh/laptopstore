@@ -88,6 +88,13 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label style="margin-right: 20px">Trạng thái</label>
+                            <div class="radio-inline">
+                                <input name="status" value="1" type="radio" checked=""> Dùng
+                                <input name="status" value="0" type="radio"> Không
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label style="margin-right: 20px">Quyền hạn</label>
                             @foreach($roles as $role)
                                 <div>

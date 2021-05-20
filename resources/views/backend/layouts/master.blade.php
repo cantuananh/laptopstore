@@ -42,12 +42,11 @@
         </ul>
     </nav>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <a href="{{route('statistical')}}" class="brand-link">
+        <a href="{{route('statistical')}}" class="brand-link d-flex justify-content-center">
             <img src="uploads/logo/IT_laptop_logo.png"
                  alt="AdminLTE Logo"
-                 class="brand-image img-circle elevation-3"
-                 style="opacity: .8">
-            <span class="brand-text font-weight-light" style="font-size: 15px;"><b>Trang quản trị</b></span>
+                 class="brand-image img-circle elevation-3">
+            <br>
         </a>
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">

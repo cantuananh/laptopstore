@@ -46,13 +46,18 @@
                         <form action="{{route('brands.destroy',['brand'=>$brand->id])}}" method="POST">
                             {!! csrf_field() !!}
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-del"
-                                    style="border-radius: 50%" title="Xóa thương hiệu">
+                            <button type="submit"
+                                    class="btn btn-danger btn-del"
+                                    style="border-radius: 50%;"
+                                    title="Xóa thương hiệu">
                                 <i class="far fa-trash-alt"></i>
                             </button>
-                            <a href="{{route('brands.edit',['brand'=>$brand->id])}}" class="btn btn-warning"
+                            <a href="{{route('brands.edit',['brand'=>$brand->id])}}"
+                               class="btn btn-warning"
                                title="Chỉnh sửa thương hiệu"
-                               style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
+                               style="color: white;border-radius: 50%;">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
                         </form>
                     </td>
                 </tr>

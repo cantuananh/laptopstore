@@ -83,6 +83,15 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label style="margin-right: 20px">Trạng thái</label>
+                            <div class="radio-inline">
+                                <input name="status" value="1"
+                                       type="radio" {{($user->status==1)? 'checked=checked':'' }}> Đang dùng
+                                <input name="status" value="0" type="radio" @if($user->status == 0) checked @endif> Không
+                                dùng
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label style="margin-right: 20px">Quyền hạn</label>
                             @foreach($roles as $role)
                                 <div>
