@@ -6,7 +6,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Role extends Authenticatable
 {
-    protected $table='roles';
+    protected $table = 'roles';
     protected $fillable = ['name'];
 
     public function users()

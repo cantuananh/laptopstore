@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Supplier extends Model
 {
     use SoftDeletes;
+
     protected $table = "suppliers";
     protected $fillable = ['name', 'address', 'phone', 'percent_discount'];
 
@@ -15,6 +16,7 @@ class Supplier extends Model
     {
         return $this->hasMany('App\Product', 'brand_id');
     }
+
     public function bills()
     {
         return $this->hasMany('App\Bill', 'supplier_id');

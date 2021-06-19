@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Order extends Model
 {
     use SoftDeletes;
+
     protected $table = 'orders';
-    protected $fillable = ['user_id', 'payment','total_price', 'status'];
+    protected $fillable = ['user_id', 'payment', 'total_price', 'status'];
 
 
     public function products()
@@ -26,6 +27,7 @@ class Order extends Model
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+
     public function search($name_user, $payment)
     {
         return $this->when($name_user, function ($query) use ($name_user) {
@@ -39,10 +41,12 @@ class Order extends Model
             ->latest('id')
             ->paginate(5);
     }
+
     public function getOrderBy($id)
     {
         return Order::findOrFail($id);
     }
+
     public static function addTotalPrice($product_id, $order_id, $request)
     {
         $order = Order::findOrFail($order_id);

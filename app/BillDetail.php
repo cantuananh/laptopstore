@@ -14,10 +14,12 @@ class BillDetail extends Model
     {
         return $this->belongsTo('App\DetailProduct', 'detail_product_id');
     }
+
     public function bill()
     {
         return $this->belongsTo('App\Bill', 'bill_id');
     }
+
     public function getBillProductBy($id)
     {
         return BillDetail::findOrFail($id);
@@ -25,6 +27,6 @@ class BillDetail extends Model
 
     public static function getBillProductWhere($id)
     {
-        return BillDetail::where('bill_id',$id)->latest('id')->get();
+        return BillDetail::where('bill_id', $id)->latest('id')->get();
     }
 }

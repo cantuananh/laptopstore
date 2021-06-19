@@ -59,11 +59,12 @@
                     @endforeach
                     </tbody>
                 </table>
-                <h5 class="class pull-right">Tổng tiền thanh toán: <b>{{number_format(\Cart::getSubTotal())}}</b><u>đ</u></h5>
+                <h5 class="class pull-right">Tổng tiền thanh toán:
+                    <b>{{number_format(\Cart::getSubTotal())}}</b><u>đ</u>
+                    <a href="{{route('dathang')}}" class="btn btn-success pay-btn" style="margin-left: 1rem;" title="Tiến hành thanh toán">
+                        <b>Thanh toán</b></a>
+                </h5>
                 <br>
-                <div class="pay-product">
-                    <a href="{{route('dathang')}}" class="btn btn-warning pay-btn"><b class="pay-text">Thanh toán</b></a>
-                </div>
             </form>
         </div>
     </div>
@@ -88,24 +89,7 @@
         font-size: 1rem;
     }
 
-    .pay-product {
-        position: absolute;
-
-        right: 50%;
-        margin-top: 2.5rem !important;
-    }
-
     #content {
         height: 53%;
-    }
-
-    .pay-btn {
-        height: 3rem;
-        width: 10rem;
-    }
-
-    .pay-text {
-        position: relative;
-        top: 0.4rem;
     }
 </style>

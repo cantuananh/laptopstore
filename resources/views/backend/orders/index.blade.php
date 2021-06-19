@@ -58,6 +58,7 @@
                         <tr class="odd gradeX">
                             <td class="text-center">{{$order->id}}</td>
                             <td>{{$order->user->name}}</td>
+                            <td>{{$order->user->name ? $order->user->name : "No name"}}</td>
                             <td class="text-center">
                                 <?php Carbon\Carbon::setLocale('vi');
                                 if (Carbon\Carbon::createFromTimestamp(strtotime($order->created_at))->diffInHours() >= 24) {

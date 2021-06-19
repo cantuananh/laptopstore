@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-         'name', 'email' ,'password', 'gender', 'birthday', 'address', 'phone', 'image', 'status',
+        'name', 'email', 'password', 'gender', 'birthday', 'address', 'phone', 'image', 'status',
     ];
 
     /**
@@ -38,6 +38,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     public function bills()
     {
         return $this->hasMany('App\Bill', 'user_id');
@@ -45,7 +46,7 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany('App\Role', 'role_user','user_id','role_id');
+        return $this->belongsToMany('App\Role', 'role_user', 'user_id', 'role_id');
     }
 
     public function checkRole($roles)
@@ -78,8 +79,8 @@ class User extends Authenticatable
         return User::findOrFail($id);
     }
 
-    public  function getListRoleBy($id)
+    public function getListRoleBy($id)
     {
-        return  User::with('roles')->findOrFail($id);
+        return User::with('roles')->findOrFail($id);
     }
 }

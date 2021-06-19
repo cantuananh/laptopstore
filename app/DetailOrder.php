@@ -14,14 +14,17 @@ class DetailOrder extends Model
     {
         return $this->belongsTo('App\DetailProduct', 'detail_product_id');
     }
+
     public function order()
     {
         return $this->belongsTo('App\Order', 'order_id');
     }
+
     public static function getOrderProductWhere($id)
     {
-        return DetailOrder::where('order_id',$id)->latest('id')->get();
+        return DetailOrder::where('order_id', $id)->latest('id')->get();
     }
+
     public function getOrderProductBy($id)
     {
         return DetailOrder::findOrFail($id);

@@ -18,7 +18,7 @@ class DetailProduct extends Model
     {
         return $this->where('product_id', $id)->latest('id')
             ->when($name, function ($query) use ($name) {
-            $query->where('seri', 'like', '%' . $name . '%');
-        })->paginate(12);
+                $query->where('seri', 'like', '%' . $name . '%');
+            })->paginate(12);
     }
 }
