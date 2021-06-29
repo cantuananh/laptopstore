@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-7" style="padding-bottom:120px">
-                <form action="" method="post" class="beta-form-checkout" enctype="multipart/form-data">
+                <form action="{{route('users.profile.edit')}}" method="post" class="beta-form-checkout" enctype="multipart/form-data">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div>
                         @if(count($errors)>0)

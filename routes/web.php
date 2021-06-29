@@ -21,7 +21,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login:admin|employee'], func
     Route::get('profile', 'UserController@profile')->name('users.profile');
     Route::get('profile/sua', 'UserController@getEditUser');
 
-    Route::post('profile/sua', 'UserController@postEditUser');
+    Route::post('profile/sua', 'UserController@postEditUser')->name('users.profile.edit');
 
     Route::resource('bills', 'BillController');
 

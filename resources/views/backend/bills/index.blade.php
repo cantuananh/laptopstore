@@ -50,7 +50,7 @@
                 @foreach($bills as $bill)
                     <tr class="odd gradeX">
                         <td class="text-center">{{$bill->id}}</td>
-                        <td>{{$bill->user->name}}</td>
+                        <td>{{optional($bill->user)->name}}</td>
                         <td class="text-center">
                             <?php Carbon\Carbon::setLocale('vi');
                             if (Carbon\Carbon::createFromTimestamp(strtotime($bill->created_at))->diffInHours() >= 24) {
@@ -69,9 +69,12 @@
                             <form action="{{route('updateBillStatus',['id'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 @if($bill->status == 1)
-                                    <i class="fas fa-check-circle" title="Chưa thanh toán"></i>
+                                    <button style="border: unset; background-color: unset;"><i
+                                            class="fas fa-check-circle" title="Chưa thanh toán"></i></button>
                                 @else
-                                    <i class="fas fa-check-circle" title="Đã thanh toán" style="color: green"></i>
+                                    <button style="border: unset; background-color: unset;"><i
+                                            class="fas fa-check-circle" title="Đã thanh toán"
+                                            style="color: green"></i></button>
                                 @endif
                             </form>
                         </td>

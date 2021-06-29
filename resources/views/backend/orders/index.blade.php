@@ -57,8 +57,8 @@
                     @foreach($orders as $order)
                         <tr class="odd gradeX">
                             <td class="text-center">{{$order->id}}</td>
-                            <td>{{$order->user->name}}</td>
-                            <td>{{$order->user->name ? $order->user->name : "No name"}}</td>
+{{--                            @dd($order->user->name)--}}
+                            <td>{{optional($order->user)->name}}</td>
                             <td class="text-center">
                                 <?php Carbon\Carbon::setLocale('vi');
                                 if (Carbon\Carbon::createFromTimestamp(strtotime($order->created_at))->diffInHours() >= 24) {
@@ -75,9 +75,10 @@
                                 <form action="{{route('updateOrderStatus',['id'=>$order->id])}}" method="POST">
                                     {!! csrf_field() !!}
                                     @if($order->status==1)
-                                        <i class="fas fa-check-circle" title="Chưa thanh toán"></i>
+                                        <button style="border: unset; background-color: unset;"><i class="fas fa-check-circle" title="Chưa thanh toán"></i></button>
                                     @else
-                                        <i class="fas fa-check-circle" title="Đã thanh toán" style="color: green"></i>
+                                        <button style="border: unset; background-color: unset;"><i class="fas fa-check-circle" title="Đã thanh toán"
+                                                   style="color: green"></i></button>
                                     @endif
                                 </form>
                             </td>
@@ -103,7 +104,8 @@
                                         <a href="{{route('exportOrder',['id'=>$order->id])}}"
                                            title="Xuất file PDF"
                                            class="btn btn-success"
-                                           style="color: white;border-radius: 50%"><i class="fas fa-download"></i></a>
+                                           style="color: white;border-radius: 50%"><i
+                                                class="fas fa-download"></i></a>
                                     @endif
                                 </form>
                             </td>

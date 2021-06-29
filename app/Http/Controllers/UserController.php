@@ -6,14 +6,14 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Role;
 use App\RoleUser;
-use App\Traits\StoreImageTrait;
+use App\Traits\HandleImage;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    use StoreImageTrait;
+    use HandleImage;
 
     protected $imagePath = "uploads/users/";
     protected $user;
@@ -95,7 +95,9 @@ class UserController extends Controller
     {
         $user = $this->user->getUserBy($id);
         $data = $request->except('image');
+
         $data['image'] = $this->updateImage($request, $user->image, $this->imagePath);
+
         $user->update($data);
         $user->roles()->sync($data['roles']);
 
@@ -129,6 +131,7 @@ class UserController extends Controller
 
     public function postEditUser(Request $request)
     {
+        dd($request);
 
         $this->validate($request, [
             'email' => 'required|email',
