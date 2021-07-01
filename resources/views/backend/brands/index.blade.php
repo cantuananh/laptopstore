@@ -39,10 +39,10 @@
             <tbody>
             @foreach($brands as $brand)
                 <tr class="odd gradeX">
-                    <td class="text-center">{{$brand->id}}</td>
-                    <td class="text-center">{{$brand->name}}</td>
-                    <td>{{$brand->description}}</td>
-                    <td class="text-center">
+                    <td class="text-center align-middle">{{$brand->id}}</td>
+                    <td class="text-center align-middle">{{$brand->name}}</td>
+                    <td class="align-middle">{{$brand->description}}</td>
+                    <td class="text-center align-middle">
                         <form action="{{route('brands.destroy',['brand'=>$brand->id])}}" method="POST">
                             {!! csrf_field() !!}
                             @method('DELETE')

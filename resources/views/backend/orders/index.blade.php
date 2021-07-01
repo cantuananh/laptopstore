@@ -56,9 +56,9 @@
                 @if($orders->count() > 0)
                     @foreach($orders as $order)
                         <tr class="odd gradeX">
-                            <td class="text-center">{{$order->id}}</td>
-                            <td>{{optional($order->user)->name}}</td>
-                            <td class="text-center">
+                            <td class="text-center align-middle">{{$order->id}}</td>
+                            <td class="align-middle">{{optional($order->user)->name}}</td>
+                            <td class="text-center align-middle">
                                 <?php Carbon\Carbon::setLocale('vi');
                                 if (Carbon\Carbon::createFromTimestamp(strtotime($order->created_at))->diffInHours() >= 24) {
                                     $date = $order->created_at;
@@ -68,9 +68,9 @@
                                 ?>
                                 {{$date}}
                             </td>
-                            <td> @if($order->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
-                            <td> {{number_format($order->total_price)}} <u>đ</u></td>
-                            <td class="text-center">
+                            <td class="align-middle"> @if($order->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
+                            <td class="align-middle"> {{number_format($order->total_price)}} <u>đ</u></td>
+                            <td class="text-center align-middle">
                                 <form action="{{route('updateOrderStatus',['id'=>$order->id])}}" method="POST">
                                     {!! csrf_field() !!}
                                     @if($order->status==1)
@@ -81,7 +81,7 @@
                                     @endif
                                 </form>
                             </td>
-                            <td class="text-center">
+                            <td class="text-center align-middle">
                                 <form action="{{route('orders.destroy',['order'=>$order->id])}}" method="POST">
                                     {!! csrf_field() !!}
                                     @method('DELETE')

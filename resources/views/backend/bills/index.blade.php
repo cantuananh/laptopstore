@@ -49,9 +49,9 @@
                 <tbody>
                 @foreach($bills as $bill)
                     <tr class="odd gradeX">
-                        <td class="text-center">{{$bill->id}}</td>
-                        <td>{{optional($bill->user)->name}}</td>
-                        <td class="text-center">
+                        <td class="text-center align-middle">{{$bill->id}}</td>
+                        <td class="align-middle">{{optional($bill->user)->name}}</td>
+                        <td class="text-center align-middle">
                             <?php Carbon\Carbon::setLocale('vi');
                             if (Carbon\Carbon::createFromTimestamp(strtotime($bill->created_at))->diffInHours() >= 24) {
                                 $date = $bill->created_at;
@@ -61,11 +61,11 @@
                             ?>
                             {{$date}}
                         </td>
-                        <td> {{$bill->supplier->name}}</td>
-                        <td> @if($bill->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
-                        <td> {{ number_format($bill->total_price-$bill->total_price*($bill->supplier->percent_discount/100))}}
+                        <td class="align-middle"> {{$bill->supplier->name}}</td>
+                        <td class="align-middle"> @if($bill->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
+                        <td class="align-middle"> {{ number_format($bill->total_price-$bill->total_price*($bill->supplier->percent_discount/100))}}
                             <u>đ</u></td>
-                        <td class="text-center">
+                        <td class="text-center align-middle">
                             <form action="{{route('updateBillStatus',['id'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 @if($bill->status == 1)
@@ -78,7 +78,7 @@
                                 @endif
                             </form>
                         </td>
-                        <td class="text-center">
+                        <td class="text-center align-middle">
                             <form action="{{route('bills.destroy',['bill'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 @method('DELETE')
