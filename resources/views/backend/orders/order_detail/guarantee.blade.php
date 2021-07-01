@@ -11,7 +11,7 @@
         }
 
         body {
-            background: rgba(19, 226, 232, 0.94);
+            background: #C9CDCF;
             font-family: ipag, Tahoma, 'Roboto', Sans-Serif;
         }
 
@@ -47,17 +47,16 @@
 <body>
 <div>
     <div class="ban1">
-        <img src="uploads/logo/laptop.png" height="73px" width="129px" alt="logo" class="img">
-        <p style="color: black" class="divp">IT Laptop</p>
+        <p style="color: black; margin-top: 4.5rem;" class="divp">IT Laptop</p>
     </div>
     <div class="ban2">
         <p>Địa chỉ: Xóm Mơ Nồng, Kim Quan, Thạch Thất, Hà Nội.</p>
         <p>Số điện thoại: 0348158822</p>
-        <p>Email: anh.ct@deha-soft.com</p>
-        <p>Website: https://itlaptop.com</p>
+        <p style="margin-left: 18rem;">Email: anh.ct@deha-soft.com</p>
+        <p style="margin-left: 18rem;">Website: https://itlaptop.com</p>
     </div>
 </div>
-<h1 class="h1" style="color: #970fc7; text-align: center">PHIẾU BẢO HÀNH</h1>
+<h1 class="h1" style="color: black; text-align: center">PHIẾU BẢO HÀNH</h1>
 <h2 style="color: white ; background: red; text-align: center" class="tex">Vui lòng trình phiếu khi có nhu cầu sửa chữa
     - bảo hành</h2>
 <div class="form-control-range control">
@@ -70,11 +69,11 @@
     @endfor
     <p style="color: black" class="tex">Thời gian bảo hành: {{$detail_order->detail_product->product->guarantee_time}}
         tháng</p>
-    <label style="color: black" class="lab">Cửa hàng(ký tên hoặc đóng dấu):</label> &nbsp;&nbsp;&nbsp;
-    <label style="color: black" class="lab">Khách hàng(ký tên):</label>
-    <br><br> <br><br>
+    <label style="color: black" class="lab">Cửa hàng (ký tên hoặc đóng dấu):</label> &nbsp;&nbsp;&nbsp;
+    <label style="color: black" class="lab">Khách hàng (ký tên):</label>
+    <br><br><br><br><br><br><br><br><br><br><br>
     <hr>
-    <p style="color: red" class="tex">*Chú ý: Bất kỳ một sự thay đổi bổ sung nào khác với nội dung cua phiếu này sẽ
+    <p style="color: #66696A;" class="tex">*Chú ý: Bất kỳ một sự thay đổi bổ sung nào khác với nội dung của phiếu này sẽ
         không có giá trị bảo hành.</p>
 </div>
 </body>

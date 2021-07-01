@@ -30,10 +30,10 @@
         <table class="table table-striped table-bordered table-hover test col-10 m-auto">
             <thead>
             <tr align="center">
-                <th>ID</th>
-                <th>Tên thương hiệu</th>
-                <th>Mô tả</th>
-                <th>Chức năng</th>
+                <th class="align-middle">ID</th>
+                <th class="align-middle">Tên thương hiệu</th>
+                <th class="align-middle">Mô tả</th>
+                <th class="align-middle">Chức năng</th>
             </tr>
             </thead>
             <tbody>

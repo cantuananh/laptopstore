@@ -25,17 +25,17 @@
                            style="color: white;border-radius: 50%"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
                     </h1>
                 </div>
-                <table class="table table-striped table-bordered table-hover">
+                <table class="table table-striped table-bordered table-hover col-10 m-auto">
                     <thead>
                     <tr align="center">
-                        <th>Mã sản phẩm</th>
-                        <th>Sản phẩm</th>
-                        <th>Hình ảnh</th>
-                        <th>Mô tả</th>
-                        <th>Thời gian bảo hành</th>
-                        <th>Số lượng</th>
-                        <th>Đơn giá</th>
-                        <th>Thành tiền</th>
+                        <th class="align-middle">Mã sản phẩm</th>
+                        <th class="align-middle">Sản phẩm</th>
+                        <th class="align-middle">Hình ảnh</th>
+                        <th class="align-middle">Mô tả</th>
+                        <th class="align-middle">Thời gian bảo hành</th>
+                        <th class="align-middle">Số lượng</th>
+                        <th class="align-middle">Đơn giá</th>
+                        <th class="align-middle">Thành tiền</th>
 {{--                        <th>Chức năng</th>--}}
                     </tr>
                     </thead>

@@ -43,13 +43,13 @@
             <table class="table table-striped table-bordered table-hover test table-id col-10 m-auto">
                 <thead>
                 <tr align="center">
-                    <th>Mã hóa đơn</th>
-                    <th>Khách hàng</th>
-                    <th>Ngày bán</th>
-                    <th>Phương thức thanh toán</th>
-                    <th>Tổng tiền</th>
-                    <th>Trạng thái</th>
-                    <th>Chức năng</th>
+                    <th class="align-middle">Mã hóa đơn</th>
+                    <th class="align-middle">Khách hàng</th>
+                    <th class="align-middle">Ngày bán</th>
+                    <th class="align-middle">Phương thức thanh toán</th>
+                    <th class="align-middle">Tổng tiền</th>
+                    <th class="align-middle">Trạng thái</th>
+                    <th class="align-middle">Chức năng</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -57,7 +57,6 @@
                     @foreach($orders as $order)
                         <tr class="odd gradeX">
                             <td class="text-center">{{$order->id}}</td>
-{{--                            @dd($order->user->name)--}}
                             <td>{{optional($order->user)->name}}</td>
                             <td class="text-center">
                                 <?php Carbon\Carbon::setLocale('vi');

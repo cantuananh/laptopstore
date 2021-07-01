@@ -34,15 +34,15 @@
             <table class="table table-hover table-bordered table-striped col-10 m-auto">
                 <thead>
                 <tr align="center">
-                    <th>ID</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Thương hiệu</th>
-                    <th>Hình ảnh</th>
-                    <th>Vi xử lý</th>
-                    <th>Màn hình</th>
-                    <th>Giá bán</th>
-                    <th>Số lượng</th>
-                    <th>Chức năng</th>
+                    <th class="align-middle">ID</th>
+                    <th class="align-middle">Tên sản phẩm</th>
+                    <th class="align-middle">Thương hiệu</th>
+                    <th class="align-middle">Hình ảnh</th>
+                    <th class="align-middle">Vi xử lý</th>
+                    <th class="align-middle">Màn hình</th>
+                    <th class="align-middle">Giá bán</th>
+                    <th class="align-middle">Số lượng</th>
+                    <th class="align-middle">Chức năng</th>
                 </tr>
                 </thead>
                 <tbody>

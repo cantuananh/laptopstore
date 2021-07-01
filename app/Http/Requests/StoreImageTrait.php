@@ -4,7 +4,7 @@ namespace App\Traits;
 
 use Intervention\Image\Facades\Image;
 
-trait StoreImageTrait
+trait HandleImage
 {
     public function uploadImage($image, $imagePath)
     {
@@ -20,7 +20,7 @@ trait StoreImageTrait
         }
     }
 
-    public function updateImage($image, $currentName, $imagePath)
+    public function updateImages($image, $currentName, $imagePath)
     {
 
         if ($image->hasFile('image')) {
@@ -33,7 +33,7 @@ trait StoreImageTrait
         }
     }
 
-    public function updateImages($image, $currentName, $imagePath)
+    public function updateImage($image, $currentName, $imagePath)
     {
 
         if ($image->hasFile('image')) {

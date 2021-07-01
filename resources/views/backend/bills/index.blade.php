@@ -36,14 +36,14 @@
             <table class="table table-striped table-bordered table-hover test table-id col-10 m-auto">
                 <thead>
                 <tr align="center">
-                    <th>Mã phiếu</th>
-                    <th>Nhân viên</th>
-                    <th>Ngày nhập</th>
-                    <th>Nhà cung cấp</th>
-                    <th>Phương thức thanh toán</th>
-                    <th>Tổng tiền</th>
-                    <th>Trạng thái</th>
-                    <th>Chức năng</th>
+                    <th class="align-middle">Mã phiếu</th>
+                    <th class="align-middle">Nhân viên</th>
+                    <th class="align-middle">Ngày nhập</th>
+                    <th class="align-middle">Nhà cung cấp</th>
+                    <th class="align-middle">Phương thức thanh toán</th>
+                    <th class="align-middle">Tổng tiền</th>
+                    <th class="align-middle">Trạng thái</th>
+                    <th class="align-middle">Chức năng</th>
                 </tr>
                 </thead>
                 <tbody>
