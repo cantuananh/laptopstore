@@ -62,7 +62,7 @@
                             {{$date}}
                         </td>
                         <td class="align-middle"> {{$bill->supplier->name}}</td>
-                        <td class="align-middle"> @if($bill->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
+                        <td class="align-middle text-center"> @if($bill->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
                         <td class="align-middle"> {{ number_format($bill->total_price-$bill->total_price*($bill->supplier->percent_discount/100))}}
                             <u>đ</u></td>
                         <td class="text-center align-middle">
@@ -70,7 +70,7 @@
                                 {!! csrf_field() !!}
                                 @if($bill->status == 1)
                                     <button style="border: unset; background-color: unset;"><i
-                                            class="fas fa-check-circle" title="Chưa thanh toán"></i></button>
+                                            class="fas fa-check-circle" style="color: gray" title="Chưa thanh toán"></i></button>
                                 @else
                                     <button style="border: unset; background-color: unset;"><i
                                             class="fas fa-check-circle" title="Đã thanh toán"
@@ -82,20 +82,20 @@
                             <form action="{{route('bills.destroy',['bill'=>$bill->id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 @method('DELETE')
-                                @if($bill->status == 1)
-                                    <button type="submit" class="btn btn-danger btn-del"
-                                            style="border-radius: 50%" title="Xoá phiếu nhập kho">
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                    <a href="{{route('bills.edit',['bill'=>$bill->id])}}"
-                                       title="Chỉnh sửa phiếu nhập kho"
-                                       class="btn btn-warning"
-                                       style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
-                                @endif
                                 <a href="{{route('bills.show',['bill'=>$bill->id])}}"
                                    title="Xem phiếu nhập kho"
                                    class="btn btn-primary"
                                    style="color: white;border-radius: 50%"><i class="fas fa-eye"></i></a>
+                                @if($bill->status == 1)
+                                    <a href="{{route('bills.edit',['bill'=>$bill->id])}}"
+                                       title="Chỉnh sửa phiếu nhập kho"
+                                       class="btn btn-warning"
+                                       style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
+                                    <button type="submit" class="btn btn-danger btn-del"
+                                            style="border-radius: 50%" title="Xoá phiếu nhập kho">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                @endif
                                 @if($bill->status == 2)
                                     <a href="{{route('exportBill',['id'=>$bill->id])}}" class="btn btn-success"
                                        title="Xuất file PDF"

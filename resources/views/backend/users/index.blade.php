@@ -21,7 +21,7 @@
             <form action="{{route('users.index')}}" method="get" role="search">
                 <div class="input-group d-flex justify-content-center">
                     <input type="text" class="col-lg-2" name="name"
-                           placeholder="Nhập tên..." style="margin-right: 5px">
+                           placeholder="Nhập tên tài khoản..." style="margin-right: 5px">
                     <select style="margin-right: 10px" name="role" class="col-lg-1">
                         <option value="">Tất cả</option>
                         @foreach($roles as $role)
@@ -39,38 +39,38 @@
                 <thead>
                 <tr align="center">
                     <th>ID</th>
-                    <th>Họ Tên</th>
+                    <th>Tên tài khoản</th>
                     <th>Ảnh đại diện</th>
                     <th>Email</th>
                     <th>Quyền</th>
-                    <th>Chức năng</th>
+                    <th>Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($users as $user)
                     <tr class="odd gradeX">
-                        <td class="text-center">{{$user->id}}</td>
-                        <td>{{$user->name}}</td>
-                        <td class="text-center"><img src="uploads/users/{{$user->image}}" height="100px"
-                                                     width="150px">
+                        <td class="text-center align-middle">{{$user->id}}</td>
+                        <td class="text-center align-middle">{{$user->name}}</td>
+                        <td class="text-center align-middle"><img src="uploads/users/{{$user->image}}" height="100px"
+                                                                  width="150px">
                         </td>
-                        <td>{{$user->email}}</td>
-                        <td class="text-center">
+                        <td class="text-center align-middle">{{$user->email}}</td>
+                        <td class="text-center align-middle">
                             @foreach($user->roles as $role)
                                 {{$role->name}} <br>
                             @endforeach
                         </td>
-                        <td class="text-center">
+                        <td class="text-center align-middle">
                             <form action="{{route('users.destroy',['user'=>$user->id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 @method('DELETE')
+                                <a href="{{route('users.edit',['user'=>$user->id])}}" class="btn btn-primary"
+                                   title="Chỉnh sửa tài khoản"
+                                   style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
                                 <button type="submit" class="btn btn-danger btn-del"
                                         style="border-radius: 50%" title="Xóa tài khoản">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
-                                <a href="{{route('users.edit',['user'=>$user->id])}}" class="btn btn-primary"
-                                   title="Chỉnh sửa tài khoản"
-                                   style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
                             </form>
                         </td>
                     </tr>

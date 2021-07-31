@@ -29,9 +29,9 @@
                     <thead>
                     <tr align="center">
                         <th class="align-middle">Mã sản phẩm</th>
-                        <th class="align-middle">Sản phẩm</th>
-                        <th class="align-middle">Hình ảnh</th>
-                        <th class="align-middle">Mô tả</th>
+                        <th class="align-middle">Tên sản phẩm</th>
+                        <th class="align-middle">Hình ảnh sản phẩm</th>
+                        <th class="align-middle">Mô tả sản phẩm</th>
                         <th class="align-middle">Thời gian bảo hành</th>
                         <th class="align-middle">Số lượng</th>
                         <th class="align-middle">Đơn giá</th>
@@ -42,23 +42,23 @@
                     <tbody class="table__list_item">
                     @foreach($product_items as $item)
                         <tr class="odd gradeX">
-                            <td>{{$item->detail_product->product->id}}</td>
-                            <td>{{$item->detail_product->product->name}}</td>
-                            <td><img src="uploads/products/{{$item->detail_product->product->image}}" height="100"
+                            <td class="text-center align-middle">{{$item->detail_product->product->id}}</td>
+                            <td class="align-middle">{{$item->detail_product->product->name}}</td>
+                            <td class="text-center align-middle"><img src="uploads/products/{{$item->detail_product->product->image}}" height="100"
                                      width="100"></td>
-                            <td>
+                            <td class="align-middle">
                                 {{$item->detail_product->product->descriptionf}} . Ram {{$item->detail_product->product->ram}} GB , Màn hình: {{$item->detail_product->product->screen }}, Vi xử lý: {{$item->detail_product->product->microprocessors}}
                             </td>
-                            <td>
+                            <td class="text-center align-middle">
                                 {{$item->detail_product->product->guarantee_time}} Tháng
                             </td>
-                            <td>
+                            <td class="text-center align-middle">
                                 {{$item->quantity}}
                             </td>
-                            <td>
+                            <td class="text-center align-middle">
                                 {{$item->detail_product->product->price}} <u>đ</u>
                             </td>
-                            <td>
+                            <td class="text-center align-middle">
                                 {{$item->detail_product->product->price*$item->quantity}} <u>đ</u>
                             </td>
 {{--                            <td class="center">--}}

@@ -25,7 +25,7 @@
                         <div class="col-sm-8">
                             <div class="single-item-body">
                                 <div class="space20">&nbsp;</div>
-                                <p class="single-item-title" style="font-size: 25px">{{$detail_product->name}}</p>
+                                <p class="single-item-title" style="font-size: 20px">{{$detail_product->name}}</p>
                                 <div class="space20">&nbsp;</div>
                                 <p class="single-item-price" style="font-size: 25px">
                                     @if($detail_product->cost>$detail_product->price)
@@ -36,7 +36,7 @@
                             </div>
                             <div class="space20">&nbsp;</div>
                             <div class="single-item-options">
-                                <a class="add-to-cart" href="{{route('themgiohang',$detail_product->id)}}"><i
+                                <a class="add-to-cart" title="Thêm vào giỏ hàng" href="{{route('themgiohang',$detail_product->id)}}"><i
                                         class="fa fa-shopping-cart"></i></a>
                                 <div class="clearfix"></div>
                             </div>
@@ -63,12 +63,10 @@
                                        placeholder="Nhập bình luận của bạn về sản phẩm!">
                                 <br>
                                 @if($check)
-                                    <button type="submit" class="btn btn-primary ">Đánh giá sản
-                                        phẩm
+                                    <button type="submit" class="btn btn-primary pt-1">Bình luận
                                     </button>
                                 @else
-                                    <a href="{{route('dangnhap')}}" class="btn btn-primary">Đánh giá sản
-                                        phẩm</a>
+                                    <a href="{{route('dangnhap')}}" class="btn btn-primary pt-1">Bình luận</a>
                                 @endif
                             </form>
                             <hr>
@@ -166,5 +164,9 @@
 
     .list-product {
         margin-top: 1.6rem;
+    }
+
+    .add-to-cart:hover {
+        background-color: orange;
     }
 </style>

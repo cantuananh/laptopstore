@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="your-order">
-                            <div class="your-order-head"><h5>Đơn hàng của bạn</h5></div>
+                            <div class="your-order-head"><h5>Thông tin đơn hàng</h5></div>
                             <div class="your-order-body">
                                 <div class="your-order-item">
                                     <div>
@@ -119,7 +119,7 @@
                                                name="payment" value="0" data-order_button_text="">
                                         <label for="payment_method_cheque">Chuyển khoản </label>
                                         <div class="payment_box payment_method_cheque" style="display: block;">
-                                            Bạn vui lòng chuyển tiền qua số tài khoản ACB: 6978367 - CAN TUAN ANH với nội dung là: ID +
+                                            Bạn vui lòng chuyển tiền qua số tài khoản ACB: 6978367 - CAN TUAN ANH với nội dung là:
                                             Họ tên + Tên sản phẩm + ngày đặt.
                                         </div>
                                     </li>
@@ -127,7 +127,7 @@
                             </div>
                             @if(\Cart::getSubTotal())
                                 <div class="text-center">
-                                    <button type="submit" class="beta-btn primary" name="ok">Hãy Đặt hàng <i
+                                    <button title="Đặt hàng sản phẩm" type="submit" class="beta-btn primary" name="ok">Đặt hàng <i
                                             class="fa fa-chevron-right"></i></button>
                                 </div>
                             @endif

@@ -28,7 +28,7 @@
             <form action="{{route('orders.index')}}" method="get" role="search">
                 <div class="input-group d-flex justify-content-center">
                     <input type="text" name="name" class="col-lg-2"
-                           placeholder="Nhập tên khách hàng..." style="margin-right: 5px">
+                           placeholder="Nhập tên nhân viên..." style="margin-right: 5px">
                     <select class="col-lg-1" style="margin-right: 5px" name="payment">
                         <option value="">Tất cả</option>
                         <option value="1">Tiền mặt</option>
@@ -44,9 +44,9 @@
                 <thead>
                 <tr align="center">
                     <th class="align-middle">Mã hóa đơn</th>
-                    <th class="align-middle">Khách hàng</th>
-                    <th class="align-middle">Ngày bán</th>
-                    <th class="align-middle">Phương thức thanh toán</th>
+                    <th class="align-middle">Nhân viên</th>
+                    <th class="align-middle">Thời gian bán</th>
+                    <th class="align-middle">Hình thức thanh toán</th>
                     <th class="align-middle">Tổng tiền</th>
                     <th class="align-middle">Trạng thái</th>
                     <th class="align-middle">Chức năng</th>
@@ -68,16 +68,19 @@
                                 ?>
                                 {{$date}}
                             </td>
-                            <td class="align-middle"> @if($order->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
-                            <td class="align-middle"> {{number_format($order->total_price)}} <u>đ</u></td>
+                            <td class="align-middle text-center"> @if($order->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
+                            <td class="align-middle text-center"> {{number_format($order->total_price)}} <u>đ</u></td>
                             <td class="text-center align-middle">
                                 <form action="{{route('updateOrderStatus',['id'=>$order->id])}}" method="POST">
                                     {!! csrf_field() !!}
                                     @if($order->status==1)
-                                        <button style="border: unset; background-color: unset;"><i class="fas fa-check-circle" title="Chưa thanh toán"></i></button>
+                                        <button style="border: unset; background-color: unset;"><i
+                                                class="fas fa-check-circle" style="color: gray;"
+                                                title="Chưa thanh toán"></i></button>
                                     @else
-                                        <button style="border: unset; background-color: unset;"><i class="fas fa-check-circle" title="Đã thanh toán"
-                                                   style="color: green"></i></button>
+                                        <button style="border: unset; background-color: unset;"><i
+                                                class="fas fa-check-circle" title="Đã thanh toán"
+                                                style="color: green"></i></button>
                                     @endif
                                 </form>
                             </td>
@@ -85,20 +88,20 @@
                                 <form action="{{route('orders.destroy',['order'=>$order->id])}}" method="POST">
                                     {!! csrf_field() !!}
                                     @method('DELETE')
-                                    @if($order->status == 1)
-                                        <button type="submit" class="btn btn-danger btn-del"
-                                                style="border-radius: 50%" title="Xóa hoá đơn">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button>
-                                        <a href="{{route('orders.edit',['order'=>$order->id])}}"
-                                           title="Chỉnh sửa hoá đơn"
-                                           class="btn btn-warning"
-                                           style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
-                                    @endif
                                     <a href="{{route('orders.show',['order'=>$order->id])}}"
                                        title="Xem hoá đơn"
                                        class="btn btn-primary"
                                        style="color: white;border-radius: 50%"><i class="fas fa-eye"></i></a>
+                                    @if($order->status == 1)
+                                        <a href="{{route('orders.edit',['order'=>$order->id])}}"
+                                           title="Chỉnh sửa hoá đơn"
+                                           class="btn btn-warning"
+                                           style="color: white;border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
+                                        <button type="submit" class="btn btn-danger btn-del"
+                                                style="border-radius: 50%" title="Xóa hoá đơn">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    @endif
                                     @if($order->status == 2)
                                         <a href="{{route('exportOrder',['id'=>$order->id])}}"
                                            title="Xuất file PDF"

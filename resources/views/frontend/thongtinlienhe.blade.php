@@ -37,6 +37,8 @@
                     <br>
                     <p>
                         Chúng tôi luôn giải đáp những thắc mắc của bạn! <br>
+                    </p>
+                    <p>
                         <i class="fa fa-phone"></i> 0348158822
                     </p>
                     <div class="space20">&nbsp;</div>

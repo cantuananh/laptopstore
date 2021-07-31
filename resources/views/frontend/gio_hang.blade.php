@@ -21,12 +21,12 @@
                     <thead>
                     <tr>
                         <th class="text-center">STT</th>
-                        <th class="text-center">Tên</th>
-                        <th class="text-center">Hình ảnh</th>
-                        <th class="text-center">Giá</th>
+                        <th class="text-center">Tên sản phẩm</th>
+                        <th class="text-center">Hình ảnh sản phẩm</th>
+                        <th class="text-center">Giá sản phẩm</th>
                         <th class="text-center">Số lượng</th>
                         <th class="text-center">Thành tiền</th>
-                        <th class="text-center">Thao tác</th>
+                        <th class="text-center">Hành động</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -44,6 +44,7 @@
                                        value="{{$cart->quantity}}"
                                        type="number"
                                        min="1"
+                                       style="width: 2.5rem !important;"
                                        class="product-number">
                                 <button class="quantity-update btn-success" title="Cập nhật số lượng"
                                         cart="{{$cart->id}}"><b>Update</b></button>
@@ -51,8 +52,8 @@
                             <td class="text-center">
                                 {{number_format($cart->price * $cart->quantity)}}<u>đ</u></td>
                             <td class="text-center">
-                                <a href="{{url('del-cart',['id'=>$cart['id']])}}"><i
-                                        class="fa fa-trash-o text-danger icons-delete-product"></i>Xoá</a>
+                                <a title="Xoá khỏi giỏ hàng" href="{{url('del-cart',['id'=>$cart['id']])}}"><i
+                                        class="fa fa-trash-o text-danger icons-delete-product" style="font-size: 1.3rem;"></i></a>
                             </td>
                         </tr>
                         <?php $i++?>
@@ -61,7 +62,8 @@
                 </table>
                 <h5 class="class pull-right">Tổng tiền thanh toán:
                     <b>{{number_format(\Cart::getSubTotal())}}</b><u>đ</u>
-                    <a href="{{route('dathang')}}" class="btn btn-success pay-btn" style="margin-left: 1rem;" title="Tiến hành thanh toán">
+                    <a href="{{route('dathang')}}" class="btn btn-success pay-btn" style="margin-left: 1rem;"
+                       title="Thanh toán sản phẩm">
                         <b>Thanh toán</b></a>
                 </h5>
                 <br>
@@ -83,6 +85,7 @@
 
     .quantity-update {
         border-radius: 10px 10px 10px 10px;
+        border: 1px solid gray;
     }
 
     .icons-delete-product {
@@ -91,5 +94,10 @@
 
     #content {
         height: 53%;
+    }
+
+    .icons-delete-product:hover {
+        font-size: 1.4rem!important;
+        font-weight: bold;
     }
 </style>

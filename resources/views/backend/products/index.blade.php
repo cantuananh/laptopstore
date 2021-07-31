@@ -42,37 +42,37 @@
                     <th class="align-middle">Màn hình</th>
                     <th class="align-middle">Giá bán</th>
                     <th class="align-middle">Số lượng</th>
-                    <th class="align-middle">Chức năng</th>
+                    <th class="align-middle">Hành động</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($products as $product)
                     <tr class="odd gradeX">
-                        <td class="text-center">{{$product->id}}</td>
-                        <td>{{$product->name}}</td>
-                        <td class="text-center">{{$product->brand->name}}</td>
-                        <td class="text-center"><img src="uploads/products/{{$product->image}}" height="100"
+                        <td class="text-center align-middle">{{$product->id}}</td>
+                        <td class="align-middle">{{$product->name}}</td>
+                        <td class="text-center align-middle">{{$product->brand->name}}</td>
+                        <td class="text-center align-middle"><img src="uploads/products/{{$product->image}}" height="100"
                                                      width="150">
                         </td>
-                        <td class="text-center">{{$product->microprocessors}}</td>
-                        <td class="text-center">{{$product->screen}}</td>
-                        <td class="text-center">{{number_format($product->price)}} <u>đ</u></td>
-                        <td class="text-center">{{$product->quantity}}</td>
-                        <td class="text-center">
+                        <td class="text-center align-middle">{{$product->microprocessors}}</td>
+                        <td class="text-center align-middle">{{$product->screen}}</td>
+                        <td class="text-center align-middle">{{number_format($product->price)}} <u>đ</u></td>
+                        <td class="text-center align-middle">{{$product->quantity}}</td>
+                        <td class="text-center align-middle">
                             <form action="{{route('products.destroy',['product'=>$product->id])}}" method="POST">
                                 {!! csrf_field() !!}
                                 @method('DELETE')
+                                <a href="{{route('products.show',['product'=>$product->id])}}" class="btn btn-primary"
+                                   title="Xem sản phẩm"
+                                   style="color: white;border-radius: 50%"><i class="fas fa-eye"></i></a>
+                                <a href="{{route('products.edit',['product'=>$product->id])}}" class="btn btn-warning"
+                                   title="Chỉnh sửa sản phẩm"
+                                style="border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
                                 <button type="submit" class="btn btn-danger btn-del"
                                         title="Xoá sản phẩm"
                                         style="border-radius: 50%" title="Xóa">
                                     <i class="far fa-trash-alt"></i>
                                 </button>
-                                <a href="{{route('products.edit',['product'=>$product->id])}}" class="btn btn-warning"
-                                   title="Chỉnh sửa sản phẩm"
-                                   style="border-radius: 50%"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="{{route('products.show',['product'=>$product->id])}}" class="btn btn-primary"
-                                   title="Xem sản phẩm"
-                                   style="color: white;border-radius: 50%"><i class="fas fa-eye"></i></a>
                             </form>
                         </td>
                     </tr>

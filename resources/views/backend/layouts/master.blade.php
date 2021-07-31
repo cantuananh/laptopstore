@@ -127,7 +127,7 @@
         </div>
     </div>
     <footer class="main-footer text-center">
-        <strong>Copyright &copy; 2021 <a href="https://www.facebook.com/daotrongquang">IT laptop - Cấn Tuấn
+        <strong>Copyright &copy; 2021 <a href="https://www.facebook.com/anh.ct97">IT laptop - Cấn Tuấn
                 Anh</a>.</strong>
         All rights reserved.
     </footer>

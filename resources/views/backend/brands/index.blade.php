@@ -19,6 +19,7 @@
             <div class="input-group d-flex justify-content-center">
                 <input type="text" class="col-lg-2" name="name"
                        placeholder="Nhập tên thương hiệu..." style="margin-right: 5px">
+                       placeholder="Nhập tên thương hiệu..." style="margin-right: 5px">
                 <input type="text" class="col-lg-2" name="description"
                        placeholder="Nhập mô tả..." style="margin-right: 5px">
                 <button type="submit" title="Tìm kiếm thương hiệu" class="btn-search">
@@ -32,8 +33,8 @@
             <tr align="center">
                 <th class="align-middle">ID</th>
                 <th class="align-middle">Tên thương hiệu</th>
-                <th class="align-middle">Mô tả</th>
-                <th class="align-middle">Chức năng</th>
+                <th class="align-middle">Mô tả chi tiết</th>
+                <th class="align-middle">Hành động</th>
             </tr>
             </thead>
             <tbody>
@@ -46,18 +47,18 @@
                         <form action="{{route('brands.destroy',['brand'=>$brand->id])}}" method="POST">
                             {!! csrf_field() !!}
                             @method('DELETE')
-                            <button type="submit"
-                                    class="btn btn-danger btn-del"
-                                    style="border-radius: 50%;"
-                                    title="Xóa thương hiệu">
-                                <i class="far fa-trash-alt"></i>
-                            </button>
                             <a href="{{route('brands.edit',['brand'=>$brand->id])}}"
                                class="btn btn-warning"
                                title="Chỉnh sửa thương hiệu"
                                style="color: white;border-radius: 50%;">
                                 <i class="fas fa-pencil-alt"></i>
                             </a>
+                            <button type="submit"
+                                    class="btn btn-danger btn-del"
+                                    style="border-radius: 50%;"
+                                    title="Xóa thương hiệu">
+                                <i class="far fa-trash-alt"></i>
+                            </button>
                         </form>
                     </td>
                 </tr>
