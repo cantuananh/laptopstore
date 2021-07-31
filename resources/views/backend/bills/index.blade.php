@@ -48,6 +48,7 @@
                 </thead>
                 <tbody>
                 @foreach($bills as $bill)
+                    @dd($bill)
                     <tr class="odd gradeX">
                         <td class="text-center align-middle">{{$bill->id}}</td>
                         <td class="align-middle">{{optional($bill->user)->name}}</td>
@@ -62,7 +63,8 @@
                             {{$date}}
                         </td>
                         <td class="align-middle"> {{$bill->supplier->name}}</td>
-                        <td class="align-middle text-center"> @if($bill->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
+                        <td class="align-middle text-center"> @if($bill->payment==1) Tiền mặt @else Qua
+                            thẻ @endif  </td>
                         <td class="align-middle"> {{ number_format($bill->total_price-$bill->total_price*($bill->supplier->percent_discount/100))}}
                             <u>đ</u></td>
                         <td class="text-center align-middle">
@@ -70,7 +72,8 @@
                                 {!! csrf_field() !!}
                                 @if($bill->status == 1)
                                     <button style="border: unset; background-color: unset;"><i
-                                            class="fas fa-check-circle" style="color: gray" title="Chưa thanh toán"></i></button>
+                                            class="fas fa-check-circle" style="color: gray" title="Chưa thanh toán"></i>
+                                    </button>
                                 @else
                                     <button style="border: unset; background-color: unset;"><i
                                             class="fas fa-check-circle" title="Đã thanh toán"

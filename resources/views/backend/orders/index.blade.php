@@ -68,7 +68,8 @@
                                 ?>
                                 {{$date}}
                             </td>
-                            <td class="align-middle text-center"> @if($order->payment==1) Tiền mặt @else Qua thẻ @endif  </td>
+                            <td class="align-middle text-center"> @if($order->payment==1) Tiền mặt @else Qua
+                                thẻ @endif  </td>
                             <td class="align-middle text-center"> {{number_format($order->total_price)}} <u>đ</u></td>
                             <td class="text-center align-middle">
                                 <form action="{{route('updateOrderStatus',['id'=>$order->id])}}" method="POST">
