@@ -38,12 +38,12 @@
                 <tr align="center">
                     <th class="align-middle">Mã phiếu</th>
                     <th class="align-middle">Nhân viên</th>
-                    <th class="align-middle">Ngày nhập</th>
+                    <th class="align-middle">Thời gian nhập</th>
                     <th class="align-middle">Nhà cung cấp</th>
                     <th class="align-middle">Phương thức thanh toán</th>
                     <th class="align-middle">Tổng tiền</th>
                     <th class="align-middle">Trạng thái</th>
-                    <th class="align-middle">Chức năng</th>
+                    <th class="align-middle">Hành động</th>
                 </tr>
                 </thead>
                 <tbody>

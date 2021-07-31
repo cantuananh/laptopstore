@@ -28,7 +28,7 @@
             <form action="{{route('orders.index')}}" method="get" role="search">
                 <div class="input-group d-flex justify-content-center">
                     <input type="text" name="name" class="col-lg-2"
-                           placeholder="Nhập tên nhân viên..." style="margin-right: 5px">
+                           placeholder="Nhập tên khách hàng..." style="margin-right: 5px">
                     <select class="col-lg-1" style="margin-right: 5px" name="payment">
                         <option value="">Tất cả</option>
                         <option value="1">Tiền mặt</option>
@@ -44,7 +44,7 @@
                 <thead>
                 <tr align="center">
                     <th class="align-middle">Mã hóa đơn</th>
-                    <th class="align-middle">Nhân viên</th>
+                    <th class="align-middle">Tên khách hàng</th>
                     <th class="align-middle">Thời gian bán</th>
                     <th class="align-middle">Hình thức thanh toán</th>
                     <th class="align-middle">Tổng tiền</th>

@@ -42,7 +42,9 @@
                     <th>Tên tài khoản</th>
                     <th>Ảnh đại diện</th>
                     <th>Email</th>
-                    <th>Quyền</th>
+                    <th>Ngày sinh</th>
+                    <th>Số điện thoại</th>
+                    <th>Vai trò</th>
                     <th>Hành động</th>
                 </tr>
                 </thead>
@@ -55,6 +57,8 @@
                                                                   width="150px">
                         </td>
                         <td class="text-center align-middle">{{$user->email}}</td>
+                        <td class="text-center align-middle">{{$user->birthday}}</td>
+                        <td class="text-center align-middle">{{$user->phone}}</td>
                         <td class="text-center align-middle">
                             @foreach($user->roles as $role)
                                 {{$role->name}} <br>

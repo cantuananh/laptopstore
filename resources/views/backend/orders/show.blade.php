@@ -35,52 +35,52 @@
                         <th class="align-middle">Đơn giá</th>
                         <th class="align-middle">Số lượng</th>
                         <th class="align-middle">Thành tiền</th>
-                        <th class="align-middle">Hành động</th>
+{{--                        <th class="align-middle">Hành động</th>--}}
                     </tr>
                     </thead>
                     <tbody class="table__list_item">
                     @foreach($product_items as $item)
                         <tr class="odd gradeX">
-                            <td>{{$item->id}}</td>
-                            <td>{{$item->detail_product->product->name}}</td>
-                            <td class="text-center"><img
+                            <td class="text-center align-middle">{{$item->id}}</td>
+                            <td class="text-center align-middle>"{{$item->detail_product->product->name}}</td>
+                            <td class="text-center align-middle"><img
                                     src="uploads/products/{{$item->detail_product->product->image}}" height="100"
                                     width="100"></td>
-                            <td>
+                            <td class="text-center align-middle">
                                 {{$item->detail_product->product->name}} . Ram {{$item->detail_product->product->ram}}
                                 GB , Màn hình: {{$item->detail_product->product->screen }}, Vi xử
                                 lý: {{$item->detail_product->product->microprocessors}}
                             </td>
-                            <td class="text-center">
+                            <td class="text-center align-middle">
                                 {{$item->detail_product->product->guarantee_time}} Tháng
                             </td>
-                            <td>
+                            <td class="text-center align-middle">
                                 {{number_format($item->detail_product->product->price)}} <u>đ</u>
                             </td>
-                            <td class="text-center">
+                            <td class="text-center align-middle">
                                 {{$item->quantity}}
                             </td>
-                            <td>
+                            <td class="text-center align-middle">
                                 {{number_format($item->quantity*$item->detail_product->product->price)}} <u>đ</u>
                             </td>
-                            <td class="text-center">
-                                <button class="btn btn-warning btnEditOrderProductModal" data-toggle="modal"
-                                        style="border-radius: 50%;"
-                                        data-target="#editOrderProductModal" data-id="{{$item->id}}"
-                                        title="Sửa chi tiết hoá đơn">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                                <button class="btn btn-danger btnDeleteOrderProductModal btn-del" data-toggle="modal"
-                                        style="border-radius: 50%"
-                                        data-target="#btnDeleteOrderDetailModal" data-id="{{$item->id}}"
-                                        title="Xoá chi tiết hoá đơn">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                                <a href="{{route('exportGuarantee',['id'=>$item->id])}}"
-                                   title="Xuất file PDF"
-                                   class="btn btn-success"
-                                   style="color: white;border-radius: 50%"><i class="fas fa-download"></i></a>
-                            </td>
+{{--                            <td class="text-center align-middle">--}}
+{{--                                <button class="btn btn-warning btnEditOrderProductModal" data-toggle="modal"--}}
+{{--                                        style="border-radius: 50%;"--}}
+{{--                                        data-target="#editOrderProductModal" data-id="{{$item->id}}"--}}
+{{--                                        title="Sửa chi tiết hoá đơn">--}}
+{{--                                    <i class="fas fa-pencil-alt"></i>--}}
+{{--                                </button>--}}
+{{--                                <button class="btn btn-danger btnDeleteOrderProductModal btn-del" data-toggle="modal"--}}
+{{--                                        style="border-radius: 50%"--}}
+{{--                                        data-target="#btnDeleteOrderDetailModal" data-id="{{$item->id}}"--}}
+{{--                                        title="Xoá chi tiết hoá đơn">--}}
+{{--                                    <i class="far fa-trash-alt"></i>--}}
+{{--                                </button>--}}
+{{--                                <a href="{{route('exportGuarantee',['id'=>$item->id])}}"--}}
+{{--                                   title="Xuất file PDF"--}}
+{{--                                   class="btn btn-success"--}}
+{{--                                   style="color: white;border-radius: 50%"><i class="fas fa-download"></i></a>--}}
+{{--                            </td>--}}
                         </tr>
                     @endforeach
                     </tbody>

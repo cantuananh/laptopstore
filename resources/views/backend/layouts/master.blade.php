@@ -105,7 +105,7 @@
                         <a href="{{route('users.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>
-                                Tài khoản
+                                Tài khoản người dùng
                             </p>
                         </a>
                     </li>
@@ -127,9 +127,8 @@
         </div>
     </div>
     <footer class="main-footer text-center">
-        <strong>Copyright &copy; 2021 <a href="https://www.facebook.com/anh.ct97">IT laptop - Cấn Tuấn
-                Anh</a>.</strong>
-        All rights reserved.
+        <p>Copyright &copy; 2021 <a href="https://www.facebook.com/anh.ct97">IT laptop - Cấn Tuấn
+                Anh</a>. All rights reserved.</p>
     </footer>
     <aside class="control-sidebar control-sidebar-dark">
     </aside>
