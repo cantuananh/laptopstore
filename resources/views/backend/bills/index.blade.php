@@ -48,7 +48,6 @@
                 </thead>
                 <tbody>
                 @foreach($bills as $bill)
-                    @dd($bill)
                     <tr class="odd gradeX">
                         <td class="text-center align-middle">{{$bill->id}}</td>
                         <td class="align-middle">{{optional($bill->user)->name}}</td>
