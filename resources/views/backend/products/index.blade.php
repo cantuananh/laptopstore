@@ -21,9 +21,9 @@
             <form action="{{route('products.index')}}" method="get" role="search">
                 <div class="input-group d-flex justify-content-center">
                     <input type="text" class="col-lg-2" name="name"
-                           placeholder="Nhập tên loại hàng..." style="margin-right: 5px">
+                           placeholder="Nhập tên sản phẩm..." style="margin-right: 5px">
                     <input type="text" class="col-lg-2" name="brand_id"
-                           placeholder="Nhập loai hàng..." style="margin-right: 5px">
+                           placeholder="Nhập tên thương hiệu..." style="margin-right: 5px">
                     <button type="submit" class="btn-search"
                             title="Tìm kiếm sản phẩm">
                         <i class="fas fa-search"></i>

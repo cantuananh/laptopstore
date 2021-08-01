@@ -19,7 +19,6 @@
             <div class="input-group d-flex justify-content-center">
                 <input type="text" class="col-lg-2" name="name"
                        placeholder="Nhập tên thương hiệu..." style="margin-right: 5px">
-                       placeholder="Nhập tên thương hiệu..." style="margin-right: 5px">
                 <input type="text" class="col-lg-2" name="description"
                        placeholder="Nhập mô tả..." style="margin-right: 5px">
                 <button type="submit" title="Tìm kiếm thương hiệu" class="btn-search">

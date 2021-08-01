@@ -103,13 +103,13 @@
                                             <i class="far fa-trash-alt"></i>
                                         </button>
                                     @endif
-                                    @if($order->status == 2)
-                                        <a href="{{route('exportOrder',['id'=>$order->id])}}"
-                                           title="Xuất file PDF"
-                                           class="btn btn-success"
-                                           style="color: white;border-radius: 50%"><i
-                                                class="fas fa-download"></i></a>
-                                    @endif
+{{--                                    @if($order->status == 2)--}}
+{{--                                        <a href="{{route('exportOrder',['id'=>$order->id])}}"--}}
+{{--                                           title="Xuất file PDF"--}}
+{{--                                           class="btn btn-success"--}}
+{{--                                           style="color: white;border-radius: 50%"><i--}}
+{{--                                                class="fas fa-download"></i></a>--}}
+{{--                                    @endif--}}
                                 </form>
                             </td>
                         </tr>

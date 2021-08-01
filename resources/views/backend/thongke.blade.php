@@ -8,7 +8,7 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <div>
-        <h5 align="center">Thống kê số hóa đơn bán trong 30 ngày</h5>
+        <h5 align="center">Thống kê số hóa đơn bán trong 30 ngày gần nhất</h5>
     </div>
     <div id="stats-container" style="height: 250px;"></div>
     <script>
@@ -71,7 +71,7 @@
             var chart = Highcharts.chart('container', {
 
                 title: {
-                    text: 'Thống kê số phiếu nhập hàng 6 tháng gần nhất'
+                    text: 'Thống kê số phiếu nhập kho trong 6 tháng gần nhất'
                 },
                 xAxis: {
                     categories: listOfYear,
