@@ -44,7 +44,7 @@ class Product extends Model
                 $query->wherehas('brand', function ($queryProduct) use ($brandName) {
                     $queryProduct->where('name', 'like', '%' . $brandName . '%');
                 });
-            })->paginate(5);
+            })->orderBy('id', 'desc')->paginate(5);
     }
 
     public function getSearch($name)

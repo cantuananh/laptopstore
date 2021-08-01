@@ -42,7 +42,7 @@
                     <th class="align-middle">Nhà cung cấp</th>
                     <th class="align-middle">Phương thức thanh toán</th>
                     <th class="align-middle">Tổng tiền</th>
-                    <th class="align-middle">Trạng thái</th>
+                    <th class="align-middle">Trạng thái thanh toán</th>
                     <th class="align-middle">Hành động</th>
                 </tr>
                 </thead>

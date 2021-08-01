@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header text-center">Danh sách tài khoản
+                    <h1 class="page-header text-center">Danh sách tài khoản người dùng
                         <a href="{{route('users.create')}}"
                            title="Thêm tài khoản"
                            style="color: green; border-radius: 50%"><i class="fas fa-plus-circle"></i></a>
@@ -38,14 +38,14 @@
             <table class="table table-hover table-bordered table-striped col-10 m-auto">
                 <thead>
                 <tr align="center">
-                    <th>ID</th>
-                    <th>Tên tài khoản</th>
-                    <th>Ảnh đại diện</th>
-                    <th>Email</th>
-                    <th>Ngày sinh</th>
-                    <th>Số điện thoại</th>
-                    <th>Vai trò</th>
-                    <th>Hành động</th>
+                    <th class="align-middle">ID</th>
+                    <th class="align-middle col-2">Tên tài khoản</th>
+                    <th class="align-middle">Ảnh đại diện</th>
+                    <th class="align-middle">Email</th>
+                    <th class="align-middle col-2">Ngày sinh</th>
+                    <th class="align-middle">Số điện thoại</th>
+                    <th class="align-middle">Vai trò</th>
+                    <th class="align-middle">Hành động</th>
                 </tr>
                 </thead>
                 <tbody>

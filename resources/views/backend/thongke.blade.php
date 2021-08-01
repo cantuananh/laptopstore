@@ -36,10 +36,11 @@
 
                 // ID of the element in which to draw the chart.
                 element: 'stats-container',
-                data: [0, 0], // Set initial data (ideally you would provide an array of default data)
-                xkey: 'date', // Set the key for X-axis
+                data: [0, 0, ], // Set initial data (ideally you would provide an array of default data)
+                xkey: 'date',  // Set the key for X-axis
                 ykeys: ['value'], // Set the key for Y-axis
                 labels: ['Số hóa đơn'] // Set the label when bar is rolled over
+
             });
 
             // Request initial data for the past 7 days:

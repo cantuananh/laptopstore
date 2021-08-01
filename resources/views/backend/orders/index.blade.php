@@ -48,7 +48,7 @@
                     <th class="align-middle">Thời gian bán</th>
                     <th class="align-middle">Hình thức thanh toán</th>
                     <th class="align-middle">Tổng tiền</th>
-                    <th class="align-middle">Trạng thái</th>
+                    <th class="align-middle">Trạng thái thanh toán</th>
                     <th class="align-middle">Chức năng</th>
                 </tr>
                 </thead>
@@ -103,13 +103,13 @@
                                             <i class="far fa-trash-alt"></i>
                                         </button>
                                     @endif
-{{--                                    @if($order->status == 2)--}}
-{{--                                        <a href="{{route('exportOrder',['id'=>$order->id])}}"--}}
-{{--                                           title="Xuất file PDF"--}}
-{{--                                           class="btn btn-success"--}}
-{{--                                           style="color: white;border-radius: 50%"><i--}}
-{{--                                                class="fas fa-download"></i></a>--}}
-{{--                                    @endif--}}
+                                    {{--                                    @if($order->status == 2)--}}
+                                    {{--                                        <a href="{{route('exportOrder',['id'=>$order->id])}}"--}}
+                                    {{--                                           title="Xuất file PDF"--}}
+                                    {{--                                           class="btn btn-success"--}}
+                                    {{--                                           style="color: white;border-radius: 50%"><i--}}
+                                    {{--                                                class="fas fa-download"></i></a>--}}
+                                    {{--                                    @endif--}}
                                 </form>
                             </td>
                         </tr>

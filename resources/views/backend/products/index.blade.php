@@ -37,7 +37,7 @@
                     <th class="align-middle">ID</th>
                     <th class="align-middle">Tên sản phẩm</th>
                     <th class="align-middle">Thương hiệu</th>
-                    <th class="align-middle">Hình ảnh</th>
+                    <th class="align-middle">Hình ảnh sản phẩm</th>
                     <th class="align-middle">Vi xử lý</th>
                     <th class="align-middle">Màn hình</th>
                     <th class="align-middle">Giá bán</th>
